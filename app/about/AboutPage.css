@@ -1,0 +1,1143 @@
+/* ============================================================
+   AboutPage.css — Pantrix Portfolio | Black + Teal Neon Luxury
+   Full standalone About PAGE (not just section)
+   ============================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,600&family=DM+Sans:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap");
+
+/* ============================================================
+   CSS Variables
+   ============================================================ */
+
+:root {
+  --teal-neon: #00f5d4;
+  --teal-neon-light: #5efade;
+  --teal-neon-dim: #00f5d444;
+  --teal-neon-dim2: #00f5d418;
+  --electric-blue: #00bbf9;
+  --electric-blue-dim: #00bbf944;
+  --bg-dark: #0a0a0a;
+  --bg-card: #111111;
+  --bg-card2: #1a1a1a;
+  --white: #ffffff;
+  --white-muted: #e0e0e0;
+  --muted: #888888;
+  --muted2: #666666;
+  --border: #222222;
+  --border2: #333333;
+  --gradient-primary: linear-gradient(135deg, #00f5d4, #00bbf9);
+  --gradient-glow: radial-gradient(circle, #00f5d430, transparent 70%);
+  --font-display: "Cormorant Garamond", serif;
+  --font-body: "DM Sans", sans-serif;
+  --font-mono: "Space Mono", monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ============================================================
+   Page Root
+   ============================================================ */
+
+.ap {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: var(--bg-dark);
+  overflow-x: hidden;
+  font-family: var(--font-body);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(5rem, 9vw, 8rem);
+  padding-bottom: clamp(5rem, 9vw, 8rem);
+}
+
+/* ============================================================
+   Background Layer
+   ============================================================ */
+
+.ap__bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ap__grid {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, #00f5d40a 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.ap__glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  animation: apGlowBreath 9s ease-in-out infinite alternate;
+}
+
+.ap__glow--1 {
+  width: 700px;
+  height: 700px;
+  top: -100px;
+  right: -200px;
+  background: var(--gradient-glow);
+  animation-delay: 0s;
+}
+
+.ap__glow--2 {
+  width: 550px;
+  height: 550px;
+  bottom: 200px;
+  left: -180px;
+  background: radial-gradient(circle, #00bbf930, transparent 70%);
+  animation-delay: 4.5s;
+}
+
+.ap__glow--3 {
+  width: 450px;
+  height: 450px;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, #00f5d420, transparent 70%);
+  animation-delay: 2s;
+  animation-duration: 12s;
+}
+
+@keyframes apGlowBreath {
+  from {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0.75;
+    transform: scale(1.12);
+  }
+}
+
+/* Deco Lines */
+.ap__deco-line {
+  position: absolute;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--teal-neon-dim),
+    transparent
+  );
+}
+
+.ap__deco-line--h1 {
+  top: 20%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  opacity: 0.4;
+}
+.ap__deco-line--h2 {
+  top: 65%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  opacity: 0.25;
+}
+.ap__deco-line--v1 {
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    var(--teal-neon-dim),
+    transparent
+  );
+  opacity: 0.25;
+}
+
+/* ============================================================
+   Shared Section Wrapper
+   ============================================================ */
+
+.ap__section {
+  position: relative;
+  z-index: 1;
+  padding: 0 clamp(1.5rem, 6vw, 7rem);
+}
+
+/* ============================================================
+   Section Head (shared)
+   ============================================================ */
+
+.ap__section-head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2.4rem;
+}
+
+.ap__section-num {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--teal-neon);
+  letter-spacing: 0.1em;
+}
+
+.ap__section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+  font-weight: 600;
+  color: var(--white);
+}
+
+.ap__section-bar {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--teal-neon-dim), transparent);
+  max-width: 200px;
+}
+
+/* ============================================================
+   HERO SECTION
+   ============================================================ */
+
+.ap__hero {
+  position: relative;
+  z-index: 1;
+  padding: clamp(6rem, 12vh, 10rem) clamp(1.5rem, 6vw, 7rem) 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+/* Label Row */
+.ap__label-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+.ap__label-line {
+  flex: 1;
+  max-width: 120px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--teal-neon-dim));
+}
+
+.ap__label-row .ap__label-line:last-child {
+  background: linear-gradient(90deg, var(--teal-neon-dim), transparent);
+}
+
+.ap__label-text {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--teal-neon);
+  padding: 0.3rem 0.9rem;
+  border: 1px solid var(--teal-neon-dim);
+  border-radius: 999px;
+  background: var(--teal-neon-dim2);
+  animation: apFadeIn 0.8s ease both;
+}
+
+/* Intro layout */
+.ap__intro {
+  display: flex;
+  gap: clamp(2.5rem, 5vw, 6rem);
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+/* Left */
+.ap__intro-left {
+  flex: 1 1 320px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  animation: apSlideLeft 0.9s 0.1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Eyebrow */
+.ap__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.ap__eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--teal-neon);
+  box-shadow: 0 0 8px var(--teal-neon);
+  animation: apPulse 2s ease-in-out infinite;
+}
+
+/* Main Heading */
+.ap__heading {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.06;
+  display: flex;
+  flex-direction: column;
+  gap: 0.06em;
+}
+
+.ap__heading-line {
+  display: block;
+  font-size: clamp(3rem, 5.5vw, 5.2rem);
+  color: var(--white);
+  animation: apLineReveal 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.ap__heading-line:nth-child(1) {
+  animation-delay: 0.18s;
+}
+.ap__heading-line:nth-child(2) {
+  animation-delay: 0.28s;
+}
+.ap__heading-line:nth-child(3) {
+  animation-delay: 0.38s;
+}
+
+.ap__heading-line--gradient {
+  background: linear-gradient(
+    135deg,
+    var(--teal-neon),
+    var(--electric-blue),
+    var(--teal-neon)
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation:
+    apLineReveal 0.75s 0.28s both,
+    apShimmer 3s linear infinite;
+}
+
+.ap__heading-line--thin {
+  font-weight: 300;
+  font-style: italic;
+  color: var(--muted);
+  font-size: clamp(2.4rem, 4.5vw, 4.2rem);
+}
+
+/* Signature */
+.ap__signature {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  animation: apSlideLeft 0.9s 0.55s both;
+}
+
+.ap__signature-name {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+  font-weight: 600;
+  background: linear-gradient(135deg, var(--teal-neon), var(--electric-blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: 0.06em;
+}
+
+.ap__signature-dot {
+  color: var(--teal-neon);
+  font-size: 1.2rem;
+}
+
+.ap__signature-role {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Right */
+.ap__intro-right {
+  flex: 1 1 340px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  animation: apSlideRight 0.9s 0.2s both;
+}
+
+.ap__desc {
+  font-size: clamp(0.88rem, 1.3vw, 1.02rem);
+  font-weight: 300;
+  line-height: 1.85;
+  color: var(--white-muted);
+}
+
+.ap__desc strong {
+  color: var(--teal-neon-light);
+  font-weight: 500;
+}
+
+/* ============================================================
+   Stats Grid
+   ============================================================ */
+
+.ap__stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--border);
+  animation: apFadeIn 0.9s 0.6s both;
+}
+
+.ap__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 1.2rem 1.4rem;
+  background: var(--bg-card);
+  transition: all 0.3s ease;
+}
+
+.ap__stat:hover {
+  background: var(--bg-card2);
+  transform: scale(1.02);
+}
+
+.ap__stat-num {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--teal-neon), var(--white));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  line-height: 1;
+}
+
+.ap__stat-label {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}
+
+/* ============================================================
+   Services Grid — 01
+   ============================================================ */
+
+.ap__services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+}
+
+.ap__service-card {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.8rem 1.5rem 1.6rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  animation: apFadeIn 0.7s both;
+}
+
+.ap__service-card:hover {
+  transform: translateY(-7px);
+  border-color: var(--teal-neon-dim);
+  background: var(--bg-card2);
+  box-shadow:
+    0 20px 50px #00000066,
+    0 0 0 1px var(--teal-neon-dim);
+}
+
+.ap__service-icon-wrap {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ap__service-icon {
+  position: relative;
+  z-index: 1;
+  color: var(--teal-neon-light);
+  transition: all 0.3s;
+}
+
+.ap__service-card:hover .ap__service-icon {
+  transform: scale(1.15) translateY(-2px);
+  color: var(--teal-neon);
+}
+
+.ap__service-icon-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--teal-neon-dim2);
+  transform: scale(0);
+  transition: transform 0.35s;
+}
+
+.ap__service-card:hover .ap__service-icon-glow {
+  transform: scale(1.6);
+}
+
+.ap__service-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+  font-weight: 600;
+  color: var(--white);
+  transition: color 0.3s;
+}
+
+.ap__service-card:hover .ap__service-title {
+  color: var(--teal-neon-light);
+}
+
+.ap__service-desc {
+  font-size: 0.88rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.ap__service-num {
+  position: absolute;
+  bottom: 0.6rem;
+  right: 1rem;
+  font-family: var(--font-display);
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--border2);
+  line-height: 1;
+  transition: all 0.3s;
+  user-select: none;
+}
+
+.ap__service-card:hover .ap__service-num {
+  color: var(--teal-neon-dim);
+  opacity: 0.8;
+}
+
+.ap__service-hover-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--teal-neon),
+    transparent
+  );
+  transform: scaleX(0);
+  transition: transform 0.4s;
+}
+
+.ap__service-card:hover .ap__service-hover-bar {
+  transform: scaleX(1);
+}
+
+/* ============================================================
+   Skills — 02
+   ============================================================ */
+
+.ap__skills {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.ap__skill-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  animation: apFadeIn 0.7s both;
+}
+
+.ap__skill-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.ap__skill-name {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--white-muted);
+}
+
+.ap__skill-pct {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--teal-neon);
+  letter-spacing: 0.08em;
+}
+
+.ap__skill-track {
+  width: 100%;
+  height: 4px;
+  background: var(--border);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.ap__skill-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--teal-neon), var(--electric-blue));
+  width: 0;
+  animation: apSkillFill 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+  box-shadow: 0 0 10px var(--teal-neon-dim);
+}
+
+@keyframes apSkillFill {
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--target-width, 100%);
+  }
+}
+
+/* ============================================================
+   Timeline — 03
+   ============================================================ */
+
+.ap__timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-left: clamp(1.5rem, 3vw, 3rem);
+}
+
+.ap__timeline-track {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  bottom: 10px;
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    var(--teal-neon-dim),
+    var(--teal-neon-dim),
+    transparent
+  );
+}
+
+.ap__timeline-item {
+  position: relative;
+  display: flex;
+  gap: 1.4rem;
+  align-items: flex-start;
+  animation: apFadeIn 0.7s both;
+}
+
+.ap__timeline-dot {
+  position: absolute;
+  left: calc(-1 * clamp(1.5rem, 3vw, 3rem));
+  top: 0.5rem;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid var(--teal-neon);
+  background: var(--bg-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ap__timeline-dot-inner {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--teal-neon);
+  animation: apPulse 2s ease-in-out infinite;
+}
+
+.ap__timeline-card {
+  flex: 1;
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.4rem 1.6rem;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.ap__timeline-card:hover {
+  border-color: var(--teal-neon-dim);
+  background: var(--bg-card2);
+  transform: translateX(6px);
+  box-shadow: 0 8px 30px #00000055;
+}
+
+.ap__timeline-year {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--teal-neon);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.ap__timeline-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 0.4rem;
+}
+
+.ap__timeline-desc {
+  font-size: 0.88rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.ap__timeline-shine {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 50%, #00f5d406 100%);
+  pointer-events: none;
+}
+
+/* ============================================================
+   Values — 04
+   ============================================================ */
+
+.ap__values {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+}
+
+.ap__value-card {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.8rem 1.5rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  animation: apFadeIn 0.7s both;
+}
+
+.ap__value-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--teal-neon-dim);
+  background: var(--bg-card2);
+  box-shadow:
+    0 20px 50px #00000066,
+    0 0 0 1px var(--teal-neon-dim);
+}
+
+.ap__value-icon {
+  color: var(--teal-neon-light);
+  transition: all 0.3s;
+}
+
+.ap__value-card:hover .ap__value-icon {
+  color: var(--teal-neon);
+  transform: scale(1.15);
+}
+
+.ap__value-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+  font-weight: 600;
+  color: var(--white);
+  transition: color 0.3s;
+}
+
+.ap__value-card:hover .ap__value-title {
+  color: var(--teal-neon-light);
+}
+
+.ap__value-desc {
+  font-size: 0.88rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.ap__value-hover-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--teal-neon),
+    transparent
+  );
+  transform: scaleX(0);
+  transition: transform 0.4s;
+}
+
+.ap__value-card:hover .ap__value-hover-bar {
+  transform: scaleX(1);
+}
+
+/* ============================================================
+   CTA Section
+   ============================================================ */
+
+.ap__cta-wrap {
+  position: relative;
+  z-index: 1;
+  margin: 0 clamp(1.5rem, 6vw, 7rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.8rem;
+  padding: 3.5rem 2rem;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--bg-card);
+  text-align: center;
+  overflow: hidden;
+  animation: apFadeIn 0.9s 0.3s both;
+}
+
+.ap__cta-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, #00f5d40e, transparent 60%);
+  pointer-events: none;
+}
+
+.ap__cta-wrap::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--teal-neon-dim),
+    transparent
+  );
+}
+
+.ap__cta-text {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  font-weight: 600;
+  background: linear-gradient(135deg, var(--white), var(--teal-neon-light));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+.ap__cta-btns {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================================
+   Buttons
+   ============================================================ */
+
+.ap__btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2.2rem;
+  border-radius: 60px;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  overflow: hidden;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s;
+}
+
+.ap__btn:hover {
+  transform: translateY(-3px);
+}
+
+.ap__btn--primary {
+  background: linear-gradient(135deg, var(--teal-neon), var(--electric-blue));
+  color: #0a0a0a;
+  font-weight: 600;
+  box-shadow: 0 4px 28px var(--teal-neon-dim);
+}
+
+.ap__btn--primary:hover {
+  box-shadow: 0 8px 40px var(--teal-neon);
+}
+
+.ap__btn-shine {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    #ffffff66 50%,
+    transparent 60%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.ap__btn--primary:hover .ap__btn-shine {
+  transform: translateX(100%);
+}
+
+.ap__btn--secondary {
+  color: var(--teal-neon-light);
+  background: transparent;
+  border: 1px solid var(--teal-neon-dim);
+}
+
+.ap__btn--secondary:hover {
+  background: var(--teal-neon-dim2);
+  border-color: var(--teal-neon);
+  box-shadow: 0 0 18px var(--teal-neon-dim);
+}
+
+/* ============================================================
+   Shared Keyframes
+   ============================================================ */
+
+@keyframes apFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes apSlideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-36px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes apSlideRight {
+  from {
+    opacity: 0;
+    transform: translateX(36px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes apLineReveal {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes apShimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes apPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 6px var(--teal-neon);
+  }
+  50% {
+    box-shadow: 0 0 18px var(--teal-neon-light);
+  }
+}
+
+/* ============================================================
+   Responsive — Tablet (max 1023px)
+   ============================================================ */
+
+@media (max-width: 1023px) {
+  .ap__deco-line--v1 {
+    display: none;
+  }
+}
+
+/* ============================================================
+   Responsive — Mobile (max 767px)
+   ============================================================ */
+
+@media (max-width: 767px) {
+  .ap {
+    gap: 4rem;
+  }
+
+  .ap__hero {
+    padding: 5rem 1.4rem 0;
+    gap: 2.5rem;
+  }
+
+  .ap__section {
+    padding: 0 1.4rem;
+  }
+
+  .ap__cta-wrap {
+    margin: 0 1.4rem;
+    padding: 2.2rem 1.2rem;
+  }
+
+  .ap__intro {
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .ap__intro-left,
+  .ap__intro-right {
+    flex: unset;
+    width: 100%;
+  }
+
+  .ap__heading-line {
+    font-size: clamp(2.4rem, 9vw, 3.5rem);
+  }
+
+  .ap__heading-line--thin {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+
+  .ap__services {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.85rem;
+  }
+
+  .ap__service-card {
+    padding: 1.4rem 1.1rem 1.3rem;
+  }
+
+  .ap__values {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.85rem;
+  }
+
+  .ap__timeline {
+    padding-left: 1.8rem;
+  }
+
+  .ap__timeline-dot {
+    left: -1.8rem;
+  }
+
+  .ap__cta-btns {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .ap__btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ============================================================
+   Responsive — Small Mobile (max 480px)
+   ============================================================ */
+
+@media (max-width: 480px) {
+  .ap__services {
+    grid-template-columns: 1fr;
+  }
+
+  .ap__values {
+    grid-template-columns: 1fr;
+  }
+
+  .ap__stats {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ============================================================
+   Responsive — Large Desktop (min 1280px)
+   ============================================================ */
+
+@media (min-width: 1280px) {
+  .ap__intro-left {
+    flex: 1.1;
+  }
+
+  .ap__intro-right {
+    flex: 0.9;
+  }
+
+  .ap__services {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .ap__values {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
