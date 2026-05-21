@@ -141,7 +141,9 @@ export default function Sidebar({
                     navigateTo(link.href);
                   }}
                 >
-                  <span className="sidebar__link-number">0{i + 1}</span>
+                  <span className="sidebar__link-number">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
                   <span className="sidebar__link-text">{link.label}</span>
                   <span className="sidebar__link-arrow">
                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none">

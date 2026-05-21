@@ -10,6 +10,7 @@ const footerLinks = [
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Projects", href: "/projects" },
+  { label: "Team", href: "/team" },
   { label: "Reviews", href: "/reviews" },
   { label: "Contact", href: "/contact" },
 ];
@@ -213,7 +214,7 @@ export default function Footer() {
               Ready to build something great?
             </p>
             <h2 className="footer__cta-heading">
-              Let&apos;s craft your
+              Let's craft your
               <span className="footer__cta-highlight"> digital future</span>
             </h2>
           </div>
@@ -225,7 +226,7 @@ export default function Footer() {
               navigateTo("/contact");
             }}
           >
-            <span className="footer__cta-btn-text">Start a Project</span>
+            <span className="footer__cta-btn-text">Start Your Project</span>
             <span className="footer__cta-btn-arrow">
               <IconArrow />
             </span>
@@ -271,17 +272,17 @@ export default function Footer() {
               </span>
               <span>pantrix@gmail.com</span>
             </a>
-            <a href="tel:+923001234567" className="footer__contact-item">
+            <a href="tel:+61426855997" className="footer__contact-item">
               <span className="footer__contact-icon">
                 <IconPhone />
               </span>
-              <span>+92 300 123 4567</span>
+              <span>+61 426 855 997</span>
             </a>
             <div className="footer__contact-item footer__contact-item--location">
               <span className="footer__contact-icon">
                 <IconLocation />
               </span>
-              <span>Pakistan</span>
+              <span>Australia</span>
             </div>
           </div>
         </div>
@@ -437,7 +438,7 @@ export default function Footer() {
             <span className="footer__heart" aria-hidden="true">
               ♥
             </span>{" "}
-            in Pakistan
+            in Australia
           </p>
         </div>
       </div>

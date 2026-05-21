@@ -214,7 +214,7 @@ export default function HeroSection() {
         <div className="hero__heading-wrap">
           <h1 className="hero__heading">
             <span className="hero__heading-line hero__heading-line--1">
-              <span className="hero__heading-word">Crafting</span>
+              <span className="hero__heading-word">We Craft</span>
             </span>
             <span className="hero__heading-line hero__heading-line--2">
               <span className="hero__heading-word">Digital</span>
@@ -230,41 +230,41 @@ export default function HeroSection() {
         </div>
 
         <div className="hero__name-wrap">
-          <span className="hero__name-label">Portfolio of</span>
-          <span className="hero__name">Pantrix</span>
+          <span className="hero__name-label">Pantrix</span>
+          <span className="hero__name">Creative Tech Studio</span>
         </div>
 
         <p className="hero__desc">
-          Full-stack web developer specializing in modern, high-performance web
-          applications — from pixel-perfect frontends to scalable backend
-          systems.
+          We are a full-stack web development company specializing in modern,
+          high-performance web applications — from pixel-perfect frontends to
+          scalable backend systems.
         </p>
 
         <div className="hero__ctas">
           <a href="/projects" className="hero__btn hero__btn--primary">
-            <span className="hero__btn-text">View Projects</span>
+            <span className="hero__btn-text">View Our Work</span>
             <span className="hero__btn-shine" />
           </a>
           <a href="/contact" className="hero__btn hero__btn--secondary">
-            <span className="hero__btn-text">Hire Me</span>
+            <span className="hero__btn-text">Let's Talk</span>
             <span className="hero__btn-border" />
           </a>
         </div>
 
         <div className="hero__stats">
           <div className="hero__stat">
+            <span className="hero__stat-num">150+</span>
+            <span className="hero__stat-label">Projects Delivered</span>
+          </div>
+          <div className="hero__stat-divider" />
+          <div className="hero__stat">
+            <span className="hero__stat-num">5+</span>
+            <span className="hero__stat-label">Years in Industry</span>
+          </div>
+          <div className="hero__stat-divider" />
+          <div className="hero__stat">
             <span className="hero__stat-num">50+</span>
-            <span className="hero__stat-label">Projects</span>
-          </div>
-          <div className="hero__stat-divider" />
-          <div className="hero__stat">
-            <span className="hero__stat-num">3+</span>
-            <span className="hero__stat-label">Years Exp</span>
-          </div>
-          <div className="hero__stat-divider" />
-          <div className="hero__stat">
-            <span className="hero__stat-num">100%</span>
-            <span className="hero__stat-label">Satisfaction</span>
+            <span className="hero__stat-label">Happy Clients</span>
           </div>
         </div>
       </div>
@@ -272,7 +272,7 @@ export default function HeroSection() {
       {/* Right Side - Tech Stack with Staggered Animation */}
       <div className="hero__right">
         <div className="hero__orbit-label">
-          <span className="hero__orbit-label-text">Tech Stack</span>
+          <span className="hero__orbit-label-text">Our Tech Stack</span>
           <span className="hero__orbit-label-line" />
         </div>
 

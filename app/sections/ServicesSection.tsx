@@ -192,7 +192,7 @@ export default function ServicesSection() {
       {/* Section Label */}
       <div className="services__label-row">
         <span className="services__label-line" />
-        <span className="services__label-text">What I Offer</span>
+        <span className="services__label-text">What We Offer</span>
         <span className="services__label-line" />
       </div>
 
@@ -207,7 +207,7 @@ export default function ServicesSection() {
         </h2>
         <p className="services__subtext">
           End-to-end solutions crafted with precision, performance, and
-          pixel-perfect design. From concept to deployment — I&apos;ve got you
+          pixel-perfect design. From concept to deployment — we've got you
           covered.
         </p>
       </div>
@@ -294,7 +294,7 @@ export default function ServicesSection() {
             href="/projects"
             className="services__btn services__btn--secondary"
           >
-            <span>View Portfolio</span>
+            <span>View Our Portfolio</span>
           </a>
         </div>
       </div>

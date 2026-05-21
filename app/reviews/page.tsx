@@ -29,15 +29,15 @@ export default function ReviewsPage() {
           </div>
 
           <h1 className="reviews-page__hero-heading">
-            <span className="reviews-page__hero-line">Client</span>
+            <span className="reviews-page__hero-line">What Our</span>
             <span className="reviews-page__hero-line reviews-page__hero-line--gradient">
-              Testimonials
+              Clients Say
             </span>
           </h1>
 
           <p className="reviews-page__hero-sub">
             Real words from real clients across 6+ countries who trusted Pantrix
-            to bring their vision to life.
+            to bring their visions to life.
           </p>
 
           {/* Scroll indicator */}
@@ -63,7 +63,9 @@ export default function ReviewsPage() {
             Join 50+ happy clients who've experienced the Pantrix difference.
           </p>
           <a href="/contact" className="reviews-page__cta-btn">
-            <span className="reviews-page__cta-btn-text">Start a Project</span>
+            <span className="reviews-page__cta-btn-text">
+              Start Your Project
+            </span>
             <svg
               width="18"
               height="18"

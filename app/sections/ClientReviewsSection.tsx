@@ -17,7 +17,7 @@ const reviewsData = [
     country: "Australia",
     flag: "🇦🇺",
     review:
-      "The website looks neat and clean, the color scheme is used really well, and overall it turned out great. Pantrix delivered beyond my expectations!",
+      "The website looks neat and clean, the color scheme is used really well, and overall it turned out great. Pantrix delivered beyond our expectations!",
     rating: 5,
     role: "Aussie Tech Security",
     avatar: "T",
@@ -29,7 +29,7 @@ const reviewsData = [
     country: "USA",
     flag: "🇺🇸",
     review:
-      "Absolutely blown away by the attention to detail. The development process was smooth, communication was excellent, and the final product is stunning.",
+      "Absolutely blown away by the attention to detail. The development process was smooth, communication was excellent, and the final product is stunning. Pantrix is a true partner.",
     rating: 5,
     role: "Tech Startup CEO",
     avatar: "D",
@@ -41,7 +41,7 @@ const reviewsData = [
     country: "Germany",
     flag: "🇩🇪",
     review:
-      "Präzision und Qualität sind herausragend! The website loads incredibly fast and the design is modern. Will definitely work with Pantrix again.",
+      "Präzision und Qualität sind herausragend! The website loads incredibly fast and the design is modern. We will definitely work with Pantrix again.",
     rating: 5,
     role: "Marketing Director",
     avatar: "S",
@@ -53,7 +53,7 @@ const reviewsData = [
     country: "UK",
     flag: "🇬🇧",
     review:
-      "One of the best developers I've worked with. Took my rough ideas and turned them into a beautiful, functional website. Highly recommended!",
+      "One of the best development teams we've worked with. Took our rough ideas and turned them into a beautiful, functional website. Highly recommended!",
     rating: 5,
     role: "Creative Agency Owner",
     avatar: "J",
@@ -65,7 +65,7 @@ const reviewsData = [
     country: "Canada",
     flag: "🇨🇦",
     review:
-      "The attention to user experience and mobile responsiveness is impeccable. My clients love the new site and business has increased significantly.",
+      "The attention to user experience and mobile responsiveness is impeccable. Our clients love the new site and business has increased significantly. Thank you Pantrix!",
     rating: 5,
     role: "Real Estate Agent",
     avatar: "E",
@@ -77,7 +77,7 @@ const reviewsData = [
     country: "Italy",
     flag: "🇮🇹",
     review:
-      "Pantrix delivered a masterpiece. The animations are smooth, the design is elegant, and the backend is rock solid. Grazie mille!",
+      "Pantrix delivered a masterpiece. The animations are smooth, the design is elegant, and the backend is rock solid. Grazie mille to the entire team!",
     rating: 5,
     role: "Luxury Brand Owner",
     avatar: "M",
@@ -94,7 +94,6 @@ const QuoteIcon = () => (
     width="44"
     height="44"
   >
-    {/* Left quote mark */}
     <path
       d="M8 40 C8 48.837 15.163 56 24 56 L24 48 C19.582 48 16 44.418 16 40 L16 32 L8 32 L8 40Z"
       fill="currentColor"
@@ -103,7 +102,6 @@ const QuoteIcon = () => (
       d="M8 20 C8 15.582 11.582 12 16 12 L24 12 L24 8 C13.507 8 5 16.507 5 27 L5 32 L8 32 L8 20Z"
       fill="currentColor"
     />
-    {/* Right quote mark */}
     <path
       d="M40 40 C40 48.837 47.163 56 56 56 L56 48 C51.582 48 48 44.418 48 40 L48 32 L40 32 L40 40Z"
       fill="currentColor"
@@ -160,13 +158,13 @@ export default function ClientReviewsSection() {
       {/* ── Header ── */}
       <div className="reviews__header">
         <h2 className="reviews__heading">
-          <span className="reviews__heading-line">What My</span>
+          <span className="reviews__heading-line">What Our</span>
           <span className="reviews__heading-line reviews__heading-line--gradient">
             Clients Say
           </span>
         </h2>
         <p className="reviews__subtext">
-          Don't just take my word for it — hear from people who've experienced
+          Don't just take our word for it — hear from people who've experienced
           the Pantrix difference firsthand.
         </p>
       </div>

@@ -189,7 +189,7 @@ export default function ContactPage() {
           <div className="contact__brand">
             <h1 className="contact__heading">
               <span className="contact__heading-line">Let's Create</span>
-              <span className="contact__heading-line contact__heading-line--gold">
+              <span className="contact__heading-line contact__heading-line--gradient">
                 Something Extraordinary
               </span>
             </h1>
@@ -198,7 +198,9 @@ export default function ContactPage() {
               <span className="contact__signature-dot" aria-hidden="true">
                 ✦
               </span>
-              <span className="contact__signature-role">Web Studio</span>
+              <span className="contact__signature-role">
+                Creative Tech Studio
+              </span>
             </div>
           </div>
 
@@ -242,7 +244,7 @@ export default function ContactPage() {
 
           {/* Social Links */}
           <div className="contact__social">
-            <span className="contact__social-label">Follow</span>
+            <span className="contact__social-label">Follow Us</span>
             <div className="contact__social-icons">
               <a href="#" className="contact__social-link" aria-label="GitHub">
                 <span>GitHub</span>
@@ -272,7 +274,7 @@ export default function ContactPage() {
 
             <h2 className="contact__form-title">Send a Message</h2>
             <p className="contact__form-sub">
-              Fill out the form and I'll get back to you within 24 hours.
+              Fill out the form and we'll get back to you within 24 hours.
             </p>
 
             {/* ── SUCCESS STATE ── */}
@@ -281,7 +283,7 @@ export default function ContactPage() {
                 <div className="contact__success-icon">✦</div>
                 <h3 className="contact__success-title">Message Sent!</h3>
                 <p className="contact__success-text">
-                  Thank you for reaching out. I'll get back to you within 24
+                  Thank you for reaching out. We'll get back to you within 24
                   hours.
                 </p>
                 <button
@@ -408,7 +410,7 @@ export default function ContactPage() {
             )}
 
             <p className="contact__form-note" aria-label="Privacy note">
-              ✦&nbsp; I'll reply within 24 hours &nbsp;|&nbsp; No spam, ever
+              ✦&nbsp; We'll reply within 24 hours &nbsp;|&nbsp; No spam, ever
               &nbsp;✦
             </p>
           </div>

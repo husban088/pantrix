@@ -17,7 +17,7 @@ const categories = [
 ];
 
 /* ─────────────────────────────────────────
-   PROJECTS DATA
+   PROJECTS DATA (same as before, no changes needed to project data)
 ───────────────────────────────────────── */
 const allProjects = [
   {
@@ -574,7 +574,7 @@ export default function ProjectsPage() {
         <div className="pp-hero__content">
           <div className="pp-hero__label-row">
             <span className="pp-hero__label-line" />
-            <span className="pp-hero__label-text">Featured Work</span>
+            <span className="pp-hero__label-text">Our Work</span>
             <span className="pp-hero__label-line" />
           </div>
 
@@ -586,18 +586,18 @@ export default function ProjectsPage() {
           </h1>
 
           <p className="pp-hero__subtext">
-            Explore a collection of my finest work — each project represents
+            Explore a collection of our finest work — each project represents
             countless hours of dedication, creativity, and technical excellence.
           </p>
 
           <div className="pp-hero__stats" role="list">
             <div className="pp-hero__stat" role="listitem">
-              <span className="pp-hero__stat-num">30+</span>
+              <span className="pp-hero__stat-num">150+</span>
               <span className="pp-hero__stat-label">Projects</span>
             </div>
             <div className="pp-hero__stat-divider" aria-hidden="true" />
             <div className="pp-hero__stat" role="listitem">
-              <span className="pp-hero__stat-num">15+</span>
+              <span className="pp-hero__stat-num">50+</span>
               <span className="pp-hero__stat-label">Happy Clients</span>
             </div>
             <div className="pp-hero__stat-divider" aria-hidden="true" />
@@ -639,7 +639,7 @@ export default function ProjectsPage() {
             </span>
           </h2>
           <p className="pp-featured__subtext">
-            Hand-picked highlights — my most impactful and technically complex
+            Hand-picked highlights — our most impactful and technically complex
             work.
           </p>
         </div>
@@ -953,12 +953,12 @@ export default function ProjectsPage() {
         <div className="pp-cta__inner">
           <p className="pp-cta__label">Have a Project in Mind?</p>
           <h2 className="pp-cta__heading">
-            Let&apos;s Build Something{" "}
+            Let's Build Something{" "}
             <span className="pp-cta__heading-gradient">Extraordinary</span>
           </h2>
           <p className="pp-cta__sub">
-            Let&apos;s bring your vision to life with the same level of
-            dedication and technical excellence.
+            Let's bring your vision to life with the same level of dedication
+            and technical excellence.
           </p>
 
           <div className="pp-cta__buttons">

@@ -441,7 +441,7 @@ export default function ProjectsSection() {
       {/* Section Label */}
       <div className="projects__label-row">
         <span className="projects__label-line" />
-        <span className="projects__label-text">Featured Work</span>
+        <span className="projects__label-text">Our Work</span>
         <span className="projects__label-line" />
       </div>
 
@@ -454,7 +454,7 @@ export default function ProjectsSection() {
           </span>
         </h2>
         <p className="projects__subtext">
-          A showcase of my finest work — each project crafted with precision,
+          A showcase of our finest work — each project crafted with precision,
           passion, and pixel-perfect attention to detail.
         </p>
       </div>

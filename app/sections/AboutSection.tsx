@@ -1,9 +1,9 @@
 import "./AboutSection.css";
 
 const stats = [
-  { num: "50+", label: "Projects Delivered" },
-  { num: "3+", label: "Years Experience" },
-  { num: "15+", label: "Happy Clients" },
+  { num: "150+", label: "Projects Delivered" },
+  { num: "5+", label: "Years in Industry" },
+  { num: "50+", label: "Happy Clients" },
   { num: "100%", label: "Client Satisfaction" },
 ];
 
@@ -31,7 +31,7 @@ const services = [
         />
       </svg>
     ),
-    title: "Frontend Dev",
+    title: "Frontend Development",
     desc: "Pixel-perfect UIs with React, Next.js & Tailwind CSS",
   },
   {
@@ -82,8 +82,8 @@ const services = [
         />
       </svg>
     ),
-    title: "Performance",
-    desc: "Optimized, fast & SEO-ready web applications",
+    title: "Performance Optimization",
+    desc: "Fast, SEO-ready & highly optimized web applications",
   },
   {
     icon: (
@@ -112,30 +112,30 @@ const services = [
       </svg>
     ),
     title: "Responsive Design",
-    desc: "Flawless on every screen — mobile, tablet, desktop",
+    desc: "Flawless experiences on every screen — mobile, tablet, desktop",
   },
 ];
 
 const timeline = [
   {
     year: "2021",
-    title: "Started the Journey",
-    desc: "Fell in love with HTML & CSS. Built first static websites.",
+    title: "The Beginning",
+    desc: "Pantrix started as a vision to create exceptional web experiences.",
   },
   {
     year: "2022",
-    title: "JavaScript & React",
-    desc: "Mastered JS fundamentals, React ecosystem & component design.",
+    title: "First Major Projects",
+    desc: "Delivered first enterprise-level web applications to happy clients.",
   },
   {
     year: "2023",
-    title: "Full Stack Growth",
-    desc: "Expanded to Next.js, Firebase, Supabase & Tailwind CSS.",
+    title: "Team Expansion",
+    desc: "Grew our expertise in Next.js, Firebase, Supabase & advanced frameworks.",
   },
   {
     year: "2024+",
-    title: "Pantrix — Born",
-    desc: "Launched portfolio brand. Delivering luxury web experiences.",
+    title: "Pantrix Studio",
+    desc: "Established as a full-service web development studio crafting digital excellence.",
   },
 ];
 
@@ -156,7 +156,7 @@ export default function AboutSection() {
       {/* TOP: Section label */}
       <div className="about__label-row">
         <span className="about__label-line" />
-        <span className="about__label-text">About Me</span>
+        <span className="about__label-text">About Us</span>
         <span className="about__label-line" />
       </div>
 
@@ -166,15 +166,15 @@ export default function AboutSection() {
         <div className="about__intro-left">
           <div className="about__eyebrow">
             <span className="about__eyebrow-dot" />
-            <span>Web Developer &amp; Designer</span>
+            <span>Creative Tech Studio</span>
           </div>
           <h2 className="about__heading">
             <span className="about__heading-line">Building</span>
             <span className="about__heading-line about__heading-line--gradient">
-              Experiences
+              Digital Excellence
             </span>
             <span className="about__heading-line about__heading-line--thin">
-              That Matter.
+              That Matters.
             </span>
           </h2>
           <div className="about__signature">
@@ -189,15 +189,14 @@ export default function AboutSection() {
         {/* Right — description + stats */}
         <div className="about__intro-right">
           <p className="about__desc about__desc--1">
-            I&apos;m a passionate full-stack web developer operating under the
-            brand <strong>Pantrix</strong> — crafting modern, high-performance
-            web applications that merge aesthetic elegance with technical
-            precision.
+            <strong>Pantrix</strong> is a full-service web development studio
+            crafting modern, high-performance web applications that merge
+            aesthetic elegance with technical precision.
           </p>
           <p className="about__desc about__desc--2">
             From pixel-perfect frontends in React &amp; Next.js to robust
-            backends powered by Firebase &amp; Supabase — I deliver end-to-end
-            digital solutions that stand out.
+            backends powered by Firebase &amp; Supabase — we deliver end-to-end
+            digital solutions that help brands stand out and succeed online.
           </p>
 
           {/* Stats Row */}
@@ -220,7 +219,7 @@ export default function AboutSection() {
       <div className="about__services-wrap">
         <div className="about__section-head">
           <span className="about__section-num">01</span>
-          <h3 className="about__section-title">What I Do</h3>
+          <h3 className="about__section-title">What We Do</h3>
           <span className="about__section-bar" />
         </div>
         <div className="about__services">
@@ -247,7 +246,7 @@ export default function AboutSection() {
       <div className="about__timeline-wrap">
         <div className="about__section-head">
           <span className="about__section-num">02</span>
-          <h3 className="about__section-title">My Journey</h3>
+          <h3 className="about__section-title">Our Journey</h3>
           <span className="about__section-bar" />
         </div>
 
@@ -256,11 +255,7 @@ export default function AboutSection() {
           {timeline.map((item, i) => (
             <div
               key={item.year}
-              className={`about__timeline-item ${
-                i % 2 === 0
-                  ? "about__timeline-item--left"
-                  : "about__timeline-item--right"
-              }`}
+              className="about__timeline-item"
               style={{ animationDelay: `${0.2 + i * 0.15}s` }}
             >
               <div className="about__timeline-dot">
@@ -280,7 +275,7 @@ export default function AboutSection() {
       {/* BOTTOM CTA */}
       <div className="about__cta-wrap">
         <p className="about__cta-text">
-          Ready to build something extraordinary?
+          Ready to build something extraordinary together?
         </p>
         <div className="about__cta-btns">
           <a href="/contact" className="about__btn about__btn--primary">
@@ -288,7 +283,7 @@ export default function AboutSection() {
             <span className="about__btn-shine" />
           </a>
           <a href="/projects" className="about__btn about__btn--secondary">
-            <span>View Projects</span>
+            <span>View Our Work</span>
           </a>
         </div>
       </div>

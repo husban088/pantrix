@@ -169,7 +169,7 @@ const servicesData = [
     title: "Maintenance & Support",
     shortDesc: "Ongoing care for your digital presence",
     fullDesc:
-      "Your website is never truly 'done'. I offer comprehensive maintenance plans that keep your site secure, updated, and performing at its best. 24/7 monitoring, regular backups, and priority support included.",
+      "Your website is never truly 'done'. We offer comprehensive maintenance plans that keep your site secure, updated, and performing at its best. 24/7 monitoring, regular backups, and priority support included.",
     features: [
       "24/7 Uptime Monitoring",
       "Security Patches",
@@ -392,9 +392,9 @@ export default function ServicesPage() {
       <section className="services-process">
         <div className="services-process__container">
           <div className="services-process__header">
-            <h2 className="services-process__title">My Process</h2>
+            <h2 className="services-process__title">Our Process</h2>
             <p className="services-process__subtitle">
-              How I bring your vision to life
+              How We bring your vision to life
             </p>
           </div>
           <div className="services-process__steps">
@@ -424,11 +424,11 @@ export default function ServicesPage() {
             {[
               {
                 q: "How long does a typical project take?",
-                a: "Most projects take 2-6 weeks depending on complexity. I provide a detailed timeline during our initial consultation.",
+                a: "Most projects take 2-6 weeks depending on complexity. We provide a detailed timeline during our initial consultation.",
               },
               {
                 q: "Do you offer ongoing support?",
-                a: "Yes! I offer maintenance plans starting at $199/month that include updates, security patches, and priority support.",
+                a: "Yes! We offer maintenance plans starting at $199/month that include updates, security patches, and priority support.",
               },
               {
                 q: "What's your payment structure?",
@@ -436,7 +436,7 @@ export default function ServicesPage() {
               },
               {
                 q: "Can you work with my existing team?",
-                a: "Absolutely! I collaborate seamlessly with designers, marketers, and other developers.",
+                a: "Absolutely! We collaborate seamlessly with designers, marketers, and other developers.",
               },
               {
                 q: "Do you provide SEO services?",

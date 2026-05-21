@@ -5,19 +5,22 @@
 
 /* ========== CSS VARIABLES ========== */
 :root {
-  --blue: #00d4ff;
-  --blue-mid: #0099cc;
-  --blue-dark: #007fa8;
-  --bg: #141414;
-  --bg-card: #1a1a1a;
-  --bg-card-2: #1e1e1e;
-  --border: rgba(0, 212, 255, 0.1);
-  --border-hover: rgba(0, 212, 255, 0.4);
-  --text-primary: #f0f0f0;
-  --text-muted: #888;
-  --text-dim: #555;
-  --gold: #c9a03d;
-  --gold-light: #ffd700;
+  --crystal-blue: #00d4ff;
+  --crystal-blue-light: #5ee6ff;
+  --crystal-blue-dim: #00d4ff44;
+  --crystal-blue-dim2: #00d4ff18;
+  --void-blue: #0099cc;
+  --void-blue-dim: #0099cc44;
+  --bg-dark: #1f1f1f;
+  --bg-card: #2a2a2a;
+  --bg-card-hover: #333333;
+  --white: #ffffff;
+  --white-muted: #e0e0e0;
+  --muted: #888888;
+  --border: rgba(0, 212, 255, 0.15);
+  --border-hover: rgba(0, 212, 255, 0.45);
+  --gradient-primary: linear-gradient(135deg, #00d4ff, #0099cc);
+  --gradient-glow: radial-gradient(circle, #00d4ff30, transparent 70%);
 }
 
 /* ========== PAGE WRAPPER ========== */
@@ -26,7 +29,7 @@
   position: relative;
   overflow-x: hidden;
   padding: 130px 5% 100px;
-  background: var(--bg);
+  background: var(--bg-dark);
 }
 
 /* ========== BACKGROUND ========== */
@@ -174,8 +177,8 @@
   background: linear-gradient(
     90deg,
     transparent,
-    var(--blue),
-    var(--blue-mid),
+    var(--crystal-blue),
+    var(--void-blue),
     transparent
   );
 }
@@ -184,7 +187,7 @@
   font-size: 0.72rem;
   letter-spacing: 5px;
   text-transform: uppercase;
-  color: var(--blue);
+  color: var(--crystal-blue);
   font-weight: 600;
   font-family: "Courier New", monospace;
 }
@@ -201,7 +204,7 @@
   line-height: 1.15;
   margin-bottom: 28px;
   letter-spacing: -0.5px;
-  color: var(--text-primary);
+  color: var(--white);
 }
 
 .contact__heading-line {
@@ -216,18 +219,23 @@
   animation-delay: 0.2s;
 }
 
-.contact__heading-line--gold {
-  background: linear-gradient(125deg, #c9a03d 0%, #ffd700 45%, #c9a03d 80%);
-  background-size: 220% auto;
+.contact__heading-line--gradient {
+  background: linear-gradient(
+    135deg,
+    var(--crystal-blue),
+    var(--void-blue),
+    var(--crystal-blue)
+  );
+  background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   animation:
     fadeSlideUp 0.75s 0.2s forwards,
-    shimmerGold 4s linear 1s infinite;
+    shimmerCrystal 3s linear infinite;
 }
 
-@keyframes shimmerGold {
+@keyframes shimmerCrystal {
   0% {
     background-position: 0% 50%;
   }
@@ -255,20 +263,20 @@
   font-size: 1.25rem;
   font-weight: 700;
   letter-spacing: 2.5px;
-  background: linear-gradient(135deg, #ffffff, var(--blue));
+  background: linear-gradient(135deg, var(--white), var(--crystal-blue));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
 .contact__signature-dot {
-  color: var(--gold);
+  color: var(--crystal-blue);
   font-size: 1rem;
 }
 
 .contact__signature-role {
   font-size: 0.82rem;
-  color: var(--text-muted);
+  color: var(--muted);
   font-family: "Courier New", monospace;
   letter-spacing: 0.5px;
 }
@@ -288,8 +296,8 @@
   padding: 20px 24px;
   background: linear-gradient(
     145deg,
-    rgba(26, 26, 26, 0.9),
-    rgba(20, 20, 20, 0.95)
+    rgba(42, 42, 42, 0.9),
+    rgba(31, 31, 31, 0.95)
   );
   border: 1px solid var(--border);
   border-radius: 18px;
@@ -335,8 +343,8 @@
     0 0 0 1px rgba(0, 212, 255, 0.06);
   background: linear-gradient(
     145deg,
-    rgba(30, 30, 30, 0.95),
-    rgba(24, 24, 24, 0.98)
+    rgba(51, 51, 51, 0.95),
+    rgba(42, 42, 42, 0.98)
   );
 }
 
@@ -353,7 +361,7 @@
   background: rgba(0, 212, 255, 0.08);
   border: 1px solid rgba(0, 212, 255, 0.15);
   border-radius: 14px;
-  color: var(--blue);
+  color: var(--crystal-blue);
   transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   flex-shrink: 0;
   position: relative;
@@ -361,7 +369,7 @@
 }
 
 .contact__info-card:hover .contact__info-icon {
-  background: linear-gradient(135deg, var(--blue), var(--blue-mid));
+  background: linear-gradient(135deg, var(--crystal-blue), var(--void-blue));
   color: #0a0a0a;
   border-color: transparent;
   transform: scale(1.08) rotate(-4deg);
@@ -380,7 +388,7 @@
   font-size: 0.65rem;
   text-transform: uppercase;
   letter-spacing: 2.5px;
-  color: var(--text-dim);
+  color: var(--muted);
   font-family: "Courier New", monospace;
   font-weight: 600;
 }
@@ -388,14 +396,14 @@
 .contact__info-value {
   font-size: 0.97rem;
   font-weight: 500;
-  color: var(--text-primary);
+  color: var(--white);
   text-decoration: none;
   transition: color 0.3s ease;
   font-family: "Georgia", serif;
 }
 
 .contact__info-value:hover {
-  color: var(--blue);
+  color: var(--crystal-blue);
 }
 
 /* ── Social Links ── */
@@ -408,7 +416,7 @@
   font-size: 0.65rem;
   text-transform: uppercase;
   letter-spacing: 2.5px;
-  color: var(--text-dim);
+  color: var(--muted);
   display: block;
   margin-bottom: 16px;
   font-family: "Courier New", monospace;
@@ -422,7 +430,7 @@
 }
 
 .contact__social-link {
-  color: var(--text-muted);
+  color: var(--muted);
   text-decoration: none;
   font-size: 0.82rem;
   font-family: "Courier New", monospace;
@@ -440,7 +448,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, var(--blue), var(--blue-mid));
+  background: linear-gradient(135deg, var(--crystal-blue), var(--void-blue));
   opacity: 0;
   transition: opacity 0.35s ease;
 }
@@ -452,7 +460,7 @@
 
 .contact__social-link:hover {
   color: #0a0a0a;
-  border-color: var(--blue);
+  border-color: var(--crystal-blue);
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(0, 212, 255, 0.25);
 }
@@ -468,7 +476,7 @@
 }
 
 .contact__form-card {
-  background: linear-gradient(160deg, #1c1c1c 0%, #171717 100%);
+  background: linear-gradient(160deg, #2a2a2a 0%, #1f1f1f 100%);
   border: 1px solid var(--border);
   border-radius: 28px;
   padding: 48px 44px;
@@ -497,8 +505,8 @@
   background: linear-gradient(
     90deg,
     transparent,
-    var(--blue),
-    var(--blue-mid),
+    var(--crystal-blue),
+    var(--void-blue),
     transparent
   );
   opacity: 0.7;
@@ -554,7 +562,7 @@
 }
 
 .contact__form-sub {
-  color: var(--text-muted);
+  color: var(--muted);
   font-size: 0.84rem;
   margin-bottom: 38px;
   font-family: "Courier New", monospace;
@@ -590,7 +598,7 @@
   background: transparent;
   border: none;
   outline: none;
-  color: var(--text-primary);
+  color: var(--white);
   font-size: 0.97rem;
   font-family: "Georgia", serif;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -606,7 +614,7 @@
   position: absolute;
   left: 0;
   top: 16px;
-  color: var(--text-dim);
+  color: var(--muted);
   font-size: 0.9rem;
   font-family: "Courier New", monospace;
   letter-spacing: 0.5px;
@@ -621,7 +629,7 @@
   left: 0;
   width: 100%;
   height: 1px;
-  background: linear-gradient(90deg, var(--blue), var(--blue-mid));
+  background: linear-gradient(90deg, var(--crystal-blue), var(--void-blue));
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
@@ -632,7 +640,7 @@
 .contact__input:not(:placeholder-shown) ~ .contact__label {
   top: -14px;
   font-size: 0.65rem;
-  color: var(--blue);
+  color: var(--crystal-blue);
   letter-spacing: 1.5px;
   text-transform: uppercase;
 }
@@ -652,7 +660,7 @@
 .contact__submit {
   margin-top: 8px;
   padding: 17px 34px;
-  background: linear-gradient(135deg, var(--blue), var(--blue-mid));
+  background: linear-gradient(135deg, var(--crystal-blue), var(--void-blue));
   border: none;
   border-radius: 100px;
   color: #0a0a0a;
@@ -725,7 +733,7 @@
   text-align: center;
   margin-top: 28px;
   font-size: 0.67rem;
-  color: var(--text-dim);
+  color: var(--muted);
   font-family: "Courier New", monospace;
   letter-spacing: 1px;
   position: relative;

@@ -21,7 +21,7 @@ const reasons = [
     ),
     title: "Pixel-Perfect Precision",
     short: "Every detail matters",
-    desc: "From micro-animations to spacing — each element is crafted with obsessive attention to detail. No shortcuts, no templates. Pure custom work.",
+    desc: "From micro-animations to spacing — every element is crafted with obsessive attention to detail. No shortcuts, no templates. Pure custom work.",
     highlight: "100% Custom",
   },
   {
@@ -70,7 +70,7 @@ const reasons = [
     ),
     title: "Full-Stack Expertise",
     short: "End-to-end solutions",
-    desc: "Frontend beauty meets backend power. React, Next.js, Firebase, Supabase — one developer, complete solution. No need to juggle multiple contractors.",
+    desc: "Frontend beauty meets backend power. React, Next.js, Firebase, Supabase — one team, complete solution. No need to juggle multiple contractors.",
     highlight: "End-to-End",
   },
   {
@@ -118,7 +118,7 @@ const reasons = [
     ),
     title: "Client-First Mindset",
     short: "Your vision, our mission",
-    desc: "Regular updates, transparent pricing, and zero jargon. You stay informed at every step. Your satisfaction is not just promised — it&apos;s guaranteed.",
+    desc: "Regular updates, transparent pricing, and zero jargon. You stay informed at every step. Your satisfaction is not just promised — it's guaranteed.",
     highlight: "100% Satisfaction",
   },
   {
@@ -141,15 +141,15 @@ const reasons = [
     ),
     title: "Modern Tech Stack",
     short: "Future-proof from day one",
-    desc: "No legacy frameworks, no outdated tools. Built with the latest — Next.js 14, TypeScript, Tailwind, and cutting-edge deployment pipelines on Vercel.",
+    desc: "No legacy frameworks, no outdated tools. Built with the latest — Next.js 14, TypeScript, Tailwind, and cutting-edge deployment pipelines.",
     highlight: "Always Modern",
   },
 ];
 
 const bigStats = [
-  { num: "50+", label: "Projects Completed", icon: "◈" },
-  { num: "3+", label: "Years of Excellence", icon: "◆" },
-  { num: "15+", label: "Happy Clients", icon: "◉" },
+  { num: "150+", label: "Projects Completed", icon: "◈" },
+  { num: "5+", label: "Years of Excellence", icon: "◆" },
+  { num: "50+", label: "Happy Clients", icon: "◉" },
   { num: "0", label: "Missed Deadlines", icon: "◇" },
 ];
 
@@ -200,8 +200,8 @@ export default function WhyChooseUsSection() {
           </span>
         </h2>
         <p className="wcu__subtext">
-          Not just a developer — a dedicated partner committed to transforming
-          your vision into a world-class digital experience.
+          Not just developers — dedicated partners committed to transforming
+          your vision into world-class digital experiences.
         </p>
       </div>
 
@@ -248,10 +248,7 @@ export default function WhyChooseUsSection() {
             <div className="wcu__card-body">
               <span className="wcu__card-short">{r.short}</span>
               <h4 className="wcu__card-title">{r.title}</h4>
-              <p
-                className="wcu__card-desc"
-                dangerouslySetInnerHTML={{ __html: r.desc }}
-              />
+              <p className="wcu__card-desc">{r.desc}</p>
             </div>
 
             <div className="wcu__card-badge">
@@ -280,7 +277,7 @@ export default function WhyChooseUsSection() {
               <span className="wcu__promise-icon wcu__promise-icon--bad">
                 ✕
               </span>
-              <span className="wcu__promise-label">Typical Developers</span>
+              <span className="wcu__promise-label">Typical Agencies</span>
             </div>
             <ul className="wcu__promise-list">
               {[
