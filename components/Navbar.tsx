@@ -1,9 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
-import Link from "next/link";
 import "./Navbar.css";
 import Sidebar from "./Sidebar";
 
@@ -20,6 +19,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
 
   // Determine active link from current URL path
   const getActiveLabel = (path: string): string => {
@@ -31,6 +31,12 @@ export default function Navbar() {
   };
 
   const activeLink = getActiveLabel(pathname);
+
+  // ✅ FIX: window.location.href ensures navigation always works
+  // even after staying on a page for a long time (stale Link issue)
+  const navigateTo = (href: string) => {
+    window.location.href = href;
+  };
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -47,7 +53,14 @@ export default function Navbar() {
           <span />
         </div>
 
-        <Link href="/" className="navbar__logo">
+        <a
+          href="/"
+          className="navbar__logo"
+          onClick={(e) => {
+            e.preventDefault();
+            navigateTo("/");
+          }}
+        >
           <div className="navbar__logo-wrapper">
             <Image
               src="/navlogoo.png"
@@ -59,35 +72,43 @@ export default function Navbar() {
             />
             <span className="navbar__logo-glow" />
           </div>
-        </Link>
+        </a>
 
         <ul className="navbar__links">
           {navLinks.map((link) => (
             <li key={link.label} className="navbar__item">
-              <Link
+              <a
                 href={link.href}
                 className={`navbar__link ${
                   activeLink === link.label ? "navbar__link--active" : ""
                 }`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigateTo(link.href);
+                }}
               >
                 <span className="navbar__link-text">{link.label}</span>
                 <span className="navbar__link-line" />
                 <span className="navbar__link-dot" />
-              </Link>
+              </a>
             </li>
           ))}
         </ul>
 
         {/* Let's Talk button — active state on /contact */}
         <div className="navbar__cta-wrapper">
-          <Link
+          <a
             href="/contact"
             className={`navbar__cta ${
               activeLink === "Contact" ? "navbar__cta--active" : ""
             }`}
+            onClick={(e) => {
+              e.preventDefault();
+              navigateTo("/contact");
+            }}
           >
             <span className="navbar__cta-text">Let&apos;s Talk</span>
-          </Link>
+          </a>
         </div>
 
         <button

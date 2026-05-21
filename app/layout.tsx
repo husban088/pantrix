@@ -1,7 +1,10 @@
+// app/layout.tsx
 import type { Metadata } from "next";
 import { Syne, DM_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import ClientShell from "@/components/ClientShell";
+import Footer from "@/components/Footer";
 
 const syne = Syne({
   subsets: ["latin"],
@@ -18,6 +21,9 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "Pantrix Digital Innovation",
   description: "Pantrix — Building the future, one pixel at a time.",
+  icons: {
+    icon: "/icon.png",
+  },
 };
 
 export default function RootLayout({
@@ -28,8 +34,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${syne.variable} ${dmSans.variable}`}>
       <body>
-        <Navbar />
-        {children}
+        <ClientShell>
+          <Navbar />
+          {children}
+          <Footer />
+        </ClientShell>
       </body>
     </html>
   );

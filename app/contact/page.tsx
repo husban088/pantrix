@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useRef } from "react";
 import "./Contact.css";
 
 /* ── Particle data generated at module level (no Math.random in render) ── */
@@ -93,7 +94,63 @@ const ArrowIcon = () => (
   </svg>
 );
 
+/* ── Types ── */
+type Status = "idle" | "sending" | "success" | "error";
+
 export default function ContactPage() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+  const [status, setStatus] = useState<Status>("idle");
+  const [errorMsg, setErrorMsg] = useState("");
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    // Client-side validation
+    if (!name.trim() || !email.trim() || !subject.trim() || !message.trim()) {
+      setErrorMsg("Please fill in all fields.");
+      setStatus("error");
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setErrorMsg("Please enter a valid email address.");
+      setStatus("error");
+      return;
+    }
+
+    setStatus("sending");
+    setErrorMsg("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, subject, message }),
+      });
+
+      if (res.ok) {
+        setStatus("success");
+        // Clear form after success
+        setName("");
+        setEmail("");
+        setSubject("");
+        setMessage("");
+      } else {
+        const data = await res.json();
+        setErrorMsg(data.error || "Something went wrong. Please try again.");
+        setStatus("error");
+      }
+    } catch {
+      setErrorMsg("Network error. Please check your connection and try again.");
+      setStatus("error");
+    }
+  };
+
   return (
     <section className="contact-page" id="contact">
       {/* ── Animated Background ── */}
@@ -218,80 +275,137 @@ export default function ContactPage() {
               Fill out the form and I'll get back to you within 24 hours.
             </p>
 
-            <form className="contact__form" noValidate>
-              {/* Row: Name + Email */}
-              <div className="contact__form-row">
+            {/* ── SUCCESS STATE ── */}
+            {status === "success" ? (
+              <div className="contact__success">
+                <div className="contact__success-icon">✦</div>
+                <h3 className="contact__success-title">Message Sent!</h3>
+                <p className="contact__success-text">
+                  Thank you for reaching out. I'll get back to you within 24
+                  hours.
+                </p>
+                <button
+                  className="contact__submit"
+                  style={{ marginTop: "1.5rem" }}
+                  onClick={() => setStatus("idle")}
+                >
+                  <span className="contact__submit-text">Send Another</span>
+                  <span className="contact__submit-shine" aria-hidden="true" />
+                </button>
+              </div>
+            ) : (
+              <form
+                ref={formRef}
+                className="contact__form"
+                onSubmit={handleSubmit}
+                noValidate
+              >
+                {/* Row: Name + Email */}
+                <div className="contact__form-row">
+                  <div className="contact__input-group">
+                    <input
+                      type="text"
+                      id="name"
+                      className="contact__input"
+                      placeholder=" "
+                      required
+                      autoComplete="name"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      disabled={status === "sending"}
+                    />
+                    <label htmlFor="name" className="contact__label">
+                      Your Name
+                    </label>
+                    <span
+                      className="contact__input-border"
+                      aria-hidden="true"
+                    />
+                  </div>
+
+                  <div className="contact__input-group">
+                    <input
+                      type="email"
+                      id="email"
+                      className="contact__input"
+                      placeholder=" "
+                      required
+                      autoComplete="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      disabled={status === "sending"}
+                    />
+                    <label htmlFor="email" className="contact__label">
+                      Email Address
+                    </label>
+                    <span
+                      className="contact__input-border"
+                      aria-hidden="true"
+                    />
+                  </div>
+                </div>
+
+                {/* Subject */}
                 <div className="contact__input-group">
-                  {/* placeholder=" " makes :not(:placeholder-shown) work */}
                   <input
                     type="text"
-                    id="name"
+                    id="subject"
                     className="contact__input"
                     placeholder=" "
                     required
-                    autoComplete="name"
+                    value={subject}
+                    onChange={(e) => setSubject(e.target.value)}
+                    disabled={status === "sending"}
                   />
-                  <label htmlFor="name" className="contact__label">
-                    Your Name
+                  <label htmlFor="subject" className="contact__label">
+                    Subject
                   </label>
                   <span className="contact__input-border" aria-hidden="true" />
                 </div>
 
+                {/* Message */}
                 <div className="contact__input-group">
-                  <input
-                    type="email"
-                    id="email"
-                    className="contact__input"
+                  <textarea
+                    id="message"
+                    className="contact__input contact__textarea"
+                    rows={5}
                     placeholder=" "
                     required
-                    autoComplete="email"
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    disabled={status === "sending"}
                   />
-                  <label htmlFor="email" className="contact__label">
-                    Email Address
+                  <label htmlFor="message" className="contact__label">
+                    Your Message
                   </label>
                   <span className="contact__input-border" aria-hidden="true" />
                 </div>
-              </div>
 
-              {/* Subject */}
-              <div className="contact__input-group">
-                <input
-                  type="text"
-                  id="subject"
-                  className="contact__input"
-                  placeholder=" "
-                  required
-                />
-                <label htmlFor="subject" className="contact__label">
-                  Subject
-                </label>
-                <span className="contact__input-border" aria-hidden="true" />
-              </div>
+                {/* Error Message */}
+                {status === "error" && errorMsg && (
+                  <div className="contact__error-msg" role="alert">
+                    <span>⚠</span> {errorMsg}
+                  </div>
+                )}
 
-              {/* Message */}
-              <div className="contact__input-group">
-                <textarea
-                  id="message"
-                  className="contact__input contact__textarea"
-                  rows={5}
-                  placeholder=" "
-                  required
-                />
-                <label htmlFor="message" className="contact__label">
-                  Your Message
-                </label>
-                <span className="contact__input-border" aria-hidden="true" />
-              </div>
-
-              {/* Submit */}
-              <button type="submit" className="contact__submit">
-                <span className="contact__submit-text">Send Message</span>
-                <span className="contact__submit-shine" aria-hidden="true" />
-                <span className="contact__submit-arrow" aria-hidden="true">
-                  <ArrowIcon />
-                </span>
-              </button>
-            </form>
+                {/* Submit Button */}
+                <button
+                  type="submit"
+                  className={`contact__submit ${status === "sending" ? "contact__submit--loading" : ""}`}
+                  disabled={status === "sending"}
+                >
+                  <span className="contact__submit-text">
+                    {status === "sending" ? "Sending…" : "Send Message"}
+                  </span>
+                  <span className="contact__submit-shine" aria-hidden="true" />
+                  {status !== "sending" && (
+                    <span className="contact__submit-arrow" aria-hidden="true">
+                      <ArrowIcon />
+                    </span>
+                  )}
+                </button>
+              </form>
+            )}
 
             <p className="contact__form-note" aria-label="Privacy note">
               ✦&nbsp; I'll reply within 24 hours &nbsp;|&nbsp; No spam, ever

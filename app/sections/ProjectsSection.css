@@ -120,7 +120,6 @@
 }
 
 .projects__heading {
-  font-family: var(--font-syne), sans-serif;
   font-size: 3rem;
   font-weight: 700;
   line-height: 1.2;
@@ -247,6 +246,7 @@
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
   position: relative;
+  height: 100%;
 }
 
 .projects__card-inner:hover {
@@ -256,10 +256,10 @@
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
-/* Image Container */
+/* ========== IMAGE CONTAINER ========== */
 .projects__card-image {
   position: relative;
-  height: 240px;
+  height: 220px;
   overflow: hidden;
   background: linear-gradient(135deg, #2a2a2a, #1f1f1f);
 }
@@ -271,6 +271,7 @@
   align-items: center;
   justify-content: center;
   transition: transform 0.5s ease;
+  position: relative;
 }
 
 .projects__card-inner:hover .projects__card-image-placeholder {
@@ -286,13 +287,13 @@
     rgba(0, 212, 255, 0.1),
     rgba(0, 153, 204, 0.05)
   );
+  z-index: 1;
 }
 
-.projects__card-image-icon {
-  font-size: 3rem;
-  position: relative;
-  z-index: 1;
-  opacity: 0.5;
+/* Next.js Image inside card */
+.projects__card-real-img {
+  object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
 .projects__card-overlay {
@@ -308,6 +309,7 @@
   justify-content: center;
   opacity: 0;
   transition: opacity 0.3s ease;
+  z-index: 10;
 }
 
 .projects__card-inner:hover .projects__card-overlay {
@@ -325,7 +327,10 @@
   text-decoration: none;
   font-weight: 600;
   transform: translateY(20px);
-  transition: transform 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    gap 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .projects__card-inner:hover .projects__card-view {
@@ -337,16 +342,16 @@
   box-shadow: 0 5px 20px rgba(0, 212, 255, 0.4);
 }
 
-/* Content */
+/* ========== CARD CONTENT ========== */
 .projects__card-content {
-  padding: 24px;
+  padding: 22px 24px 24px;
 }
 
 .projects__card-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .projects__card-category {
@@ -357,18 +362,18 @@
 }
 
 .projects__card-id {
-  font-family: var(--font-syne), sans-serif;
   font-size: 1rem;
   font-weight: 700;
   color: rgba(0, 212, 255, 0.3);
 }
 
 .projects__card-title {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   color: var(--white);
   transition: color 0.3s;
+  line-height: 1.4;
 }
 
 .projects__card-inner:hover .projects__card-title {
@@ -378,24 +383,49 @@
   color: transparent;
 }
 
+/* ========== COUNTRY BADGE ========== */
+.projects__card-country {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+  padding: 3px 10px 3px 6px;
+  background: rgba(0, 212, 255, 0.08);
+  border: 1px solid rgba(0, 212, 255, 0.15);
+  border-radius: 30px;
+}
+
+.projects__card-country-flag {
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+.projects__card-country-name {
+  font-size: 0.68rem;
+  color: rgba(0, 212, 255, 0.7);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* ========== DESC & TAGS ========== */
 .projects__card-desc {
   color: var(--white-muted);
-  font-size: 0.85rem;
-  line-height: 1.5;
-  margin-bottom: 15px;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  margin-bottom: 14px;
 }
 
 .projects__card-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 7px;
 }
 
 .projects__card-tag {
   padding: 4px 10px;
   background: rgba(0, 212, 255, 0.1);
   border-radius: 40px;
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   color: var(--white-muted);
   transition: all 0.3s;
 }
@@ -405,7 +435,7 @@
   color: var(--white);
 }
 
-/* Hover Border */
+/* ========== HOVER BORDER ========== */
 .projects__card-border {
   position: absolute;
   bottom: 0;
@@ -437,7 +467,6 @@
   transition: all 0.3s;
   position: relative;
   overflow: hidden;
-  font-family: "Space Mono", monospace;
   font-size: 0.78rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -537,11 +566,11 @@
   }
 
   .projects__card-content {
-    padding: 20px;
+    padding: 18px 20px 20px;
   }
 
   .projects__card-title {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 }
 

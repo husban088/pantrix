@@ -3,7 +3,6 @@
 import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-import Link from "next/link";
 import "./Sidebar.css";
 
 interface SidebarProps {
@@ -32,6 +31,13 @@ export default function Sidebar({
   };
 
   const currentActive = getActiveLabel(pathname) || activeLink;
+
+  // ✅ FIX: window.location.href — always navigates reliably
+  // even after staying on a page for a long time (stale Link click issue fix)
+  const navigateTo = (href: string) => {
+    onClose();
+    window.location.href = href;
+  };
 
   // Close sidebar when clicking outside
   useEffect(() => {
@@ -79,7 +85,14 @@ export default function Sidebar({
 
         {/* Header */}
         <div className="sidebar__header">
-          <Link href="/" className="sidebar__logo" onClick={onClose}>
+          <a
+            href="/"
+            className="sidebar__logo"
+            onClick={(e) => {
+              e.preventDefault();
+              navigateTo("/");
+            }}
+          >
             <div className="sidebar__logo-img-wrapper">
               <Image
                 src="/navlogoo.png"
@@ -90,7 +103,7 @@ export default function Sidebar({
                 priority
               />
             </div>
-          </Link>
+          </a>
 
           <button
             className="sidebar__close"
@@ -118,12 +131,15 @@ export default function Sidebar({
                 className="sidebar__item"
                 style={{ animationDelay: `${0.1 + i * 0.07}s` }}
               >
-                <Link
+                <a
                   href={link.href}
                   className={`sidebar__link ${
                     currentActive === link.label ? "sidebar__link--active" : ""
                   }`}
-                  onClick={onClose}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigateTo(link.href);
+                  }}
                 >
                   <span className="sidebar__link-number">0{i + 1}</span>
                   <span className="sidebar__link-text">{link.label}</span>
@@ -139,7 +155,7 @@ export default function Sidebar({
                     </svg>
                   </span>
                   <span className="sidebar__link-bg" />
-                </Link>
+                </a>
               </li>
             ))}
           </ul>
@@ -147,10 +163,17 @@ export default function Sidebar({
 
         {/* Footer CTA */}
         <div className="sidebar__footer">
-          <Link href="/contact" className="sidebar__cta" onClick={onClose}>
+          <a
+            href="/contact"
+            className="sidebar__cta"
+            onClick={(e) => {
+              e.preventDefault();
+              navigateTo("/contact");
+            }}
+          >
             <span className="sidebar__cta-text">Start a Project</span>
             <span className="sidebar__cta-icon">→</span>
-          </Link>
+          </a>
           <p className="sidebar__tagline">
             Crafting digital excellence, one pixel at a time.
           </p>
