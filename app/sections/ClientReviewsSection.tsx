@@ -1,6 +1,5 @@
 "use client";
 
-import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
@@ -134,9 +133,6 @@ const StarIcon = ({ filled }: { filled: boolean }) => (
 );
 
 export default function ClientReviewsSection() {
-  const prevRef = useRef<HTMLButtonElement>(null);
-  const nextRef = useRef<HTMLButtonElement>(null);
-
   return (
     <section className="reviews" id="reviews">
       {/* ── Background ── */}
@@ -171,11 +167,43 @@ export default function ClientReviewsSection() {
 
       {/* ── Swiper Slider ── */}
       <div className="reviews__slider-wrapper">
+        {/* ✅ Custom nav buttons — OUTSIDE Swiper, INSIDE wrapper */}
+        <button
+          className="reviews__nav-prev"
+          aria-label="Previous review"
+          type="button"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M15 18L9 12L15 6"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </button>
+        <button
+          className="reviews__nav-next"
+          aria-label="Next review"
+          type="button"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M9 18L15 12L9 6"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </button>
+
         <Swiper
           modules={[Autoplay, Pagination, Navigation]}
           spaceBetween={28}
           slidesPerView={1}
-          centeredSlides={false}
+          loop={true}
           autoplay={{
             delay: 4500,
             disableOnInteraction: false,
@@ -186,14 +214,8 @@ export default function ClientReviewsSection() {
             dynamicBullets: true,
           }}
           navigation={{
-            prevEl: prevRef.current,
-            nextEl: nextRef.current,
-          }}
-          onBeforeInit={(swiper) => {
-            // @ts-ignore
-            swiper.params.navigation.prevEl = prevRef.current;
-            // @ts-ignore
-            swiper.params.navigation.nextEl = nextRef.current;
+            prevEl: ".reviews__nav-prev",
+            nextEl: ".reviews__nav-next",
           }}
           breakpoints={{
             0: {
@@ -278,40 +300,6 @@ export default function ClientReviewsSection() {
             </SwiperSlide>
           ))}
         </Swiper>
-
-        {/* Custom Navigation Buttons */}
-        <button
-          ref={prevRef}
-          className="reviews__nav-prev"
-          aria-label="Previous review"
-          type="button"
-        >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-            <path
-              d="M15 18L9 12L15 6"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </button>
-        <button
-          ref={nextRef}
-          className="reviews__nav-next"
-          aria-label="Next review"
-          type="button"
-        >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-            <path
-              d="M9 18L15 12L9 6"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </button>
       </div>
 
       {/* ── Stats Bar ── */}

@@ -1,195 +1,106 @@
+"use client";
+
+import { useEffect, useRef, useState, useCallback } from "react";
 import "./HeroSection.css";
 
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaBootstrap,
+  FaReact,
+  FaNode,
+  FaFire,
+} from "react-icons/fa";
+
+import {
+  SiSass,
+  SiTailwindcss,
+  SiNextdotjs,
+  SiSupabase,
+  SiExpress,
+  SiJavascript,
+} from "react-icons/si";
+
 const techStack = [
-  {
-    name: "HTML5",
-    color: "#E34F26",
-    svg: (
-      <svg viewBox="0 0 128 128" width="100%" height="100%">
-        <path
-          fill="#E44D26"
-          d="M19.037 113.876L9.032 1.661h109.936l-10.016 112.198-45.019 12.48z"
-        />
-        <path fill="#F16529" d="M64 116.8l36.378-10.086 8.559-95.878H64z" />
-        <path
-          fill="#EBEBEB"
-          d="M64 52.455H45.788L44.53 38.361H64V24.599H29.489l.33 3.692 3.382 37.927H64zm0 35.743l-.061.017-15.327-4.14-.979-10.975H33.816l1.928 21.609 28.193 7.826.063-.017z"
-        />
-        <path
-          fill="#fff"
-          d="M63.952 52.455v13.763h16.947l-1.597 17.849-15.35 4.143v14.319l28.215-7.82.207-2.325 3.234-36.233.336-3.696h-3.708zm0-27.856v13.762h33.244l.276-3.092.628-6.978.329-3.692z"
-        />
-      </svg>
-    ),
-  },
-  {
-    name: "CSS3",
-    color: "#1572B6",
-    svg: (
-      <svg viewBox="0 0 128 128" width="100%" height="100%">
-        <path
-          fill="#1572B6"
-          d="M18.814 114.123L9.032 1.661h109.936l-9.79 112.462-45.238 12.48z"
-        />
-        <path
-          fill="#33A9DC"
-          d="M64.001 117.034l36.559-10.137 8.375-93.84H64.001z"
-        />
-        <path
-          fill="#fff"
-          d="M64.001 51.429h18.302l1.264-14.163H64.001V23.435h34.682l-.332 3.711-3.4 38.114H64.001zM64.083 87.349l-.061.018-15.404-4.159-.985-11.031H33.752l1.937 21.732 28.331 7.864.063-.018z"
-        />
-        <path
-          fill="#EBEBEB"
-          d="M63.952 51.429v13.831H46.952l-1.577-17.654-1.04-11.171H63.952V23.435H29.395l.332 3.711 3.4 38.114H63.952zm.049 35.92v14.323l-.017.005-28.3-7.855-1.929-21.748H48.633l.985 11.031 15.368 4.147z"
-        />
-      </svg>
-    ),
-  },
-  {
-    name: "JavaScript",
-    color: "#F7DF1E",
-    svg: (
-      <svg viewBox="0 0 128 128" width="100%" height="100%">
-        <path fill="#F7DF1E" d="M1.408 1.408h125.184v125.185H1.408z" />
-        <path
-          fill="#323330"
-          d="M116.347 96.736c-.917-5.711-4.641-10.508-15.672-14.981-3.832-1.761-8.104-3.022-9.377-5.926-.452-1.69-.512-2.642-.226-3.665.821-3.29 4.784-4.355 7.925-3.403 2.023.678 3.938 2.237 5.093 4.724 5.402-3.498 5.391-3.487 9.163-5.877-1.381-2.141-2.118-3.129-3.022-4.045-3.249-3.629-7.676-5.498-14.756-5.355l-3.688.477c-3.534.893-6.902 2.748-8.877 5.235-5.926 6.724-4.236 18.492 2.975 23.335 7.104 5.332 17.54 6.545 18.873 11.531 1.297 6.104-4.486 8.08-10.234 7.378-4.236-.881-6.592-3.034-9.139-6.949-4.688 2.713-4.688 2.713-9.508 5.485 1.143 2.499 2.344 3.63 4.26 5.795 9.068 9.198 31.76 8.746 35.83-5.176.165-.478 1.261-3.666.38-8.581zM69.462 58.943H57.753l-.048 30.272c0 6.438.333 12.34-.714 14.149-1.713 3.558-6.152 3.117-8.175 2.427-2.059-1.012-3.106-2.451-4.319-4.484-.333-.584-.583-1.036-.667-1.071l-9.52 5.83c1.583 3.249 3.915 6.069 6.902 7.901 4.462 2.678 10.459 3.499 16.731 2.059 4.082-1.189 7.604-3.652 9.448-7.401 2.666-4.915 2.094-10.864 2.07-17.066-.048-10.975.048-21.974.048-32.96v-.048z"
-        />
-      </svg>
-    ),
-  },
-  {
-    name: "Bootstrap",
-    color: "#7952B3",
-    svg: (
-      <svg viewBox="0 0 128 128" width="100%" height="100%">
-        <path
-          fill="#7952b3"
-          d="M8.117 0A8.1 8.1 0 000 8.117v111.766A8.1 8.1 0 008.117 128h111.766A8.1 8.1 0 00128 119.883V8.117A8.1 8.1 0 00119.883 0zm45.082 32h27.04c4.939 0 9.159.68 12.661 2.039 3.501 1.36 6.187 3.282 8.058 5.765 1.87 2.484 2.806 5.43 2.806 8.84 0 2.704-.6 5.087-1.8 7.148-1.2 2.062-2.931 3.738-5.192 5.03-2.262 1.29-4.934 2.127-8.017 2.508v.384c3.468.256 6.541 1.07 9.22 2.443 2.678 1.373 4.787 3.213 6.326 5.52 1.54 2.306 2.309 5.024 2.309 8.152 0 3.662-.986 6.897-2.958 9.703-1.971 2.807-4.797 5.003-8.476 6.587C91.496 97.704 87.12 98.5 82.05 98.5H53.2V32zm11.712 29.723h16.576c4.684 0 8.17-.853 10.456-2.558 2.286-1.706 3.43-4.162 3.43-7.37 0-3.343-1.195-5.853-3.584-7.532-2.39-1.678-6.003-2.518-10.84-2.518H64.911zm0 9.472v18.2h18.2c4.914 0 8.61-.964 11.086-2.893 2.476-1.929 3.714-4.72 3.714-8.373 0-2.465-.618-4.52-1.855-6.165-1.236-1.646-3-2.888-5.292-3.727-2.29-.84-5.02-1.26-8.185-1.26z"
-        />
-      </svg>
-    ),
-  },
-  {
-    name: "Sass",
-    color: "#CC6699",
-    svg: (
-      <svg viewBox="0 0 128 128" width="100%" height="100%">
-        <path
-          fill="#CB6699"
-          d="M64.004 0C28.656 0 0 28.656 0 64s28.656 64 64.004 64C99.352 128 128 99.344 128 64S99.352 0 64.004 0zm23.893 92.112c-1.76 2.928-5.728 5.76-11.328 6.144-2.944.192-5.888-.32-8.448-1.728-2.144-1.216-3.84-3.04-5.024-5.12-.48 2.336-1.44 4.576-2.848 6.592-2.4 3.424-6.016 5.92-10.976 5.92-6.048 0-9.248-3.424-10.016-7.456-.864-4.704 1.344-9.504 4.992-12.8 3.296-2.976 7.456-4.512 11.68-5.248l-.576-4.48c-.544-4.224-.672-8.48-.352-12.672-2.112 3.776-3.84 7.808-5.536 11.904-.8 1.984-1.632 3.968-2.56 5.92-.288.608-.576 1.216-.928 1.792-.32.512-.704.992-1.152 1.408-.96.864-2.208 1.376-3.488 1.248-1.344-.128-2.592-.896-3.328-1.984-.48-.704-.704-1.536-.8-2.368-.224-2.016.32-4.032.96-5.952 1.12-3.424 2.592-6.752 4.096-9.984 2.144-4.608 4.416-9.12 6.944-13.472 1.824-3.136 3.776-6.208 5.888-9.152 1.888-2.624 3.904-5.184 6.24-7.424 1.824-1.728 3.872-3.264 6.208-4.192 1.984-.8 4.224-1.056 6.272-.416 2.688.832 4.512 3.168 5.248 5.824.864 3.104.352 6.464-.736 9.408-.832 2.24-2.016 4.352-3.392 6.272 1.408.384 2.784.992 3.968 1.888 2.016 1.536 3.296 3.808 3.744 6.24.128.736.192 1.472.192 2.24.16-.128.32-.256.48-.352 1.984-1.408 4.192-2.272 6.592-2.4 2.688-.16 5.408.544 7.648 2.016 3.552 2.336 5.408 6.304 5.248 10.304-.064 2.784-.864 5.568-2.176 8.064z"
-        />
-      </svg>
-    ),
-  },
-  {
-    name: "React",
-    color: "#61DAFB",
-    svg: (
-      <svg viewBox="0 0 128 128" width="100%" height="100%">
-        <g fill="#61DAFB">
-          <circle cx="64" cy="64" r="11.4" />
-          <path d="M107.3 45.2c-2.2-.8-4.5-1.6-6.9-2.3.6-2.4 1.1-4.8 1.5-7.1 2.1-13.2-.2-22.5-6.6-26.1-1.9-1.1-4-1.6-6.4-1.6-7 0-15.9 5.2-24.9 13.9-9-8.7-17.9-13.9-24.9-13.9-2.4 0-4.5.5-6.4 1.6-6.4 3.7-8.7 13-6.6 26.1.4 2.3.9 4.7 1.5 7.1-2.4.7-4.7 1.4-6.9 2.3C8.2 50 1.4 56.6 1.4 64s6.8 14 19.3 18.8c2.2.8 4.5 1.6 6.9 2.3-.6 2.4-1.1 4.8-1.5 7.1-2.1 13.2.2 22.5 6.6 26.1 1.9 1.1 4 1.6 6.4 1.6 7.1 0 16-5.2 24.9-13.9 9 8.7 17.9 13.9 24.9 13.9 2.4 0 4.5-.5 6.4-1.6 6.4-3.7 8.7-13 6.6-26.1-.4-2.3-.9-4.7-1.5-7.1 2.4-.7 4.7-1.4 6.9-2.3 12.5-4.8 19.3-11.4 19.3-18.8s-6.8-14-19.3-18.8zM92.5 14.7c4.1 2.4 5.5 9.8 3.8 20.3-.3 2.1-.8 4.3-1.4 6.6-5.2-1.2-10.7-2-16.5-2.5-3.4-4.8-6.9-9.1-10.4-13 7.4-7.3 14.9-12.3 21-12.3 1.3 0 2.5.3 3.5.9zM81.3 74c-1.8 3.2-3.9 6.4-6.1 9.6-3.7.3-7.4.4-11.2.4-3.9 0-7.6-.1-11.2-.4-2.2-3.2-4.2-6.4-6-9.6-1.9-3.3-3.7-6.7-5.3-10 1.6-3.3 3.4-6.7 5.3-10 1.8-3.2 3.9-6.4 6.1-9.6 3.7-.3 7.4-.4 11.2-.4 3.9 0 7.6.1 11.2.4 2.2 3.2 4.2 6.4 6 9.6 1.9 3.3 3.7 6.7 5.3 10-1.7 3.3-3.4 6.6-5.3 10zm8.3-3.3c1.5 3.5 2.7 6.9 3.8 10.3-3.4.8-7 1.4-10.8 1.9 1.2-1.9 2.5-3.9 3.6-6 1.2-2.1 2.3-4.2 3.4-6.2zM64 97.8c-2.4-2.6-4.7-5.4-6.9-8.3 2.3.1 4.6.2 6.9.2 2.3 0 4.6-.1 6.9-.2-2.2 2.9-4.5 5.7-6.9 8.3zm-18.6-15c-3.8-.5-7.4-1.1-10.8-1.9 1.1-3.3 2.3-6.8 3.8-10.3 1.1 2 2.2 4.1 3.4 6.1 1.2 2.2 2.4 4.1 3.6 6.1zm-7-25.5c-1.5-3.5-2.7-6.9-3.8-10.3 3.4-.8 7-1.4 10.8-1.9-1.2 1.9-2.5 3.9-3.6 6-1.2 2.1-2.3 4.2-3.4 6.2zM64 30.2c2.4 2.6 4.7 5.4 6.9 8.3-2.3-.1-4.6-.2-6.9-.2-2.3 0-4.6.1-6.9.2 2.2-2.9 4.5-5.7 6.9-8.3zm22.2 21l-3.6-6c3.8.5 7.4 1.1 10.8 1.9-1.1 3.3-2.3 6.8-3.8 10.3-1.1-2-2.2-4.1-3.4-6.2zM31.7 35c-1.7-10.5-.3-17.9 3.8-20.3 1-.6 2.2-.9 3.5-.9 6 0 13.5 4.9 21 12.3-3.5 3.8-7 8.2-10.4 13-5.8.5-11.3 1.4-16.5 2.5-.6-2.3-1-4.5-1.4-6.6zM7 64c0-4.7 5.7-9.7 15.7-13.4 2-.8 4.2-1.5 6.4-2.1 1.6 5 3.6 10.3 6 15.6-2.4 5.3-4.5 10.5-6 15.5C15.3 75.6 7 69.6 7 64zm28.5 49.3c-4.1-2.4-5.5-9.8-3.8-20.3.3-2.1.8-4.3 1.4-6.6 5.2 1.2 10.7 2 16.5 2.5 3.4 4.8 6.9 9.1 10.4 13-7.4 7.3-14.9 12.3-21 12.3-1.3 0-2.5-.3-3.5-.9zM96.3 93c1.7 10.5.3 17.9-3.8 20.3-1 .6-2.2.9-3.5.9-6 0-13.5-4.9-21-12.3 3.5-3.8 7-8.2 10.4-13 5.8-.5 11.3-1.4 16.5-2.5.6 2.3 1 4.5 1.4 6.6zm9.5-18.9c-2 .8-4.2 1.5-6.4 2.1-1.6-5-3.6-10.3-6-15.6 2.4-5.3 4.5-10.5 6-15.5 13.8 4 22.1 10 22.1 15.6-.1 4.7-5.8 9.7-15.7 13.4z" />
-        </g>
-      </svg>
-    ),
-  },
-  {
-    name: "Tailwind",
-    color: "#06B6D4",
-    svg: (
-      <svg viewBox="0 0 128 128" width="100%" height="100%">
-        <path
-          d="M64.004 25.602c-17.067 0-27.73 8.53-32 25.597 6.398-8.531 13.867-11.73 22.398-9.597 4.871 1.214 8.352 4.746 12.207 8.66C72.883 56.629 80.145 64 96.004 64c17.066 0 27.73-8.531 32-25.602-6.399 8.536-13.867 11.735-22.399 9.602-4.87-1.215-8.347-4.746-12.207-8.66-6.27-6.367-13.53-13.738-29.394-13.738zM32.004 64c-17.066 0-27.73 8.531-32 25.602C6.402 81.066 13.87 77.867 22.402 80c4.871 1.215 8.352 4.746 12.207 8.66 6.274 6.367 13.536 13.738 29.395 13.738 17.066 0 27.73-8.53 32-25.597-6.399 8.531-13.867 11.73-22.399 9.597-4.87-1.214-8.347-4.745-12.207-8.66C55.128 71.371 47.868 64 32.004 64zm0 0"
-          fill="#38bdf8"
-        />
-      </svg>
-    ),
-  },
-  {
-    name: "Next.js",
-    color: "#ffffff",
-    svg: (
-      <svg viewBox="0 0 128 128" width="100%" height="100%">
-        <path
-          d="M64 0C28.7 0 0 28.7 0 64s28.7 64 64 64c11.2 0 21.7-2.9 30.8-7.9L48.4 55.3v36.6H36.3V48.8h26.8l7.1 11.5 20.4-22.7A64 64 0 0064 0z"
-          fill="#ffffff"
-        />
-        <path
-          d="M91.5 25.1L66.9 50.5V36.3h-12v54.5h12V67.2l16.6 23.7h15L75.7 60.6l28.5-35.5h-12.7z"
-          fill="#ffffff"
-        />
-      </svg>
-    ),
-  },
-  {
-    name: "Firebase",
-    color: "#FFCA28",
-    svg: (
-      <svg viewBox="0 0 128 128" width="100%" height="100%">
-        <path
-          fill="#FFA000"
-          d="M1.9 96.1L28.8 3.9c.6-2.1 3.4-2.3 4.3-.3l15.3 30.5L1.9 96.1z"
-        />
-        <path
-          fill="#F57F17"
-          d="M71.8 40.4l-13.3-26c-.9-1.8-3.5-1.7-4.3.2L1.9 96.1l69.9-55.7z"
-        />
-        <path
-          fill="#FFCA28"
-          d="M1.9 96.1l20.1-12.5 47.6-43.2 6.7 13.5-53.1 55.8L1.9 96.1z"
-        />
-        <path fill="#FFA000" d="M23.2 109.7l-3-12.5 51.5-57.5 6.7 13.5z" />
-        <path
-          fill="#FFCA28"
-          d="M65.9 126c-4.8 0-9.5-1.1-13.8-3.3L1.9 96.1l24.2 13.7 13.5 16.5c7.5 3.8 16.6 4.1 24.3.8l62.1-34.6-49.1 33c-3.5 0-7 .5-11 .5z"
-        />
-        <path
-          fill="#F57F17"
-          d="M126 92.5l-62.1 34.6c7.7 3.3 16.8 3 24.3-.8l13.5-16.5 24.3-17.3z"
-        />
-        <path fill="#FFA000" d="M126 92.5L78.4 59.3l-12.5-19.4 60.1 52.6z" />
-        <path fill="#FFCA28" d="M78.4 59.3L65.9 40l-6.7-13.5 19.2 32.8z" />
-      </svg>
-    ),
-  },
-  {
-    name: "Supabase",
-    color: "#3ECF8E",
-    svg: (
-      <svg viewBox="0 0 128 128" width="100%" height="100%">
-        <defs>
-          <linearGradient id="sb1" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#3ECF8E" />
-            <stop offset="100%" stopColor="#1a9e6a" />
-          </linearGradient>
-        </defs>
-        <path
-          fill="url(#sb1)"
-          d="M74.99 116.78c-3.3 4.14-10.05 1.9-10.12-3.37L63.5 68H103c7.46 0 11.61 8.62 6.94 14.41l-34.95 34.37z"
-        />
-        <path
-          fill="#3ECF8E"
-          fillOpacity=".5"
-          d="M53.01 11.22c3.3-4.14 10.05-1.9 10.12 3.37L64.5 60H24.5c-7.46 0-11.61-8.62-6.94-14.41L53.01 11.22z"
-        />
-      </svg>
-    ),
-  },
+  { name: "HTML5", icon: FaHtml5, color: "#E34F26" },
+  { name: "CSS3", icon: FaCss3Alt, color: "#1572B6" },
+  { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
+  { name: "Bootstrap", icon: FaBootstrap, color: "#7952B3" },
+  { name: "Sass", icon: SiSass, color: "#CC6699" },
+  { name: "React", icon: FaReact, color: "#61DAFB" },
+  { name: "Tailwind", icon: SiTailwindcss, color: "#06B6D4" },
+  { name: "Next.js", icon: SiNextdotjs, color: "#ffffff" },
+  { name: "Node.js", icon: FaNode, color: "#339933" },
+  { name: "Express", icon: SiExpress, color: "#ffffff" },
+  { name: "Firebase", icon: FaFire, color: "#FFCA28" },
+  { name: "Supabase", icon: SiSupabase, color: "#3ECF8E" },
 ];
 
 export default function HeroSection() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isLoaded, setIsLoaded] = useState(false);
+  const heroRef = useRef<HTMLElement>(null);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+
+  /* Mouse move effect for 3D tilt */
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!heroRef.current) return;
+      const rect = heroRef.current.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
+      const y = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+      setMousePosition({ x, y });
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+
+  /* Sequential icon animation - moves to next icon every 2.5 seconds */
+  useEffect(() => {
+    setIsLoaded(true);
+
+    intervalRef.current = setInterval(() => {
+      setIsAnimating(true);
+      setTimeout(() => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % techStack.length);
+        setTimeout(() => setIsAnimating(false), 150);
+      }, 300);
+    }, 2800);
+
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, []);
+
+  const currentTech = techStack[currentIndex];
+  const IconComponent = currentTech.icon;
+  const nextIndex = (currentIndex + 1) % techStack.length;
+  const nextTech = techStack[nextIndex];
+  const NextIconComponent = nextTech.icon;
+
   return (
-    <section className="hero">
-      {/* Background */}
+    <section
+      className={`hero ${isLoaded ? "hero--loaded" : ""}`}
+      ref={heroRef}
+      style={
+        {
+          "--mouse-x": mousePosition.x,
+          "--mouse-y": mousePosition.y,
+        } as React.CSSProperties
+      }
+    >
+      {/* Enhanced Background Layer */}
       <div className="hero__bg">
         <div className="hero__grid" />
         <div className="hero__glow hero__glow--1" />
         <div className="hero__glow hero__glow--2" />
         <div className="hero__glow hero__glow--3" />
+        <div className="hero__gradient-overlay" />
+        <div className="hero__scan-line" />
         <div className="hero__particles">
-          {Array.from({ length: 30 }).map((_, i) => (
+          {Array.from({ length: 60 }).map((_, i) => (
             <span
               key={i}
               className="hero__particle"
@@ -198,39 +109,43 @@ export default function HeroSection() {
                 top: `${(i * 53 + 10) % 90}%`,
                 animationDelay: `${(i * 0.4) % 6}s`,
                 animationDuration: `${4 + (i % 4)}s`,
+                width: `${2 + (i % 3)}px`,
+                height: `${2 + (i % 3)}px`,
               }}
             />
           ))}
         </div>
       </div>
 
-      {/* Left Side */}
+      {/* ── Left Side with Luxury Enhancements ── */}
       <div className="hero__left">
         <div className="hero__badge">
           <span className="hero__badge-dot" />
-          <span className="hero__badge-text">Available for Projects</span>
+          <span className="hero__badge-line" />
+          <span className="hero__badge-text">
+            ✦ AVAILABLE FOR EXCLUSIVE PROJECTS ✦
+          </span>
         </div>
 
-        <div className="hero__heading-wrap">
-          <h1 className="hero__heading">
-            <span className="hero__heading-line hero__heading-line--1">
-              <span className="hero__heading-word">We Craft</span>
+        <h1 className="hero__heading">
+          <span className="hero__heading-line hero__heading-line--1">
+            <span className="hero__heading-word">We Craft</span>
+          </span>
+          <span className="hero__heading-line hero__heading-line--2">
+            <span className="hero__heading-word">Digital</span>
+            <span className="hero__heading-word hero__heading-word--gradient">
+              {" "}
+              Excellence
             </span>
-            <span className="hero__heading-line hero__heading-line--2">
-              <span className="hero__heading-word">Digital</span>
-              <span className="hero__heading-word hero__heading-word--gradient">
-                {" "}
-                Excellence
-              </span>
-            </span>
-            <span className="hero__heading-line hero__heading-line--3">
-              <span className="hero__heading-word">for the Web</span>
-            </span>
-          </h1>
-        </div>
+          </span>
+          <span className="hero__heading-line hero__heading-line--3">
+            <span className="hero__heading-word">for the Web</span>
+          </span>
+        </h1>
 
         <div className="hero__name-wrap">
           <span className="hero__name-label">Pantrix</span>
+          <span className="hero__name-decoration">——</span>
           <span className="hero__name">Creative Tech Studio</span>
         </div>
 
@@ -244,10 +159,11 @@ export default function HeroSection() {
           <a href="/projects" className="hero__btn hero__btn--primary">
             <span className="hero__btn-text">View Our Work</span>
             <span className="hero__btn-shine" />
+            <span className="hero__btn-glow" />
           </a>
           <a href="/contact" className="hero__btn hero__btn--secondary">
             <span className="hero__btn-text">Let's Talk</span>
-            <span className="hero__btn-border" />
+            <span className="hero__btn-arrow">→</span>
           </a>
         </div>
 
@@ -267,40 +183,131 @@ export default function HeroSection() {
             <span className="hero__stat-label">Happy Clients</span>
           </div>
         </div>
+
+        <div className="hero__luxury-indicator">
+          <div className="hero__luxury-diamond" />
+          <span className="hero__luxury-text">BESPOKE SOLUTIONS</span>
+          <div className="hero__luxury-diamond" />
+        </div>
       </div>
 
-      {/* Right Side - Tech Stack with Staggered Animation */}
+      {/* ── Right Side - Sequential Tech Showcase (No White Shade, Only Icon Color Glow) ── */}
       <div className="hero__right">
         <div className="hero__orbit-label">
-          <span className="hero__orbit-label-text">Our Tech Stack</span>
+          <span className="hero__orbit-label-icon">⚡</span>
+          <span className="hero__orbit-label-text">TECH STACK</span>
           <span className="hero__orbit-label-line" />
         </div>
 
-        <div className="hero__logos-grid">
-          {techStack.map((tech, i) => (
-            <div
-              key={tech.name}
-              className="hero__logo-card"
-              style={{ animationDelay: `${0.3 + i * 0.1}s` }}
-            >
-              <div className="hero__logo-icon-wrap">
-                <div
-                  className="hero__logo-glow"
-                  style={{ background: `${tech.color}22` }}
-                />
-                <div className="hero__logo-icon">{tech.svg}</div>
-              </div>
-              <span className="hero__logo-name">{tech.name}</span>
+        {/* Sequential Tech Carousel Container */}
+        <div className="hero__sequential-container">
+          {/* Subtle ambient glow that matches icon color */}
+          <div
+            className="hero__sequential-ambient-glow"
+            style={{
+              background: `radial-gradient(circle at center, ${currentTech.color}20, transparent 70%)`,
+            }}
+          />
+
+          {/* Main Icon Display - No White Shine Effects */}
+          <div
+            className={`hero__sequential-icon-wrapper ${isAnimating ? "hero__sequential-icon-wrapper--exit" : "hero__sequential-icon-wrapper--enter"}`}
+          >
+            <div className="hero__sequential-icon-circle">
+              {/* Icon color glow effect only - NO white shine */}
               <div
-                className="hero__logo-border"
-                style={{ borderColor: `${tech.color}33` }}
+                className="hero__sequential-icon-color-glow"
+                style={{
+                  background: `radial-gradient(circle, ${currentTech.color}60, transparent)`,
+                }}
+              />
+              {/* The Icon with its original color */}
+              <IconComponent
+                className="hero__sequential-icon"
+                style={{ color: currentTech.color }}
+              />
+              {/* Luxury pulse ring with icon color */}
+              <div
+                className="hero__sequential-icon-pulse-ring"
+                style={{ borderColor: currentTech.color }}
+              />
+              {/* Sparkle effects with icon color */}
+              <div className="hero__sequential-sparkles">
+                {[...Array(4)].map((_, i) => (
+                  <div
+                    key={i}
+                    className="hero__sequential-sparkle"
+                    style={{
+                      animationDelay: `${i * 0.2}s`,
+                      backgroundColor: currentTech.color,
+                    }}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Tech Name with color underline */}
+          <div className="hero__sequential-tech-name">
+            <h3
+              className="hero__sequential-tech-name-text"
+              style={{ color: currentTech.color }}
+            >
+              {currentTech.name}
+            </h3>
+            <div
+              className="hero__sequential-tech-underline"
+              style={{ background: currentTech.color }}
+            />
+          </div>
+
+          {/* Premium Progress Bar with icon color */}
+          <div className="hero__sequential-progress">
+            <div
+              className="hero__sequential-progress-bar"
+              style={{
+                backgroundColor: currentTech.color,
+                boxShadow: `0 0 12px ${currentTech.color}`,
+              }}
+            />
+          </div>
+
+          {/* Next Tech Preview */}
+          <div className="hero__sequential-next-preview">
+            <span className="hero__sequential-next-label">Up Next</span>
+            <div className="hero__sequential-next-icon-wrapper">
+              <NextIconComponent
+                className="hero__sequential-next-icon"
+                style={{ color: nextTech.color }}
               />
             </div>
-          ))}
+            <span
+              className="hero__sequential-next-name"
+              style={{ color: nextTech.color }}
+            >
+              {nextTech.name}
+            </span>
+            <span className="hero__sequential-next-arrow">→</span>
+          </div>
+
+          {/* Minimal Step Indicators */}
+          <div className="hero__sequential-steps">
+            {techStack.map((tech, idx) => (
+              <div
+                key={tech.name}
+                className={`hero__sequential-step ${idx === currentIndex ? "hero__sequential-step--active" : ""} ${idx < currentIndex ? "hero__sequential-step--completed" : ""}`}
+                style={{
+                  backgroundColor: idx === currentIndex ? tech.color : "",
+                }}
+              />
+            ))}
+          </div>
         </div>
 
+        {/* Floating decorative rings */}
         <div className="hero__float-ring hero__float-ring--1" />
         <div className="hero__float-ring hero__float-ring--2" />
+        <div className="hero__float-ring hero__float-ring--3" />
       </div>
     </section>
   );
