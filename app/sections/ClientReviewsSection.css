@@ -482,6 +482,103 @@
   width: 100%;
 }
 
+/* ========== SERVICE FILTER BADGES STRIP ========== */
+.reviews__service-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 5% 56px;
+  position: relative;
+  z-index: 2;
+}
+
+.reviews__svc-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 16px;
+  border-radius: 100px;
+  border: 1px solid;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.025);
+  font-family: "Courier New", monospace;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+  cursor: default;
+}
+
+.reviews__svc-badge:hover {
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateY(-2px);
+}
+
+.reviews__svc-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ========== PER-CARD SERVICE TAG ========== */
+.reviews__service-tag {
+  position: absolute;
+  top: 72px; /* below number badge */
+  left: 22px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: 100px;
+  border: 1px solid;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-family: "Courier New", monospace;
+  z-index: 3;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  white-space: nowrap;
+}
+
+.reviews__service-tag-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Adjust header-info margin to account for service tag */
+.reviews__header-info {
+  margin-top: 90px !important; /* badge 52px + tag ~28px + gap */
+}
+
+/* Card hover — use CSS variable accent */
+.reviews__card:hover {
+  border-color: color-mix(
+    in srgb,
+    var(--card-accent, #00d4ff) 40%,
+    transparent
+  ) !important;
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.4),
+    0 0 0 1px color-mix(in srgb, var(--card-accent, #00d4ff) 12%, transparent),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
+}
+
+.reviews__card:hover::before {
+  background: radial-gradient(
+    ellipse at 50% -10%,
+    color-mix(in srgb, var(--card-accent, #00d4ff) 10%, transparent),
+    transparent 65%
+  ) !important;
+}
+
 /* ========== NAVIGATION BUTTONS ========== */
 .reviews__nav-prev,
 .reviews__nav-next {
@@ -647,6 +744,16 @@
     font-size: 2.2rem;
   }
 
+  .reviews__service-badges {
+    gap: 8px;
+    padding: 0 5% 44px;
+  }
+
+  .reviews__svc-badge {
+    font-size: 0.65rem;
+    padding: 6px 12px;
+  }
+
   .reviews__slider-wrapper {
     padding: 10px 44px 10px;
   }
@@ -704,6 +811,26 @@
 @media (max-width: 480px) {
   .reviews {
     padding: 60px 4% 80px;
+  }
+
+  .reviews__service-badges {
+    gap: 6px;
+    padding: 0 4% 36px;
+  }
+
+  .reviews__svc-badge {
+    font-size: 0.6rem;
+    padding: 5px 10px;
+  }
+
+  .reviews__service-tag {
+    font-size: 0.52rem;
+    padding: 2px 8px;
+    top: 62px;
+  }
+
+  .reviews__header-info {
+    margin-top: 80px !important;
   }
 
   .reviews__label-text {

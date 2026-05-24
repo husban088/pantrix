@@ -1,7 +1,9 @@
+"use client";
+
 import "./AboutPage.css";
 
 /* ─────────────────────────────────────────────
-   DATA — Updated for company branding
+   DATA — 8 Services (same as About Section)
 ───────────────────────────────────────────── */
 
 const stats = [
@@ -11,6 +13,7 @@ const stats = [
   { num: "100%", label: "Client Satisfaction" },
 ];
 
+// 8 Services - EXACTLY matching About Section design
 const services = [
   {
     icon: (
@@ -35,8 +38,11 @@ const services = [
         />
       </svg>
     ),
+    badge: "01",
+    badgeColor: "#00f5d4",
     title: "Frontend Development",
     desc: "Pixel-perfect UIs with React, Next.js & Tailwind CSS",
+    tags: ["React", "Next.js", "Tailwind"],
   },
   {
     icon: (
@@ -65,8 +71,11 @@ const services = [
         />
       </svg>
     ),
+    badge: "02",
+    badgeColor: "#00bbf9",
     title: "Backend & APIs",
     desc: "Scalable servers with Firebase & Supabase integration",
+    tags: ["Node.js", "Firebase", "Supabase"],
   },
   {
     icon: (
@@ -86,8 +95,11 @@ const services = [
         />
       </svg>
     ),
-    title: "Performance Optimization",
+    badge: "03",
+    badgeColor: "#a855f7",
+    title: "Performance & SEO",
     desc: "Fast, SEO-ready & highly optimized web applications",
+    tags: ["Core Web Vitals", "SEO", "Speed"],
   },
   {
     icon: (
@@ -115,35 +127,119 @@ const services = [
         />
       </svg>
     ),
+    badge: "04",
+    badgeColor: "#f59e0b",
     title: "Responsive Design",
-    desc: "Flawless experiences on every screen — mobile, tablet, desktop",
+    desc: "Flawless experiences on every screen — mobile to desktop",
+    tags: ["Mobile", "Tablet", "Desktop"],
+  },
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" width="28" height="28">
+        <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="1.5" />
+        <path
+          d="M12 2v3M12 19v3M2 12h3M19 12h3"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+        />
+        <path
+          d="M5.64 5.64l2.12 2.12M16.24 16.24l2.12 2.12M5.64 18.36l2.12-2.12M16.24 7.76l2.12-2.12"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+        />
+      </svg>
+    ),
+    badge: "05",
+    badgeColor: "#FF6B6B",
+    title: "Social Ads Management",
+    desc: "Data-driven ad campaigns on Meta, Instagram & Google that convert",
+    tags: ["Meta Ads", "Google Ads", "Analytics"],
+  },
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" width="28" height="28">
+        <circle cx="12" cy="8" r="4" stroke="currentColor" strokeWidth="1.5" />
+        <path
+          d="M4 20c0-4 3.6-7 8-7s8 3 8 7"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+        />
+        <path
+          d="M18 3l2 2-5 5"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
+    badge: "06",
+    badgeColor: "#FFD700",
+    title: "Graphic Designing",
+    desc: "Brand identities, logos & visual systems built with purpose",
+    tags: ["Branding", "Logo", "Illustration"],
+  },
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" width="28" height="28">
+        <rect
+          x="3"
+          y="4"
+          width="18"
+          height="14"
+          rx="2"
+          stroke="currentColor"
+          strokeWidth="1.5"
+        />
+        <path d="M3 8h18" stroke="currentColor" strokeWidth="1.5" />
+        <path
+          d="M9 12h6M9 15h4"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+        />
+      </svg>
+    ),
+    badge: "07",
+    badgeColor: "#FF69B4",
+    title: "Poster Designing",
+    desc: "Eye-catching promotional posters & marketing visuals that convert",
+    tags: ["Print", "Event Posters", "Banners"],
+  },
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" width="28" height="28">
+        <rect
+          x="2"
+          y="4"
+          width="20"
+          height="16"
+          rx="2"
+          stroke="currentColor"
+          strokeWidth="1.5"
+        />
+        <path
+          d="M10 9l6 3-6 3V9z"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinejoin="round"
+          fill="currentColor"
+          fillOpacity="0.2"
+        />
+      </svg>
+    ),
+    badge: "08",
+    badgeColor: "#9B59B6",
+    title: "Video Editing",
+    desc: "Professional reels, motion graphics & branded video content",
+    tags: ["Reels", "Motion Graphics", "Color Grade"],
   },
 ];
 
-const timeline = [
-  {
-    year: "2021",
-    title: "The Beginning",
-    desc: "Pantrix started as a vision to create exceptional web experiences.",
-  },
-  {
-    year: "2022",
-    title: "First Major Projects",
-    desc: "Delivered first enterprise-level web applications to happy clients.",
-  },
-  {
-    year: "2023",
-    title: "Team Expansion",
-    desc: "Grew our expertise in Next.js, Firebase, Supabase & advanced frameworks.",
-  },
-  {
-    year: "2024+",
-    title: "Pantrix Studio",
-    desc: "Established as a full-service web development studio crafting digital excellence.",
-  },
-];
-
-/* ── NEW: Our Approach Data ── */
+/* ── OUR APPROACH DATA ── */
 const approachSteps = [
   {
     id: "01",
@@ -167,8 +263,8 @@ const approachSteps = [
         />
       </svg>
     ),
-    color: "#00d4ff",
-    gradient: "linear-gradient(135deg, #00d4ff, #0099cc)",
+    color: "#00f5d4",
+    gradient: "linear-gradient(135deg, #00f5d4, #00bbf9)",
   },
   {
     id: "02",
@@ -201,8 +297,8 @@ const approachSteps = [
         />
       </svg>
     ),
-    color: "#5ee6ff",
-    gradient: "linear-gradient(135deg, #5ee6ff, #00d4ff)",
+    color: "#00bbf9",
+    gradient: "linear-gradient(135deg, #00bbf9, #00f5d4)",
   },
   {
     id: "03",
@@ -227,11 +323,12 @@ const approachSteps = [
         />
       </svg>
     ),
-    color: "#66e7ff",
-    gradient: "linear-gradient(135deg, #66e7ff, #5ee6ff)",
+    color: "#5efade",
+    gradient: "linear-gradient(135deg, #5efade, #00f5d4)",
   },
 ];
 
+/* ── OUR VALUES DATA ── */
 const values = [
   {
     icon: (
@@ -314,7 +411,7 @@ export default function AboutPage() {
   return (
     <div className="ap">
       {/* ══════════════════════════════════════
-          BACKGROUND — same 3 glows + grid + deco lines
+          BACKGROUND — 3 glows + grid + deco lines
       ══════════════════════════════════════ */}
       <div className="ap__bg">
         <div className="ap__grid" />
@@ -330,16 +427,13 @@ export default function AboutPage() {
           HERO — label + intro left/right + stats
       ══════════════════════════════════════ */}
       <section className="ap__hero">
-        {/* Section Label */}
         <div className="ap__label-row">
           <span className="ap__label-line" />
           <span className="ap__label-text">About Us</span>
           <span className="ap__label-line" />
         </div>
 
-        {/* Intro two-column layout */}
         <div className="ap__intro">
-          {/* Left — heading + eyebrow + signature */}
           <div className="ap__intro-left">
             <div className="ap__eyebrow">
               <span className="ap__eyebrow-dot" />
@@ -359,25 +453,25 @@ export default function AboutPage() {
             <div className="ap__signature">
               <span className="ap__signature-name">Pantrix</span>
               <span className="ap__signature-dot">✦</span>
-              <span className="ap__signature-role">Web Development Studio</span>
+              <span className="ap__signature-role">
+                Full-Service Digital Studio
+              </span>
             </div>
           </div>
 
-          {/* Right — description + stats grid */}
           <div className="ap__intro-right">
             <p className="ap__desc">
-              <strong>Pantrix</strong> is a full-service web development studio
-              crafting modern, high-performance web applications that merge
-              aesthetic elegance with technical precision.
+              <strong>Pantrix</strong> is a full-service digital studio crafting
+              modern web applications, scroll-stopping ad campaigns, stunning
+              brand visuals, and cinematic video content — all under one roof.
             </p>
             <p className="ap__desc">
-              From pixel-perfect frontends in React &amp; Next.js to robust
-              backends powered by Firebase &amp; Supabase — we deliver
-              end-to-end digital solutions that help brands stand out and
-              succeed online.
+              From pixel-perfect frontends in React &amp; Next.js, to social ads
+              on Meta &amp; Google, to graphic design, posters, and video
+              editing — we deliver end-to-end digital solutions that help brands
+              stand out online.
             </p>
 
-            {/* Stats 2×2 grid */}
             <div className="ap__stats">
               {stats.map((s, i) => (
                 <div
@@ -395,7 +489,7 @@ export default function AboutPage() {
       </section>
 
       {/* ══════════════════════════════════════
-          01 — WHAT WE DO (service cards)
+          01 — WHAT WE DO (8 Services Cards - Same as About Section)
       ══════════════════════════════════════ */}
       <section className="ap__section">
         <div className="ap__section-head">
@@ -409,24 +503,80 @@ export default function AboutPage() {
             <div
               key={svc.title}
               className="ap__service-card"
-              style={{ animationDelay: `${0.15 + i * 0.12}s` }}
+              style={
+                {
+                  animationDelay: `${0.08 + i * 0.07}s`,
+                  "--card-color": svc.badgeColor,
+                } as React.CSSProperties
+              }
             >
-              <div className="ap__service-icon-wrap">
-                <span className="ap__service-icon">{svc.icon}</span>
-                <span className="ap__service-icon-glow" />
+              {/* Badge - top right */}
+              <div
+                className="ap__service-badge"
+                style={{
+                  color: svc.badgeColor,
+                  borderColor: `${svc.badgeColor}33`,
+                  background: `${svc.badgeColor}12`,
+                }}
+              >
+                {svc.badge}
               </div>
+
+              {/* Icon */}
+              <div className="ap__service-icon-wrap">
+                <span
+                  className="ap__service-icon"
+                  style={{ color: svc.badgeColor }}
+                >
+                  {svc.icon}
+                </span>
+                <span
+                  className="ap__service-icon-glow"
+                  style={{
+                    background: `radial-gradient(circle, ${svc.badgeColor}22, transparent 70%)`,
+                  }}
+                />
+              </div>
+
               <h3 className="ap__service-title">{svc.title}</h3>
               <p className="ap__service-desc">{svc.desc}</p>
-              <span className="ap__service-num">0{i + 1}</span>
-              <span className="ap__service-hover-bar" />
+
+              {/* Tags */}
+              <div className="ap__service-tags">
+                {svc.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="ap__service-tag"
+                    style={{
+                      borderColor: `${svc.badgeColor}30`,
+                      color: svc.badgeColor,
+                    }}
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              {/* Hover effects */}
+              <span
+                className="ap__service-hover-bar"
+                style={{
+                  background: `linear-gradient(90deg, transparent, ${svc.badgeColor}, transparent)`,
+                }}
+              />
+              <span
+                className="ap__service-corner-glow"
+                style={{
+                  background: `radial-gradient(circle at bottom right, ${svc.badgeColor}18, transparent 60%)`,
+                }}
+              />
             </div>
           ))}
         </div>
       </section>
 
       {/* ══════════════════════════════════════
-          02 — OUR APPROACH (NEW - replaces Skills)
-          Luxury 3-step process with hover animations
+          02 — OUR APPROACH (3-step process)
       ══════════════════════════════════════ */}
       <section className="ap__section ap__approach-section">
         <div className="ap__section-head">
@@ -442,7 +592,6 @@ export default function AboutPage() {
               className="ap__approach-card"
               style={{ animationDelay: `${0.1 + i * 0.15}s` }}
             >
-              {/* Connecting line between cards (except last) */}
               {i < approachSteps.length - 1 && (
                 <div className="ap__approach-connector" aria-hidden="true">
                   <svg viewBox="0 0 60 24" fill="none">
@@ -458,7 +607,6 @@ export default function AboutPage() {
               )}
 
               <div className="ap__approach-card-inner">
-                {/* Glowing background on hover */}
                 <div
                   className="ap__approach-card-glow"
                   style={{
@@ -466,7 +614,6 @@ export default function AboutPage() {
                   }}
                 />
 
-                {/* Step Number Badge */}
                 <div
                   className="ap__approach-step"
                   style={{ borderColor: step.color }}
@@ -475,7 +622,6 @@ export default function AboutPage() {
                   <div className="ap__approach-step-ring" />
                 </div>
 
-                {/* Icon */}
                 <div
                   className="ap__approach-icon"
                   style={{ color: step.color }}
@@ -483,12 +629,10 @@ export default function AboutPage() {
                   {step.icon}
                 </div>
 
-                {/* Content */}
                 <h3 className="ap__approach-title">{step.title}</h3>
                 <p className="ap__approach-subtitle">{step.subtitle}</p>
                 <p className="ap__approach-desc">{step.desc}</p>
 
-                {/* Feature list */}
                 <div className="ap__approach-features">
                   {i === 0 && (
                     <>
@@ -513,13 +657,11 @@ export default function AboutPage() {
                   )}
                 </div>
 
-                {/* Hover bar */}
                 <div
                   className="ap__approach-hover-bar"
                   style={{ background: step.gradient }}
                 />
 
-                {/* Corner accents */}
                 <div className="ap__approach-corner ap__approach-corner--tl" />
                 <div className="ap__approach-corner ap__approach-corner--br" />
               </div>
@@ -529,45 +671,11 @@ export default function AboutPage() {
       </section>
 
       {/* ══════════════════════════════════════
-          03 — OUR JOURNEY (timeline)
+          03 — OUR VALUES (REMOVED OUR JOURNEY)
       ══════════════════════════════════════ */}
       <section className="ap__section">
         <div className="ap__section-head">
           <span className="ap__section-num">03</span>
-          <h2 className="ap__section-title">Our Journey</h2>
-          <span className="ap__section-bar" />
-        </div>
-
-        <div className="ap__timeline">
-          <div className="ap__timeline-track" />
-
-          {timeline.map((item, i) => (
-            <div
-              key={item.year}
-              className="ap__timeline-item"
-              style={{ animationDelay: `${0.2 + i * 0.15}s` }}
-            >
-              <div className="ap__timeline-dot">
-                <span className="ap__timeline-dot-inner" />
-              </div>
-
-              <div className="ap__timeline-card">
-                <span className="ap__timeline-year">{item.year}</span>
-                <h3 className="ap__timeline-title">{item.title}</h3>
-                <p className="ap__timeline-desc">{item.desc}</p>
-                <span className="ap__timeline-shine" />
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════
-          04 — OUR VALUES (value cards)
-      ══════════════════════════════════════ */}
-      <section className="ap__section">
-        <div className="ap__section-head">
-          <span className="ap__section-num">04</span>
           <h2 className="ap__section-title">Our Values</h2>
           <span className="ap__section-bar" />
         </div>
@@ -589,7 +697,7 @@ export default function AboutPage() {
       </section>
 
       {/* ══════════════════════════════════════
-          CTA — bottom section
+          CTA — KEPT (removed nothing)
       ══════════════════════════════════════ */}
       <section className="ap__cta-wrap">
         <p className="ap__cta-text">

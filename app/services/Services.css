@@ -173,7 +173,6 @@
   display: block;
 }
 
-/* Gold accent → replaced with teal-neon gradient */
 .services-hero__title-gold {
   background: linear-gradient(
     135deg,
@@ -306,7 +305,11 @@
   gap: 30px;
 }
 
-/* --- Individual Service Card --- */
+/* ============================================================
+   SERVICE CARD STYLES (Fully Updated)
+   ============================================================ */
+
+/* Main Card Container */
 .service-card {
   background: var(--bg-card);
   backdrop-filter: blur(10px);
@@ -315,7 +318,7 @@
   padding: 35px;
   position: relative;
   transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-  overflow: hidden;
+  overflow: visible;
   opacity: 0;
   animation: fadeUp 0.6s forwards;
 }
@@ -329,6 +332,36 @@
     0 0 0 1px var(--teal-neon-dim);
 }
 
+/* Highlight Badge */
+.service-card__highlight {
+  position: absolute;
+  top: 20px;
+  left: 24px;
+  z-index: 100;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 100px;
+  border: 1px solid;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.service-card__highlight-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  animation: svcDotPulse 2s ease-in-out infinite;
+  display: inline-block;
+}
+
+/* Glow Effect */
 .service-card__glow {
   position: absolute;
   top: 0;
@@ -345,33 +378,75 @@
   opacity: 0.3;
 }
 
+/* Top Row - Flex layout */
+.service-card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 22px;
+  margin-top: 10px;
+}
+
+.service-card__top-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+/* Icon */
 .service-card__icon {
-  width: 70px;
-  height: 70px;
+  width: 54px;
+  height: 54px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 245, 212, 0.1);
-  border-radius: 20px;
-  margin-bottom: 25px;
-  transition: all 0.3s;
+  border-radius: 16px;
+  border: 1px solid;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+  flex-shrink: 0;
+  margin-bottom: 0;
 }
 
 .service-card:hover .service-card__icon {
-  transform: scale(1.05);
-  background: rgba(0, 245, 212, 0.2);
+  transform: translateY(-3px) scale(1.05);
 }
 
+/* ID */
 .service-card__id {
-  position: absolute;
-  top: 30px;
-  right: 30px;
-  font-size: 1.1rem;
+  font-size: 0.7rem;
   font-weight: 700;
-  color: var(--teal-neon-dim);
-  letter-spacing: 1px;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.3);
+  font-variant-numeric: tabular-nums;
+  position: static;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 2px 8px;
+  border-radius: 20px;
 }
 
+/* Category Badge */
+.service-card__category {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 100px;
+  border: 1px solid;
+  white-space: nowrap;
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.service-card:hover .service-card__category {
+  opacity: 1;
+}
+
+/* Title */
 .service-card__title {
   font-size: 1.5rem;
   font-weight: 600;
@@ -384,23 +459,28 @@
   color: var(--teal-neon-light);
 }
 
+/* Short Description */
 .service-card__short {
   color: var(--teal-neon);
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   margin-bottom: 15px;
   letter-spacing: 0.5px;
+  font-weight: 500;
 }
 
+/* Full Description */
 .service-card__desc {
   color: var(--muted);
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   line-height: 1.6;
   margin-bottom: 20px;
 }
 
+/* Features List */
 .service-card__features {
   list-style: none;
   margin-bottom: 25px;
+  padding: 0;
 }
 
 .service-card__features li {
@@ -417,84 +497,121 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--teal-neon);
   flex-shrink: 0;
 }
 
+/* Footer - Customer friendly inquiry text */
 .service-card__footer {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 25px;
-  padding: 15px 0;
-  border-top: 1px solid rgba(0, 245, 212, 0.15);
-  border-bottom: 1px solid rgba(0, 245, 212, 0.15);
+  align-items: center;
+  padding-top: 16px;
+  border-top: 1px solid;
+  margin-top: auto;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
-.service-card__price,
-.service-card__timeline {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.service-card__price-label,
-.service-card__timeline-label {
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--muted);
-}
-
-.service-card__price-value {
-  font-size: 1rem;
-  font-weight: 600;
-  background: linear-gradient(135deg, var(--white), var(--teal-neon));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.service-card__timeline-value {
+/* Customer friendly inquiry text - left side */
+.service-card__inquiry-text {
   font-size: 0.9rem;
   font-weight: 500;
-  color: var(--teal-neon);
-}
-
-.service-card__cta {
+  letter-spacing: 0.02em;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 12px 20px;
-  background: transparent;
-  border: 1px solid var(--teal-neon-dim);
-  border-radius: 40px;
-  color: var(--white);
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover .service-card__inquiry-text {
+  transform: translateX(2px);
+}
+
+/* CTA Button */
+.service-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
   text-decoration: none;
-  transition: all 0.3s;
-  font-weight: 500;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 40px;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .service-card__cta:hover {
-  background: var(--teal-neon-dim2);
-  border-color: var(--teal-neon);
-  color: var(--teal-neon-light);
-  box-shadow: 0 0 20px var(--teal-neon-dim);
+  color: var(--cta-color, var(--teal-neon));
+  background: color-mix(
+    in srgb,
+    var(--cta-color, var(--teal-neon)) 15%,
+    transparent
+  );
+  border-color: color-mix(
+    in srgb,
+    var(--cta-color, var(--teal-neon)) 40%,
+    transparent
+  );
+  transform: translateX(3px);
 }
 
-/* Hover bottom border sweep */
+/* Hover Bottom Border */
 .service-card__border {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 0;
-  height: 2px;
-  background: var(--teal-neon);
+  height: 3px;
   transition: width 0.4s ease;
+  border-radius: 0 0 24px 24px;
 }
 
 .service-card:hover .service-card__border {
   width: 100%;
+}
+
+/* Top Hover Bar */
+.service-card__hover-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 24px 24px 0 0;
+  z-index: 5;
+}
+
+.service-card:hover .service-card__hover-top {
+  transform: scaleX(1);
+}
+
+/* Hide old price/timeline styles */
+.service-card__price,
+.service-card__timeline,
+.service-card__price-label,
+.service-card__price-value,
+.service-card__timeline-label,
+.service-card__timeline-value {
+  display: none;
+}
+
+/* Pulse animation for dot */
+@keyframes svcDotPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 6px currentColor;
+    opacity: 1;
+  }
+  50% {
+    box-shadow: 0 0 18px currentColor;
+    opacity: 0.8;
+  }
 }
 
 /* ============================================================
@@ -609,206 +726,153 @@
 }
 
 /* ============================================================
-   FAQ SECTION
-   ============================================================ */
-.services-faq {
-  padding: 80px 5%;
-  background: var(--bg-dark);
-  position: relative;
-}
-
-/* Dot grid */
-.services-faq::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: radial-gradient(circle, #00f5d40a 1px, transparent 1px);
-  background-size: 40px 40px;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.services-faq__container {
-  max-width: 1000px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 2;
-}
-
-.services-faq__title {
-  font-size: 2rem;
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 50px;
-  color: var(--white);
-}
-
-.services-faq__grid {
-  display: grid;
-  gap: 20px;
-}
-
-.services-faq__item {
-  padding: 25px 30px;
-  background: var(--bg-card);
-  border: 1px solid rgba(0, 245, 212, 0.12);
-  border-radius: 20px;
-  transition: all 0.3s;
-}
-
-.services-faq__item:hover {
-  border-color: var(--teal-neon-dim);
-  background: var(--bg-card2);
-  box-shadow: 0 0 20px var(--teal-neon-dim);
-}
-
-.services-faq__question {
-  font-size: 1.05rem;
-  font-weight: 600;
-  margin-bottom: 10px;
-  color: var(--teal-neon);
-}
-
-.services-faq__answer {
-  color: var(--muted);
-  font-size: 0.9rem;
-  line-height: 1.6;
-}
-
-/* ============================================================
    CTA SECTION
    ============================================================ */
 .services-cta {
-  padding: 80px 5%;
-  background: var(--bg-dark);
-  text-align: center;
   position: relative;
+  padding: 100px 5% 120px;
+  text-align: center;
   overflow: hidden;
+  background: var(--bg-dark);
 }
 
-/* Glow behind CTA */
-.services-cta::before {
-  content: "";
+.services-cta__bg {
   position: absolute;
-  width: 700px;
-  height: 400px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: radial-gradient(ellipse, #00f5d415, transparent 70%);
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 245, 212, 0.04) 0%,
+    rgba(0, 187, 249, 0.03) 50%,
+    transparent 100%
+  );
   pointer-events: none;
-  z-index: 0;
 }
 
-/* Top border line */
-.services-cta::after {
-  content: "";
+.services-cta__separator {
   position: absolute;
   top: 0;
-  left: 5%;
-  right: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
   height: 1px;
   background: linear-gradient(
     90deg,
     transparent,
-    var(--teal-neon-dim),
+    rgba(0, 245, 212, 0.3),
     transparent
   );
 }
 
-.services-cta__container {
-  max-width: 800px;
-  margin: 0 auto;
+.services-cta__inner {
   position: relative;
   z-index: 2;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
-.services-cta__title {
-  font-size: 2.2rem;
+.services-cta__label {
+  font-size: 0.72rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #00f5d4;
+  font-family: "Courier New", monospace;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.services-cta__heading {
+  font-family: "Georgia", serif;
+  font-size: 2.8rem;
   font-weight: 700;
-  margin-bottom: 15px;
-  color: var(--white);
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 18px;
+  letter-spacing: -0.5px;
 }
 
-.services-cta__subtitle {
-  color: var(--muted);
-  margin-bottom: 35px;
-  font-size: 1rem;
+.services-cta__heading-gradient {
+  background: linear-gradient(125deg, #00f5d4 0%, #5efade 50%, #00bbf9 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 4s linear infinite;
+}
+
+.services-cta__sub {
+  color: #888888;
+  font-size: 0.97rem;
+  line-height: 1.7;
+  margin-bottom: 44px;
 }
 
 .services-cta__buttons {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  align-items: center;
+  gap: 18px;
   flex-wrap: wrap;
-  margin-bottom: 25px;
 }
 
 .services-cta__btn {
-  padding: 14px 35px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 32px;
   border-radius: 60px;
   text-decoration: none;
   font-weight: 600;
-  transition: all 0.3s;
+  font-size: 0.78rem;
+  font-family: "Courier New", monospace;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   position: relative;
   overflow: hidden;
-  display: inline-block;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  font-size: 0.82rem;
+  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* Primary button — teal gradient */
 .services-cta__btn--primary {
-  background: var(--gradient-primary);
+  background: linear-gradient(135deg, #00f5d4, #00bbf9);
   color: #0a0a0a;
   border: none;
+  box-shadow: 0 8px 28px rgba(0, 245, 212, 0.25);
 }
 
 .services-cta__btn--primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 40px var(--teal-neon);
+  box-shadow: 0 16px 44px rgba(0, 245, 212, 0.4);
+  gap: 18px;
 }
 
 .services-cta__btn-shine {
   position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.3),
-    transparent
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.28) 50%,
+    transparent 60%
   );
-  transition: left 0.6s;
+  background-size: 200% 100%;
+  background-position: -100% 0;
+  transition: background-position 0.55s ease;
+  pointer-events: none;
 }
 
 .services-cta__btn--primary:hover .services-cta__btn-shine {
-  left: 100%;
+  background-position: 200% 0;
 }
 
-/* Secondary button — ghost teal */
 .services-cta__btn--secondary {
   background: transparent;
-  color: var(--teal-neon-light);
-  border: 1px solid var(--teal-neon-dim);
+  color: #ffffff;
+  border: 1px solid rgba(0, 245, 212, 0.35);
 }
 
 .services-cta__btn--secondary:hover {
-  border-color: var(--teal-neon);
-  background: var(--teal-neon-dim2);
+  border-color: rgba(0, 245, 212, 0.7);
+  background: rgba(0, 245, 212, 0.08);
   transform: translateY(-3px);
-  box-shadow: 0 0 25px var(--teal-neon-dim);
-}
-
-.services-cta__note {
-  font-size: 0.8rem;
-  color: var(--muted);
 }
 
 /* ============================================================
@@ -832,7 +896,6 @@
   .services-hero__title {
     font-size: 3rem;
   }
-
   .services-page__cards {
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 25px;
@@ -850,37 +913,59 @@
     min-height: 60vh;
     padding: 100px 5% 60px;
   }
-
   .services-hero__title {
     font-size: 2.2rem;
   }
   .services-hero__subtitle {
     font-size: 0.95rem;
   }
-
   .services-page__title {
     font-size: 2rem;
   }
   .services-page__cards {
     grid-template-columns: 1fr;
   }
-
   .service-card {
-    padding: 25px;
+    padding: 28px;
   }
-
   .services-process__steps {
     flex-direction: column;
   }
   .process-step {
     min-width: auto;
   }
-
-  .services-faq__item {
-    padding: 20px;
+  .services-cta__heading {
+    font-size: 2rem;
   }
-  .services-cta__title {
-    font-size: 1.7rem;
+  .services-cta__buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  .services-cta__btn {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+  .service-card__highlight {
+    top: 16px;
+    left: 16px;
+    padding: 4px 10px;
+    font-size: 0.6rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .service-card__footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .service-card__inquiry-text {
+    font-size: 0.8rem;
+  }
+  .service-card__cta {
+    padding: 6px 16px;
+    font-size: 0.73rem;
   }
 }
 
@@ -894,27 +979,58 @@
   .services-hero__stat-num {
     font-size: 1.5rem;
   }
-
   .services-page__title {
     font-size: 1.6rem;
   }
   .service-card__title {
     font-size: 1.3rem;
   }
-
   .service-card__footer {
     flex-direction: column;
+    gap: 12px;
+  }
+  .service-card__inquiry-text {
+    font-size: 0.75rem;
+  }
+  .service-card__cta {
+    padding: 5px 14px;
+    font-size: 0.7rem;
+  }
+  .service-card__top {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .service-card__top-right {
+    flex-direction: row;
+    align-items: center;
     gap: 10px;
   }
-
-  .services-cta__buttons {
-    flex-direction: column;
-    align-items: center;
+  .service-card__highlight {
+    font-size: 0.55rem;
+    left: 16px;
+    top: 16px;
+    padding: 3px 10px;
   }
-
+  .service-card {
+    padding: 28px 20px 25px;
+  }
+  .services-cta__heading {
+    font-size: 1.6rem;
+  }
   .services-cta__btn {
-    width: 100%;
-    max-width: 260px;
-    text-align: center;
+    padding: 12px 24px;
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .services-hero__title {
+    font-size: 1.5rem;
+  }
+  .service-card__title {
+    font-size: 1.2rem;
+  }
+  .service-card__inquiry-text {
+    font-size: 0.7rem;
   }
 }

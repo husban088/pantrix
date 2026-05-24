@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./HeroSection.css";
 
 import {
@@ -10,6 +10,12 @@ import {
   FaReact,
   FaNode,
   FaFire,
+  FaCode,
+  FaPalette,
+  FaBullhorn,
+  FaFilm,
+  FaImage,
+  FaLayerGroup,
 } from "react-icons/fa";
 
 import {
@@ -36,15 +42,58 @@ const techStack = [
   { name: "Supabase", icon: SiSupabase, color: "#3ECF8E" },
 ];
 
+const services = [
+  {
+    id: "fullstack",
+    icon: FaCode,
+    color: "#00d4ff",
+    title: "Full Stack Development",
+    desc: "Modern, high-performance web applications — pixel-perfect frontends to scalable backend systems.",
+    tags: ["React", "Next.js", "Node.js", "Supabase"],
+  },
+  {
+    id: "social",
+    icon: FaBullhorn,
+    color: "#FF6B6B",
+    title: "Social Ads Management",
+    desc: "Data-driven ad campaigns on Facebook, Instagram & Google that convert and deliver real ROI.",
+    tags: ["Meta Ads", "Google Ads", "Analytics", "Campaigns"],
+  },
+  {
+    id: "graphic",
+    icon: FaPalette,
+    color: "#FFD700",
+    title: "Graphic Designing",
+    desc: "Brand identities, logos, and visual systems crafted with purpose, precision, and creativity.",
+    tags: ["Branding", "Logo", "UI Design", "Illustration"],
+  },
+  {
+    id: "poster",
+    icon: FaImage,
+    color: "#FF69B4",
+    title: "Poster Designing",
+    desc: "Eye-catching promotional posters and marketing visuals that make your brand unforgettable.",
+    tags: ["Event Posters", "Social Posts", "Banners", "Print"],
+  },
+  {
+    id: "video",
+    icon: FaFilm,
+    color: "#9B59B6",
+    title: "Video Editing",
+    desc: "Professional video production, reels, motion graphics, and branded content that drives engagement.",
+    tags: ["Reels", "Motion Graphics", "Color Grading", "Shorts"],
+  },
+];
+
 export default function HeroSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isLoaded, setIsLoaded] = useState(false);
+  const [activeService, setActiveService] = useState(0);
   const heroRef = useRef<HTMLElement>(null);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
-  /* Mouse move effect for 3D tilt */
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       if (!heroRef.current) return;
@@ -57,14 +106,13 @@ export default function HeroSection() {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
-  /* Sequential icon animation - moves to next icon every 2.5 seconds */
   useEffect(() => {
     setIsLoaded(true);
 
     intervalRef.current = setInterval(() => {
       setIsAnimating(true);
       setTimeout(() => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % techStack.length);
+        setCurrentIndex((prev) => (prev + 1) % techStack.length);
         setTimeout(() => setIsAnimating(false), 150);
       }, 300);
     }, 2800);
@@ -72,6 +120,14 @@ export default function HeroSection() {
     return () => {
       if (intervalRef.current) clearInterval(intervalRef.current);
     };
+  }, []);
+
+  // Auto-cycle services
+  useEffect(() => {
+    const serviceInterval = setInterval(() => {
+      setActiveService((prev) => (prev + 1) % services.length);
+    }, 3500);
+    return () => clearInterval(serviceInterval);
   }, []);
 
   const currentTech = techStack[currentIndex];
@@ -91,7 +147,7 @@ export default function HeroSection() {
         } as React.CSSProperties
       }
     >
-      {/* Enhanced Background Layer */}
+      {/* Background Layer */}
       <div className="hero__bg">
         <div className="hero__grid" />
         <div className="hero__glow hero__glow--1" />
@@ -117,197 +173,278 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* ── Left Side with Luxury Enhancements ── */}
-      <div className="hero__left">
-        <div className="hero__badge">
-          <span className="hero__badge-dot" />
-          <span className="hero__badge-line" />
-          <span className="hero__badge-text">
-            ✦ AVAILABLE FOR EXCLUSIVE PROJECTS ✦
-          </span>
-        </div>
-
-        <h1 className="hero__heading">
-          <span className="hero__heading-line hero__heading-line--1">
-            <span className="hero__heading-word">We Craft</span>
-          </span>
-          <span className="hero__heading-line hero__heading-line--2">
-            <span className="hero__heading-word">Digital</span>
-            <span className="hero__heading-word hero__heading-word--gradient">
-              {" "}
-              Excellence
+      {/* ── MAIN CONTENT WRAPPER ── */}
+      <div className="hero__content">
+        {/* ── LEFT SIDE ── */}
+        <div className="hero__left">
+          <div className="hero__badge">
+            <span className="hero__badge-dot" />
+            <span className="hero__badge-line" />
+            <span className="hero__badge-text">
+              ✦ AVAILABLE FOR EXCLUSIVE PROJECTS ✦
             </span>
-          </span>
-          <span className="hero__heading-line hero__heading-line--3">
-            <span className="hero__heading-word">for the Web</span>
-          </span>
-        </h1>
-
-        <div className="hero__name-wrap">
-          <span className="hero__name-label">Pantrix</span>
-          <span className="hero__name-decoration">——</span>
-          <span className="hero__name">Creative Tech Studio</span>
-        </div>
-
-        <p className="hero__desc">
-          We are a full-stack web development company specializing in modern,
-          high-performance web applications — from pixel-perfect frontends to
-          scalable backend systems.
-        </p>
-
-        <div className="hero__ctas">
-          <a href="/projects" className="hero__btn hero__btn--primary">
-            <span className="hero__btn-text">View Our Work</span>
-            <span className="hero__btn-shine" />
-            <span className="hero__btn-glow" />
-          </a>
-          <a href="/contact" className="hero__btn hero__btn--secondary">
-            <span className="hero__btn-text">Let's Talk</span>
-            <span className="hero__btn-arrow">→</span>
-          </a>
-        </div>
-
-        <div className="hero__stats">
-          <div className="hero__stat">
-            <span className="hero__stat-num">150+</span>
-            <span className="hero__stat-label">Projects Delivered</span>
           </div>
-          <div className="hero__stat-divider" />
-          <div className="hero__stat">
-            <span className="hero__stat-num">5+</span>
-            <span className="hero__stat-label">Years in Industry</span>
+
+          <h1 className="hero__heading">
+            <span className="hero__heading-line hero__heading-line--1">
+              <span className="hero__heading-word">We Craft</span>
+            </span>
+            <span className="hero__heading-line hero__heading-line--2">
+              <span className="hero__heading-word">Digital</span>
+              <span className="hero__heading-word hero__heading-word--gradient">
+                {" "}
+                Excellence
+              </span>
+            </span>
+            <span className="hero__heading-line hero__heading-line--3">
+              <span className="hero__heading-word">for the Web</span>
+            </span>
+          </h1>
+
+          <div className="hero__name-wrap">
+            <span className="hero__name-label">Pantrix</span>
+            <span className="hero__name-decoration">——</span>
+            <span className="hero__name">Creative Tech Studio</span>
           </div>
-          <div className="hero__stat-divider" />
-          <div className="hero__stat">
-            <span className="hero__stat-num">50+</span>
-            <span className="hero__stat-label">Happy Clients</span>
-          </div>
-        </div>
 
-        <div className="hero__luxury-indicator">
-          <div className="hero__luxury-diamond" />
-          <span className="hero__luxury-text">BESPOKE SOLUTIONS</span>
-          <div className="hero__luxury-diamond" />
-        </div>
-      </div>
+          <p className="hero__desc">
+            We are a full-service digital studio — from high-performance web
+            apps to scroll-stopping social ads, brand visuals, and cinematic
+            video edits. One team. Every solution.
+          </p>
 
-      {/* ── Right Side - Sequential Tech Showcase (No White Shade, Only Icon Color Glow) ── */}
-      <div className="hero__right">
-        <div className="hero__orbit-label">
-          <span className="hero__orbit-label-icon">⚡</span>
-          <span className="hero__orbit-label-text">TECH STACK</span>
-          <span className="hero__orbit-label-line" />
-        </div>
+          {/* ── SERVICES SECTION ── */}
+          <div className="hero__services">
+            <div className="hero__services-label">
+              <span className="hero__services-label-line" />
+              <span className="hero__services-label-text">OUR SERVICES</span>
+              <span className="hero__services-label-line" />
+            </div>
 
-        {/* Sequential Tech Carousel Container */}
-        <div className="hero__sequential-container">
-          {/* Subtle ambient glow that matches icon color */}
-          <div
-            className="hero__sequential-ambient-glow"
-            style={{
-              background: `radial-gradient(circle at center, ${currentTech.color}20, transparent 70%)`,
-            }}
-          />
-
-          {/* Main Icon Display - No White Shine Effects */}
-          <div
-            className={`hero__sequential-icon-wrapper ${isAnimating ? "hero__sequential-icon-wrapper--exit" : "hero__sequential-icon-wrapper--enter"}`}
-          >
-            <div className="hero__sequential-icon-circle">
-              {/* Icon color glow effect only - NO white shine */}
-              <div
-                className="hero__sequential-icon-color-glow"
-                style={{
-                  background: `radial-gradient(circle, ${currentTech.color}60, transparent)`,
-                }}
-              />
-              {/* The Icon with its original color */}
-              <IconComponent
-                className="hero__sequential-icon"
-                style={{ color: currentTech.color }}
-              />
-              {/* Luxury pulse ring with icon color */}
-              <div
-                className="hero__sequential-icon-pulse-ring"
-                style={{ borderColor: currentTech.color }}
-              />
-              {/* Sparkle effects with icon color */}
-              <div className="hero__sequential-sparkles">
-                {[...Array(4)].map((_, i) => (
+            <div className="hero__services-grid">
+              {services.map((service, idx) => {
+                const ServiceIcon = service.icon;
+                return (
                   <div
-                    key={i}
-                    className="hero__sequential-sparkle"
-                    style={{
-                      animationDelay: `${i * 0.2}s`,
-                      backgroundColor: currentTech.color,
-                    }}
-                  />
-                ))}
-              </div>
+                    key={service.id}
+                    className={`hero__service-card ${activeService === idx ? "hero__service-card--active" : ""}`}
+                    style={
+                      {
+                        "--service-color": service.color,
+                      } as React.CSSProperties
+                    }
+                    onMouseEnter={() => setActiveService(idx)}
+                  >
+                    <div className="hero__service-icon-wrap">
+                      <ServiceIcon
+                        className="hero__service-icon"
+                        style={{ color: service.color }}
+                      />
+                      <div
+                        className="hero__service-icon-glow"
+                        style={{
+                          background: `radial-gradient(circle, ${service.color}40, transparent 70%)`,
+                        }}
+                      />
+                    </div>
+                    <div className="hero__service-body">
+                      <h3 className="hero__service-title">{service.title}</h3>
+                      <p className="hero__service-desc">{service.desc}</p>
+                      <div className="hero__service-tags">
+                        {service.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="hero__service-tag"
+                            style={{
+                              borderColor: `${service.color}40`,
+                              color: service.color,
+                            }}
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    <div
+                      className="hero__service-card-glow"
+                      style={{
+                        background: `linear-gradient(135deg, ${service.color}08, transparent)`,
+                      }}
+                    />
+                  </div>
+                );
+              })}
             </div>
           </div>
 
-          {/* Tech Name with color underline */}
-          <div className="hero__sequential-tech-name">
-            <h3
-              className="hero__sequential-tech-name-text"
-              style={{ color: currentTech.color }}
-            >
-              {currentTech.name}
-            </h3>
-            <div
-              className="hero__sequential-tech-underline"
-              style={{ background: currentTech.color }}
-            />
+          <div className="hero__ctas">
+            <a href="/projects" className="hero__btn hero__btn--primary">
+              <span className="hero__btn-text">View Our Work</span>
+              <span className="hero__btn-shine" />
+              <span className="hero__btn-glow" />
+            </a>
+            <a href="/contact" className="hero__btn hero__btn--secondary">
+              <span className="hero__btn-text">Let's Talk</span>
+              <span className="hero__btn-arrow">→</span>
+            </a>
           </div>
 
-          {/* Premium Progress Bar with icon color */}
-          <div className="hero__sequential-progress">
+          <div className="hero__stats">
+            <div className="hero__stat">
+              <span className="hero__stat-num">150+</span>
+              <span className="hero__stat-label">Projects Delivered</span>
+            </div>
+            <div className="hero__stat-divider" />
+            <div className="hero__stat">
+              <span className="hero__stat-num">5+</span>
+              <span className="hero__stat-label">Years in Industry</span>
+            </div>
+            <div className="hero__stat-divider" />
+            <div className="hero__stat">
+              <span className="hero__stat-num">50+</span>
+              <span className="hero__stat-label">Happy Clients</span>
+            </div>
+          </div>
+
+          <div className="hero__luxury-indicator">
+            <div className="hero__luxury-diamond" />
+            <span className="hero__luxury-text">BESPOKE SOLUTIONS</span>
+            <div className="hero__luxury-diamond" />
+          </div>
+        </div>
+
+        {/* ── RIGHT SIDE - TECH SHOWCASE ── */}
+        <div className="hero__right">
+          <div className="hero__orbit-label">
+            <span className="hero__orbit-label-icon">⚡</span>
+            <span className="hero__orbit-label-text">TECH STACK</span>
+            <span className="hero__orbit-label-line" />
+          </div>
+
+          <div className="hero__sequential-container">
             <div
-              className="hero__sequential-progress-bar"
+              className="hero__sequential-ambient-glow"
               style={{
-                backgroundColor: currentTech.color,
-                boxShadow: `0 0 12px ${currentTech.color}`,
+                background: `radial-gradient(circle at center, ${currentTech.color}20, transparent 70%)`,
               }}
             />
-          </div>
 
-          {/* Next Tech Preview */}
-          <div className="hero__sequential-next-preview">
-            <span className="hero__sequential-next-label">Up Next</span>
-            <div className="hero__sequential-next-icon-wrapper">
-              <NextIconComponent
-                className="hero__sequential-next-icon"
-                style={{ color: nextTech.color }}
+            <div
+              className={`hero__sequential-icon-wrapper ${isAnimating ? "hero__sequential-icon-wrapper--exit" : "hero__sequential-icon-wrapper--enter"}`}
+            >
+              <div className="hero__sequential-icon-circle">
+                <div
+                  className="hero__sequential-icon-color-glow"
+                  style={{
+                    background: `radial-gradient(circle, ${currentTech.color}60, transparent)`,
+                  }}
+                />
+                <IconComponent
+                  className="hero__sequential-icon"
+                  style={{ color: currentTech.color }}
+                />
+                <div
+                  className="hero__sequential-icon-pulse-ring"
+                  style={{ borderColor: currentTech.color }}
+                />
+                <div className="hero__sequential-sparkles">
+                  {[...Array(4)].map((_, i) => (
+                    <div
+                      key={i}
+                      className="hero__sequential-sparkle"
+                      style={{
+                        animationDelay: `${i * 0.2}s`,
+                        backgroundColor: currentTech.color,
+                      }}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="hero__sequential-tech-name">
+              <h3
+                className="hero__sequential-tech-name-text"
+                style={{ color: currentTech.color }}
+              >
+                {currentTech.name}
+              </h3>
+              <div
+                className="hero__sequential-tech-underline"
+                style={{ background: currentTech.color }}
               />
             </div>
-            <span
-              className="hero__sequential-next-name"
-              style={{ color: nextTech.color }}
-            >
-              {nextTech.name}
-            </span>
-            <span className="hero__sequential-next-arrow">→</span>
-          </div>
 
-          {/* Minimal Step Indicators */}
-          <div className="hero__sequential-steps">
-            {techStack.map((tech, idx) => (
+            <div className="hero__sequential-progress">
               <div
-                key={tech.name}
-                className={`hero__sequential-step ${idx === currentIndex ? "hero__sequential-step--active" : ""} ${idx < currentIndex ? "hero__sequential-step--completed" : ""}`}
+                className="hero__sequential-progress-bar"
+                key={currentIndex}
                 style={{
-                  backgroundColor: idx === currentIndex ? tech.color : "",
+                  backgroundColor: currentTech.color,
+                  boxShadow: `0 0 12px ${currentTech.color}`,
                 }}
               />
-            ))}
-          </div>
-        </div>
+            </div>
 
-        {/* Floating decorative rings */}
-        <div className="hero__float-ring hero__float-ring--1" />
-        <div className="hero__float-ring hero__float-ring--2" />
-        <div className="hero__float-ring hero__float-ring--3" />
+            <div className="hero__sequential-next-preview">
+              <span className="hero__sequential-next-label">Up Next</span>
+              <div className="hero__sequential-next-icon-wrapper">
+                <NextIconComponent
+                  className="hero__sequential-next-icon"
+                  style={{ color: nextTech.color }}
+                />
+              </div>
+              <span
+                className="hero__sequential-next-name"
+                style={{ color: nextTech.color }}
+              >
+                {nextTech.name}
+              </span>
+              <span className="hero__sequential-next-arrow">→</span>
+            </div>
+
+            <div className="hero__sequential-steps">
+              {techStack.map((tech, idx) => (
+                <div
+                  key={tech.name}
+                  className={`hero__sequential-step ${idx === currentIndex ? "hero__sequential-step--active" : ""} ${idx < currentIndex ? "hero__sequential-step--completed" : ""}`}
+                  style={{
+                    backgroundColor: idx === currentIndex ? tech.color : "",
+                  }}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Service Quick Icons - right panel */}
+          <div className="hero__services-quick">
+            <span className="hero__services-quick-label">WE ALSO DO</span>
+            <div className="hero__services-quick-icons">
+              {services.slice(1).map((service) => {
+                const QIcon = service.icon;
+                return (
+                  <div
+                    key={service.id}
+                    className="hero__services-quick-item"
+                    style={
+                      { "--q-color": service.color } as React.CSSProperties
+                    }
+                    title={service.title}
+                  >
+                    <QIcon style={{ color: service.color }} />
+                    <span style={{ color: service.color }}>
+                      {service.title.split(" ")[0]}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="hero__float-ring hero__float-ring--1" />
+          <div className="hero__float-ring hero__float-ring--2" />
+          <div className="hero__float-ring hero__float-ring--3" />
+        </div>
       </div>
     </section>
   );

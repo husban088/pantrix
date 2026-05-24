@@ -9,7 +9,17 @@ import "swiper/css/navigation";
 
 import "./ClientReviewsSection.css";
 
+// ── Service tag colors — matching Hero/WhyChooseUs/Services ──
+const serviceColors: Record<string, string> = {
+  "Full Stack Dev": "#00d4ff",
+  "Social Ads": "#FF6B6B",
+  "Graphic Design": "#FFD700",
+  "Poster Design": "#FF69B4",
+  "Video Editing": "#9B59B6",
+};
+
 const reviewsData = [
+  // ── Full Stack Development Reviews ──
   {
     id: "01",
     name: "Tariq",
@@ -20,6 +30,7 @@ const reviewsData = [
     rating: 5,
     role: "Aussie Tech Security",
     avatar: "T",
+    service: "Full Stack Dev",
     color: "linear-gradient(135deg, #00d4ff, #0099cc)",
   },
   {
@@ -32,22 +43,11 @@ const reviewsData = [
     rating: 5,
     role: "Tech Startup CEO",
     avatar: "D",
+    service: "Full Stack Dev",
     color: "linear-gradient(135deg, #0099cc, #007fa8)",
   },
   {
     id: "03",
-    name: "Sophia Wagner",
-    country: "Germany",
-    flag: "🇩🇪",
-    review:
-      "Präzision und Qualität sind herausragend! The website loads incredibly fast and the design is modern. We will definitely work with Pantrix again.",
-    rating: 5,
-    role: "Marketing Director",
-    avatar: "S",
-    color: "linear-gradient(135deg, #00d4ff, #0099cc)",
-  },
-  {
-    id: "04",
     name: "James Anderson",
     country: "UK",
     flag: "🇬🇧",
@@ -56,31 +56,116 @@ const reviewsData = [
     rating: 5,
     role: "Creative Agency Owner",
     avatar: "J",
+    service: "Full Stack Dev",
     color: "linear-gradient(135deg, #0099cc, #007fa8)",
+  },
+  // ── Social Ads Management Reviews ──
+  {
+    id: "04",
+    name: "Marcus Leroy",
+    country: "USA",
+    flag: "🇺🇸",
+    review:
+      "Our Facebook and Instagram ads went from losing money to 4× ROAS in just 3 weeks. The targeting strategy Pantrix built for us is unlike anything we've seen from other agencies.",
+    rating: 5,
+    role: "E-Commerce Brand Owner",
+    avatar: "M",
+    service: "Social Ads",
+    color: "linear-gradient(135deg, #FF6B6B, #cc4444)",
   },
   {
     id: "05",
+    name: "Fatima Al-Rashid",
+    country: "UAE",
+    flag: "🇦🇪",
+    review:
+      "Pantrix managed our Google Ads and Meta campaigns simultaneously with incredible precision. Sales doubled in the first month. The weekly reports are detailed and transparent.",
+    rating: 5,
+    role: "Retail Business Owner",
+    avatar: "F",
+    service: "Social Ads",
+    color: "linear-gradient(135deg, #FF6B6B, #e05555)",
+  },
+  // ── Graphic Designing Reviews ──
+  {
+    id: "06",
+    name: "Sophia Wagner",
+    country: "Germany",
+    flag: "🇩🇪",
+    review:
+      "Präzision und Qualität sind herausragend! The brand identity they designed for us is modern, memorable, and perfectly captures our company values. We will work with Pantrix again.",
+    rating: 5,
+    role: "Marketing Director",
+    avatar: "S",
+    service: "Graphic Design",
+    color: "linear-gradient(135deg, #FFD700, #cc9900)",
+  },
+  {
+    id: "07",
+    name: "Amara Nwosu",
+    country: "Nigeria",
+    flag: "🇳🇬",
+    review:
+      "My logo and brand kit exceeded every expectation. The creativity, professionalism, and turnaround time were all exceptional. My business looks premium now — I get compliments every day!",
+    rating: 5,
+    role: "Fashion Entrepreneur",
+    avatar: "A",
+    service: "Graphic Design",
+    color: "linear-gradient(135deg, #FFD700, #b8860b)",
+  },
+  // ── Poster Designing Reviews ──
+  {
+    id: "08",
     name: "Elena Volkov",
     country: "Canada",
     flag: "🇨🇦",
     review:
-      "The attention to user experience and mobile responsiveness is impeccable. Our clients love the new site and business has increased significantly. Thank you Pantrix!",
+      "The event posters and social media graphics Pantrix made for us were absolutely stunning. Our event ticket sales jumped 60% compared to last year — I credit the visuals completely.",
     rating: 5,
-    role: "Real Estate Agent",
+    role: "Event Coordinator",
     avatar: "E",
-    color: "linear-gradient(135deg, #00d4ff, #0099cc)",
+    service: "Poster Design",
+    color: "linear-gradient(135deg, #FF69B4, #cc3399)",
   },
   {
-    id: "06",
+    id: "09",
+    name: "Liam O'Brien",
+    country: "Ireland",
+    flag: "🇮🇪",
+    review:
+      "Ordered social media post designs and banners for our pub's weekly events. The posters look so professional — our followers have tripled and customers keep asking who made them!",
+    rating: 5,
+    role: "Restaurant & Bar Owner",
+    avatar: "L",
+    service: "Poster Design",
+    color: "linear-gradient(135deg, #FF69B4, #e0559a)",
+  },
+  // ── Video Editing Reviews ──
+  {
+    id: "10",
     name: "Marco Rossi",
     country: "Italy",
     flag: "🇮🇹",
     review:
-      "Pantrix delivered a masterpiece. The animations are smooth, the design is elegant, and the backend is rock solid. Grazie mille to the entire team!",
+      "Pantrix delivered a masterpiece. The animations are smooth, the color grading is cinematic, and the final cut was absolutely flawless. Grazie mille to the entire team!",
     rating: 5,
     role: "Luxury Brand Owner",
     avatar: "M",
-    color: "linear-gradient(135deg, #0099cc, #007fa8)",
+    service: "Video Editing",
+    color: "linear-gradient(135deg, #9B59B6, #7d3f9e)",
+  },
+  {
+    id: "11",
+    name: "Priya Sharma",
+    country: "India",
+    flag: "🇮🇳",
+    review:
+      "My YouTube channel went from 200 to 8,000 subscribers in 2 months after Pantrix started editing my videos. The intros, transitions, and captions are on another level entirely.",
+    rating: 5,
+    role: "Content Creator & YouTuber",
+    avatar: "P",
+    service: "Video Editing",
+    color: "linear-gradient(135deg, #9B59B6, #6c3483)",
   },
 ];
 
@@ -112,7 +197,7 @@ const QuoteIcon = () => (
   </svg>
 );
 
-/* Star icon — yellow fill */
+/* Star icon */
 const StarIcon = ({ filled }: { filled: boolean }) => (
   <svg
     width="16"
@@ -160,14 +245,37 @@ export default function ClientReviewsSection() {
           </span>
         </h2>
         <p className="reviews__subtext">
-          Don't just take our word for it — hear from people who've experienced
-          the Pantrix difference firsthand.
+          Don't just take our word for it — hear from clients across 8 countries
+          who've experienced the Pantrix difference across every service we
+          offer.
         </p>
+      </div>
+
+      {/* ── Service Filter Badges ── */}
+      <div className="reviews__service-badges">
+        {Object.entries(serviceColors).map(([svc, color]) => (
+          <span
+            key={svc}
+            className="reviews__svc-badge"
+            style={
+              {
+                "--svc-color": color,
+                borderColor: `${color}35`,
+                color: color,
+              } as React.CSSProperties
+            }
+          >
+            <span
+              className="reviews__svc-dot"
+              style={{ background: color, boxShadow: `0 0 6px ${color}` }}
+            />
+            {svc}
+          </span>
+        ))}
       </div>
 
       {/* ── Swiper Slider ── */}
       <div className="reviews__slider-wrapper">
-        {/* ✅ Custom nav buttons — OUTSIDE Swiper, INSIDE wrapper */}
         <button
           className="reviews__nav-prev"
           aria-label="Previous review"
@@ -218,87 +326,116 @@ export default function ClientReviewsSection() {
             nextEl: ".reviews__nav-next",
           }}
           breakpoints={{
-            0: {
-              slidesPerView: 1,
-              spaceBetween: 20,
-            },
-            768: {
-              slidesPerView: 2,
-              spaceBetween: 24,
-            },
-            1024: {
-              slidesPerView: 3,
-              spaceBetween: 28,
-            },
+            0: { slidesPerView: 1, spaceBetween: 20 },
+            768: { slidesPerView: 2, spaceBetween: 24 },
+            1024: { slidesPerView: 3, spaceBetween: 28 },
           }}
           className="reviews__swiper"
         >
-          {reviewsData.map((review) => (
-            <SwiperSlide key={review.id}>
-              <div className="reviews__card">
-                {/* Luxury Number Badge */}
-                <div className="reviews__number-badge" aria-hidden="true">
-                  <div className="reviews__badge-inner">
-                    <span className="reviews__badge-num">{review.id}</span>
-                  </div>
-                </div>
-
-                {/* Luxury Quote Icon */}
-                <div className="reviews__quote-icon" aria-hidden="true">
-                  <QuoteIcon />
-                </div>
-
-                {/* Avatar + Client Info */}
-                <div className="reviews__header-info">
-                  <div
-                    className="reviews__avatar"
-                    style={{ background: review.color }}
-                    aria-label={review.name}
-                  >
-                    <span>{review.avatar}</span>
-                  </div>
-                  <div className="reviews__client-info">
-                    <h4 className="reviews__client-name">{review.name}</h4>
-                    <p className="reviews__client-meta">
-                      <span
-                        className="reviews__flag"
-                        role="img"
-                        aria-label={review.country}
-                      >
-                        {review.flag}
-                      </span>
-                      {review.country}
-                    </p>
-                    <p className="reviews__client-role">{review.role}</p>
-                  </div>
-                </div>
-
-                {/* Thin Divider */}
-                <div className="reviews__divider" aria-hidden="true" />
-
-                {/* Stars — yellow filled */}
+          {reviewsData.map((review) => {
+            const accentColor = serviceColors[review.service] ?? "#00d4ff";
+            return (
+              <SwiperSlide key={review.id}>
                 <div
-                  className="reviews__stars"
-                  role="img"
-                  aria-label={`${review.rating} out of 5 stars`}
+                  className="reviews__card"
+                  style={
+                    { "--card-accent": accentColor } as React.CSSProperties
+                  }
                 >
-                  {[...Array(5)].map((_, i) => (
-                    <StarIcon key={i} filled={i < review.rating} />
-                  ))}
+                  {/* Service tag — top right above quote icon */}
+                  <div
+                    className="reviews__service-tag"
+                    style={{
+                      background: `${accentColor}14`,
+                      borderColor: `${accentColor}35`,
+                      color: accentColor,
+                    }}
+                  >
+                    <span
+                      className="reviews__service-tag-dot"
+                      style={{
+                        background: accentColor,
+                        boxShadow: `0 0 5px ${accentColor}`,
+                      }}
+                    />
+                    {review.service}
+                  </div>
+
+                  {/* Number Badge */}
+                  <div className="reviews__number-badge" aria-hidden="true">
+                    <div className="reviews__badge-inner">
+                      <span className="reviews__badge-num">{review.id}</span>
+                    </div>
+                  </div>
+
+                  {/* Quote Icon */}
+                  <div className="reviews__quote-icon" aria-hidden="true">
+                    <QuoteIcon />
+                  </div>
+
+                  {/* Avatar + Client Info */}
+                  <div className="reviews__header-info">
+                    <div
+                      className="reviews__avatar"
+                      style={{ background: review.color }}
+                      aria-label={review.name}
+                    >
+                      <span>{review.avatar}</span>
+                    </div>
+                    <div className="reviews__client-info">
+                      <h4 className="reviews__client-name">{review.name}</h4>
+                      <p className="reviews__client-meta">
+                        <span
+                          className="reviews__flag"
+                          role="img"
+                          aria-label={review.country}
+                        >
+                          {review.flag}
+                        </span>
+                        {review.country}
+                      </p>
+                      <p
+                        className="reviews__client-role"
+                        style={{ color: accentColor }}
+                      >
+                        {review.role}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Divider */}
+                  <div
+                    className="reviews__divider"
+                    style={{
+                      background: `linear-gradient(90deg, transparent, ${accentColor}35, transparent)`,
+                    }}
+                    aria-hidden="true"
+                  />
+
+                  {/* Stars */}
+                  <div
+                    className="reviews__stars"
+                    role="img"
+                    aria-label={`${review.rating} out of 5 stars`}
+                  >
+                    {[...Array(5)].map((_, i) => (
+                      <StarIcon key={i} filled={i < review.rating} />
+                    ))}
+                  </div>
+
+                  {/* Review Text */}
+                  <p className="reviews__text">"{review.review}"</p>
+
+                  {/* Bottom Accent Bar */}
+                  <div
+                    className="reviews__card-border"
+                    style={{ background: review.color }}
+                    aria-hidden="true"
+                  />
                 </div>
-
-                {/* Review Text */}
-                <p className="reviews__text">"{review.review}"</p>
-
-                {/* Bottom Accent Bar */}
-                <div
-                  className="reviews__card-border"
-                  style={{ background: review.color }}
-                  aria-hidden="true"
-                />
-              </div>
-            </SwiperSlide>
-          ))}
+              </SwiperSlide>
+            );
+          })}
         </Swiper>
       </div>
 
@@ -320,7 +457,7 @@ export default function ClientReviewsSection() {
         </div>
         <div className="reviews__stat-divider" aria-hidden="true" />
         <div className="reviews__stat" role="listitem">
-          <span className="reviews__stat-num">6+</span>
+          <span className="reviews__stat-num">8+</span>
           <span className="reviews__stat-label">Countries</span>
         </div>
       </div>

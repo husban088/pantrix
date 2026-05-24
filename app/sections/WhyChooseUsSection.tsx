@@ -1,17 +1,53 @@
 import "./WhyChooseUsSection.css";
 
+// ── Service-specific reasons — matching Hero Section services ──
 const reasons = [
+  // Full Stack Development
   {
     id: "01",
+    accentColor: "#00d4ff",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" width="28" height="28">
+        <polyline
+          points="16 18 22 12 16 6"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <polyline
+          points="8 6 2 12 8 18"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <line
+          x1="14"
+          y1="4"
+          x2="10"
+          y2="20"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+        />
+      </svg>
+    ),
+    category: "Full Stack Development",
+    title: "Pixel-Perfect & Performant",
+    short: "Frontend + Backend, one team",
+    desc: "React, Next.js, Node.js, Supabase, Firebase — we handle the full stack. Blazing UIs, scalable APIs, and zero compromise on quality.",
+    highlight: "End-to-End",
+    tags: ["React", "Next.js", "Node.js", "Supabase"],
+  },
+  // Social Ads Management
+  {
+    id: "02",
+    accentColor: "#FF6B6B",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" width="28" height="28">
         <path
-          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"
-          stroke="currentColor"
-          strokeWidth="1.5"
-        />
-        <path
-          d="M8 12l3 3 5-5"
+          d="M22 12h-4l-3 9L9 3l-3 9H2"
           stroke="currentColor"
           strokeWidth="1.5"
           strokeLinecap="round"
@@ -19,62 +55,115 @@ const reasons = [
         />
       </svg>
     ),
-    title: "Pixel-Perfect Precision",
-    short: "Every detail matters",
-    desc: "From micro-animations to spacing — every element is crafted with obsessive attention to detail. No shortcuts, no templates. Pure custom work.",
-    highlight: "100% Custom",
+    category: "Social Ads Management",
+    title: "Data-Driven Ad Campaigns",
+    short: "ROI-focused advertising",
+    desc: "Meta Ads, Google Ads — precision-targeted campaigns that convert. We track every click, optimise daily, and deliver measurable growth.",
+    highlight: "Real ROI",
+    tags: ["Meta Ads", "Google Ads", "Analytics", "Campaigns"],
   },
+  // Graphic Designing
   {
-    id: "02",
+    id: "03",
+    accentColor: "#FFD700",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" width="28" height="28">
-        <path
-          d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
           stroke="currentColor"
           strokeWidth="1.5"
+        />
+        <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.5" />
+        <path
+          d="M12 2v4M12 18v4M2 12h4M18 12h4"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+        />
+      </svg>
+    ),
+    category: "Graphic Designing",
+    title: "Brand Identities That Last",
+    short: "Purpose-driven visual craft",
+    desc: "Logos, brand systems, and UI design crafted with strategy. Every mark, colour, and typeface chosen to make your brand unforgettable.",
+    highlight: "100% Custom",
+    tags: ["Branding", "Logo", "UI Design", "Illustration"],
+  },
+  // Poster Designing
+  {
+    id: "04",
+    accentColor: "#FF69B4",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" width="28" height="28">
+        <rect
+          x="3"
+          y="3"
+          width="18"
+          height="18"
+          rx="2"
+          stroke="currentColor"
+          strokeWidth="1.5"
+        />
+        <circle
+          cx="8.5"
+          cy="8.5"
+          r="1.5"
+          stroke="currentColor"
+          strokeWidth="1.5"
+        />
+        <path
+          d="M21 15l-5-5L5 21"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
           strokeLinejoin="round"
         />
       </svg>
     ),
-    title: "Blazing Fast Delivery",
-    short: "Speed without sacrifice",
-    desc: "Rapid turnaround without cutting corners. Agile workflow, clear milestones, and consistent communication keep projects on time — every time.",
-    highlight: "On-Time Always",
+    category: "Poster Designing",
+    title: "Visuals That Stop the Scroll",
+    short: "Eye-catching & on-brand",
+    desc: "Event posters, social media graphics, banners, and print collateral — designed to grab attention and communicate your message instantly.",
+    highlight: "Scroll-Stopping",
+    tags: ["Event Posters", "Social Posts", "Banners", "Print"],
   },
+  // Video Editing
   {
-    id: "03",
+    id: "05",
+    accentColor: "#9B59B6",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" width="28" height="28">
+        <polygon
+          points="23 7 16 12 23 17 23 7"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
         <rect
-          x="2"
-          y="3"
-          width="20"
+          x="1"
+          y="5"
+          width="15"
           height="14"
           rx="2"
           stroke="currentColor"
           strokeWidth="1.5"
         />
-        <path
-          d="M7 10h.01M12 10h.01M17 10h.01"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
-        <path
-          d="M8 21h8M12 17v4"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-        />
       </svg>
     ),
-    title: "Full-Stack Expertise",
-    short: "End-to-end solutions",
-    desc: "Frontend beauty meets backend power. React, Next.js, Firebase, Supabase — one team, complete solution. No need to juggle multiple contractors.",
-    highlight: "End-to-End",
+    category: "Video Editing",
+    title: "Cinematic Content & Reels",
+    short: "Motion that drives engagement",
+    desc: "Professional edits, reels, motion graphics, and branded video content. From raw footage to polished final cut — we handle it all.",
+    highlight: "Pro Quality",
+    tags: ["Reels", "Motion Graphics", "Color Grading", "Shorts"],
   },
+  // Core Principle
   {
-    id: "04",
+    id: "06",
+    accentColor: "#00d4ff",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" width="28" height="28">
         <path
@@ -92,57 +181,12 @@ const reasons = [
         />
       </svg>
     ),
-    title: "Performance & SEO",
-    short: "Built to rank & convert",
-    desc: "Lighthouse scores above 95. Fast load times, clean code architecture, and SEO best practices baked in from day one — not bolted on at the end.",
-    highlight: "95+ Lighthouse",
-  },
-  {
-    id: "05",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" width="28" height="28">
-        <path
-          d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-        />
-        <circle cx="9" cy="7" r="4" stroke="currentColor" strokeWidth="1.5" />
-        <path
-          d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-        />
-      </svg>
-    ),
-    title: "Client-First Mindset",
-    short: "Your vision, our mission",
-    desc: "Regular updates, transparent pricing, and zero jargon. You stay informed at every step. Your satisfaction is not just promised — it's guaranteed.",
-    highlight: "100% Satisfaction",
-  },
-  {
-    id: "06",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" width="28" height="28">
-        <path
-          d="M12 2L2 7l10 5 10-5-10-5z"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M2 17l10 5 10-5M2 12l10 5 10-5"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinejoin="round"
-        />
-      </svg>
-    ),
-    title: "Modern Tech Stack",
-    short: "Future-proof from day one",
-    desc: "No legacy frameworks, no outdated tools. Built with the latest — Next.js 14, TypeScript, Tailwind, and cutting-edge deployment pipelines.",
-    highlight: "Always Modern",
+    category: "Our Promise",
+    title: "On-Time. Every Time.",
+    short: "Zero missed deadlines",
+    desc: "Agile sprints, clear milestones, daily updates. We treat your deadline as sacred — because your launch date matters as much as the product.",
+    highlight: "0 Missed Deadlines",
+    tags: ["Transparent", "Agile", "On-Time", "Guaranteed"],
   },
 ];
 
@@ -191,7 +235,7 @@ export default function WhyChooseUsSection() {
       <div className="wcu__hero">
         <div className="wcu__eyebrow">
           <span className="wcu__eyebrow-dot" />
-          <span>Pantrix — Web Development Studio</span>
+          <span>Pantrix — Full-Service Digital Studio</span>
         </div>
         <h2 className="wcu__heading">
           <span className="wcu__heading-line">The Pantrix</span>
@@ -200,8 +244,8 @@ export default function WhyChooseUsSection() {
           </span>
         </h2>
         <p className="wcu__subtext">
-          Not just developers — dedicated partners committed to transforming
-          your vision into world-class digital experiences.
+          Not just developers — dedicated partners across web, design, ads, and
+          video. One team. Every solution. World-class execution.
         </p>
       </div>
 
@@ -221,9 +265,44 @@ export default function WhyChooseUsSection() {
         ))}
       </div>
 
+      {/* ── Services We Offer Strip ── */}
+      <div className="wcu__services-strip">
+        <div className="wcu__services-strip-label">
+          <span className="wcu__section-num">01</span>
+          <span className="wcu__section-title">What We Do</span>
+        </div>
+        <div className="wcu__services-pills">
+          {[
+            { label: "Full Stack Dev", color: "#00d4ff" },
+            { label: "Social Ads", color: "#FF6B6B" },
+            { label: "Graphic Design", color: "#FFD700" },
+            { label: "Poster Design", color: "#FF69B4" },
+            { label: "Video Editing", color: "#9B59B6" },
+          ].map((s) => (
+            <span
+              key={s.label}
+              className="wcu__service-pill"
+              style={
+                {
+                  "--pill-color": s.color,
+                  borderColor: `${s.color}40`,
+                  color: s.color,
+                } as React.CSSProperties
+              }
+            >
+              <span
+                className="wcu__service-pill-dot"
+                style={{ background: s.color, boxShadow: `0 0 6px ${s.color}` }}
+              />
+              {s.label}
+            </span>
+          ))}
+        </div>
+      </div>
+
       {/* ── Reasons Grid ── */}
       <div className="wcu__section-head">
-        <span className="wcu__section-num">01</span>
+        <span className="wcu__section-num">02</span>
         <h3 className="wcu__section-title">6 Reasons to Choose Pantrix</h3>
         <span className="wcu__section-bar" />
       </div>
@@ -233,32 +312,107 @@ export default function WhyChooseUsSection() {
           <div
             key={r.id}
             className="wcu__card"
-            style={{ animationDelay: `${0.1 + i * 0.1}s` }}
+            style={
+              {
+                animationDelay: `${0.1 + i * 0.1}s`,
+                "--card-accent": r.accentColor,
+              } as React.CSSProperties
+            }
           >
             <div className="wcu__card-glow" />
 
             <div className="wcu__card-top">
-              <div className="wcu__card-icon-wrap">
-                <span className="wcu__card-icon">{r.icon}</span>
-                <span className="wcu__card-icon-ring" />
+              <div
+                className="wcu__card-icon-wrap"
+                style={{
+                  background: `${r.accentColor}12`,
+                  borderColor: `${r.accentColor}30`,
+                }}
+              >
+                <span
+                  className="wcu__card-icon"
+                  style={{ color: r.accentColor }}
+                >
+                  {r.icon}
+                </span>
+                <span
+                  className="wcu__card-icon-ring"
+                  style={{ borderColor: `${r.accentColor}20` }}
+                />
               </div>
-              <span className="wcu__card-id">{r.id}</span>
+              <div className="wcu__card-top-right">
+                <span className="wcu__card-id">{r.id}</span>
+                <span
+                  className="wcu__card-category"
+                  style={{
+                    color: r.accentColor,
+                    borderColor: `${r.accentColor}30`,
+                  }}
+                >
+                  {r.category}
+                </span>
+              </div>
             </div>
 
             <div className="wcu__card-body">
-              <span className="wcu__card-short">{r.short}</span>
+              <span
+                className="wcu__card-short"
+                style={{ color: r.accentColor }}
+              >
+                {r.short}
+              </span>
               <h4 className="wcu__card-title">{r.title}</h4>
               <p className="wcu__card-desc">{r.desc}</p>
             </div>
 
-            <div className="wcu__card-badge">
-              <span className="wcu__card-badge-dot" />
+            {/* Tags */}
+            <div className="wcu__card-tags">
+              {r.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="wcu__card-tag"
+                  style={{
+                    borderColor: `${r.accentColor}25`,
+                    color: `${r.accentColor}cc`,
+                  }}
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            <div
+              className="wcu__card-badge"
+              style={{
+                background: `${r.accentColor}12`,
+                borderColor: `${r.accentColor}30`,
+                color: r.accentColor,
+              }}
+            >
+              <span
+                className="wcu__card-badge-dot"
+                style={{
+                  background: r.accentColor,
+                  boxShadow: `0 0 6px ${r.accentColor}`,
+                }}
+              />
               <span>{r.highlight}</span>
             </div>
 
-            <span className="wcu__card-hover-bar" />
-            <span className="wcu__card-corner wcu__card-corner--tl" />
-            <span className="wcu__card-corner wcu__card-corner--br" />
+            <span
+              className="wcu__card-hover-bar"
+              style={{
+                background: `linear-gradient(90deg, transparent, ${r.accentColor}, transparent)`,
+              }}
+            />
+            <span
+              className="wcu__card-corner wcu__card-corner--tl"
+              style={{ borderColor: r.accentColor }}
+            />
+            <span
+              className="wcu__card-corner wcu__card-corner--br"
+              style={{ borderColor: r.accentColor }}
+            />
           </div>
         ))}
       </div>
@@ -266,7 +420,7 @@ export default function WhyChooseUsSection() {
       {/* ── Comparison / Guarantee Strip ── */}
       <div className="wcu__guarantee-wrap">
         <div className="wcu__section-head">
-          <span className="wcu__section-num">02</span>
+          <span className="wcu__section-num">03</span>
           <h3 className="wcu__section-title">Our Promise to You</h3>
           <span className="wcu__section-bar" />
         </div>

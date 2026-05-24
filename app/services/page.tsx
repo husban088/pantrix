@@ -5,58 +5,58 @@ import "./Services.css";
 const servicesData = [
   {
     id: "01",
+    category: "Web Development",
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" width="40" height="40">
-        <path
-          d="M12 2L2 7l10 5 10-5-10-5z"
+      <svg viewBox="0 0 24 24" fill="none" width="32" height="32">
+        <polyline
+          points="16 18 22 12 16 6"
           stroke="currentColor"
           strokeWidth="1.5"
+          strokeLinecap="round"
           strokeLinejoin="round"
         />
-        <path
-          d="M2 17l10 5 10-5M2 12l10 5 10-5"
+        <polyline
+          points="8 6 2 12 8 18"
           stroke="currentColor"
           strokeWidth="1.5"
+          strokeLinecap="round"
           strokeLinejoin="round"
+        />
+        <line
+          x1="14"
+          y1="4"
+          x2="10"
+          y2="20"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
         />
       </svg>
     ),
-    title: "Frontend Development",
-    shortDesc: "Pixel-perfect, responsive interfaces that captivate users",
+    title: "Full Stack Development",
+    shortDesc:
+      "High-performance web apps — pixel-perfect frontends to scalable backend systems.",
     fullDesc:
-      "I craft modern, responsive web applications using React, Next.js, and Tailwind CSS. Every pixel is precisely placed, every animation smooth, and every interaction intuitive. Your users will never want to leave.",
+      "I craft modern, high-performance web applications using React, Next.js, and Node.js. Every pixel is precisely placed, every animation smooth, and every interaction intuitive. Your users will never want to leave.",
     features: [
-      "React 19 / Next.js 15",
-      "Tailwind CSS / Framer Motion",
-      "TypeScript",
-      "Responsive Design",
-      "Cross-browser Compatible",
+      "React & Next.js 14",
+      "Node.js & Express APIs",
+      "Supabase & Firebase",
+      "TypeScript & Tailwind CSS",
+      "Performance & SEO Optimized",
+      "Lighthouse 95+ Score",
     ],
-    price: "$999 - $2,499",
-    timeline: "2-4 weeks",
-    color: "#6c63ff",
+    inquiryText: "Let's build your dream web app",
+    color: "#00f5d4",
+    highlight: "Most Popular",
   },
   {
     id: "02",
+    category: "Digital Marketing",
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" width="40" height="40">
-        <rect
-          x="2"
-          y="3"
-          width="20"
-          height="14"
-          rx="2"
-          stroke="currentColor"
-          strokeWidth="1.5"
-        />
+      <svg viewBox="0 0 24 24" fill="none" width="32" height="32">
         <path
-          d="M8 21h8M12 17v4"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-        />
-        <path
-          d="M7 8l3 3-3 3M13 14h4"
+          d="M22 12h-4l-3 9L9 3l-3 9H2"
           stroke="currentColor"
           strokeWidth="1.5"
           strokeLinecap="round"
@@ -64,93 +64,28 @@ const servicesData = [
         />
       </svg>
     ),
-    title: "Backend & API Development",
-    shortDesc: "Scalable, secure, and blazing-fast server solutions",
+    title: "Social Ads Management",
+    shortDesc:
+      "Data-driven campaigns on Meta & Google that convert and deliver real ROI.",
     fullDesc:
-      "Powerful backend systems that handle anything you throw at them. From authentication to real-time data, I build robust APIs with Firebase, Supabase, and Node.js. Your app will be ready to scale from day one.",
+      "I create data-driven ad campaigns on Meta and Google that actually convert. From audience targeting to A/B testing and analytics, I maximize your ROI with proven strategies and weekly performance reports.",
     features: [
-      "Node.js / Express",
-      "Firebase / Supabase",
-      "RESTful APIs / GraphQL",
-      "Authentication & Security",
-      "Database Design",
+      "Meta Ads (Facebook & Instagram)",
+      "Google Ads & PPC Campaigns",
+      "Audience Targeting & Retargeting",
+      "A/B Testing & Optimization",
+      "Analytics & Weekly Reports",
+      "Campaign Strategy & Creatives",
     ],
-    price: "$1,299 - $2,999",
-    timeline: "3-5 weeks",
-    color: "#00d4ff",
+    inquiryText: "Let's boost your ROI",
+    color: "#FF6B6B",
+    highlight: "ROI Focused",
   },
   {
     id: "03",
+    category: "Design",
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" width="40" height="40">
-        <path
-          d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M9 12l2 2 4-4"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    ),
-    title: "Performance Optimization",
-    shortDesc: "Lightning-fast load times, 95+ Lighthouse scores",
-    fullDesc:
-      "Slow websites kill conversions. I optimize your existing site or build new ones with performance-first architecture. Core Web Vitals, SEO, and accessibility — all baked in from the start, not bolted on at the end.",
-    features: [
-      "Lighthouse 95+",
-      "Core Web Vitals",
-      "SEO Optimization",
-      "Image Optimization",
-      "Code Splitting",
-    ],
-    price: "$799 - $1,499",
-    timeline: "1-3 weeks",
-    color: "#c9a03d",
-  },
-  {
-    id: "04",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" width="40" height="40">
-        <path
-          d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M9 22V12h6v10"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    ),
-    title: "E-Commerce Solutions",
-    shortDesc: "Modern online stores that convert visitors to customers",
-    fullDesc:
-      "Beautiful, fast, and secure e-commerce platforms that drive sales. Whether you need Shopify, WooCommerce, or a custom solution, I build stores that are easy to manage and even easier to shop from.",
-    features: [
-      "Shopify / WooCommerce",
-      "Stripe / PayPal Integration",
-      "Product Management",
-      "Cart & Checkout",
-      "Inventory Systems",
-    ],
-    price: "$1,999 - $4,999",
-    timeline: "4-8 weeks",
-    color: "#ff6b6b",
-  },
-  {
-    id: "05",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" width="40" height="40">
+      <svg viewBox="0 0 24 24" fill="none" width="32" height="32">
         <circle
           cx="12"
           cy="12"
@@ -158,33 +93,124 @@ const servicesData = [
           stroke="currentColor"
           strokeWidth="1.5"
         />
+        <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.5" />
         <path
-          d="M12 8v4l3 3"
+          d="M12 2v4M12 18v4M2 12h4M18 12h4"
           stroke="currentColor"
           strokeWidth="1.5"
           strokeLinecap="round"
         />
       </svg>
     ),
-    title: "Maintenance & Support",
-    shortDesc: "Ongoing care for your digital presence",
+    title: "Graphic Designing",
+    shortDesc:
+      "Brand identities, logos, and visual systems crafted with purpose and precision.",
     fullDesc:
-      "Your website is never truly 'done'. We offer comprehensive maintenance plans that keep your site secure, updated, and performing at its best. 24/7 monitoring, regular backups, and priority support included.",
+      "I design stunning brand identities, logos, and complete visual systems that make your business unforgettable. Every color, font, and element is chosen with purpose to tell your unique story.",
     features: [
-      "24/7 Uptime Monitoring",
-      "Security Patches",
-      "Regular Backups",
-      "Bug Fixes",
-      "Priority Support",
+      "Logo & Brand Identity Design",
+      "Brand Style Guide & System",
+      "UI/UX Design & Prototyping",
+      "Social Media Kit",
+      "Illustration & Icon Sets",
+      "Print & Digital Assets",
     ],
-    price: "$199 - $499/month",
-    timeline: "Ongoing",
-    color: "#a855f7",
+    inquiryText: "Let's create your brand identity",
+    color: "#FFD700",
+    highlight: "100% Custom",
+  },
+  {
+    id: "04",
+    category: "Design",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" width="32" height="32">
+        <rect
+          x="3"
+          y="3"
+          width="18"
+          height="18"
+          rx="2"
+          stroke="currentColor"
+          strokeWidth="1.5"
+        />
+        <circle
+          cx="8.5"
+          cy="8.5"
+          r="1.5"
+          stroke="currentColor"
+          strokeWidth="1.5"
+        />
+        <path
+          d="M21 15l-5-5L5 21"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
+    title: "Poster Designing",
+    shortDesc:
+      "Eye-catching promotional posters and marketing visuals that make your brand unforgettable.",
+    fullDesc:
+      "I create eye-catching promotional posters and marketing visuals that stop the scroll. From event posters to social media graphics, your brand will stand out and get noticed.",
+    features: [
+      "Event & Promotional Posters",
+      "Social Media Posts & Stories",
+      "Banners & Billboard Designs",
+      "Print-Ready Files (CMYK)",
+      "Multiple Format Exports",
+      "Unlimited Revisions",
+    ],
+    inquiryText: "Let's make your brand stand out",
+    color: "#FF69B4",
+    highlight: "Scroll-Stopping",
+  },
+  {
+    id: "05",
+    category: "Video Production",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" width="32" height="32">
+        <polygon
+          points="23 7 16 12 23 17 23 7"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <rect
+          x="1"
+          y="5"
+          width="15"
+          height="14"
+          rx="2"
+          stroke="currentColor"
+          strokeWidth="1.5"
+        />
+      </svg>
+    ),
+    title: "Video Editing",
+    shortDesc:
+      "Professional edits, reels, motion graphics, and branded video content that drives engagement.",
+    fullDesc:
+      "I produce professional video edits, engaging reels, and stunning motion graphics that drive engagement. Your brand story comes to life through cinematic visuals and expert storytelling.",
+    features: [
+      "Short-Form Reels & TikToks",
+      "YouTube Long-Form Editing",
+      "Motion Graphics & Animations",
+      "Color Grading & Correction",
+      "Captions & Sound Design",
+      "Brand Intro / Outro Sequences",
+    ],
+    inquiryText: "Let's bring your vision to life",
+    color: "#9B59B6",
+    highlight: "Pro Quality",
   },
   {
     id: "06",
+    category: "Web Development",
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" width="40" height="40">
+      <svg viewBox="0 0 24 24" fill="none" width="32" height="32">
         <path
           d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"
           stroke="currentColor"
@@ -202,19 +228,21 @@ const servicesData = [
       </svg>
     ),
     title: "Custom Web Applications",
-    shortDesc: "Tailored SaaS platforms and dashboards",
+    shortDesc:
+      "Complex SaaS platforms, dashboards, and CRM systems tailored to your business.",
     fullDesc:
-      "Need something unique? I build fully custom web applications for SaaS, internal tools, CRMs, and real-time platforms. No cookie-cutter solutions — just pure, hand-crafted code that solves your exact problems.",
+      "Need something unique? I build fully custom web applications for SaaS platforms, internal tools, CRMs, and real-time systems. No cookie-cutter solutions — just pure, hand-crafted code.",
     features: [
-      "SaaS Platforms",
-      "Admin Dashboards",
-      "CRM Systems",
-      "Real-time Features",
-      "Third-party Integrations",
+      "SaaS Platform Development",
+      "Admin Dashboards & Analytics",
+      "CRM & ERP Systems",
+      "Real-time Features (WebSockets)",
+      "Third-Party API Integrations",
+      "Ongoing Support & Scaling",
     ],
-    price: "Custom Quote",
-    timeline: "8+ weeks",
-    color: "#f97316",
+    inquiryText: "Let's discuss your custom project",
+    color: "#00f5d4",
+    highlight: "Enterprise Grade",
   },
 ];
 
@@ -282,8 +310,8 @@ export default function ServicesPage() {
             <span className="services-hero__title-gold">Excellence</span>
           </h1>
           <p className="services-hero__subtitle">
-            Comprehensive web development solutions tailored to your unique
-            needs. From stunning frontends to powerful backends — I deliver
+            Comprehensive digital solutions tailored to your unique needs. From
+            stunning designs to powerful web apps and ad campaigns — I deliver
             complete digital experiences.
           </p>
           <div className="services-hero__stats">
@@ -307,9 +335,9 @@ export default function ServicesPage() {
       <section className="services-page__grid">
         <div className="services-page__container">
           <div className="services-page__header">
-            <h2 className="services-page__title">What I Offer</h2>
+            <h2 className="services-page__title">What We Do</h2>
             <p className="services-page__subtitle">
-              Choose the perfect solution for your business needs
+              Comprehensive digital solutions for your growth
             </p>
           </div>
           <div className="services-page__cards">
@@ -317,70 +345,118 @@ export default function ServicesPage() {
               <div
                 key={service.id}
                 className="service-card"
-                style={{ animationDelay: `${0.1 + i * 0.08}s` }}
+                style={
+                  {
+                    animationDelay: `${0.1 + i * 0.08}s`,
+                    "--card-color": service.color,
+                  } as React.CSSProperties
+                }
               >
+                {/* Highlight Badge */}
+                {service.highlight && (
+                  <span
+                    className="service-card__highlight"
+                    style={{
+                      background: `${service.color}18`,
+                      borderColor: `${service.color}40`,
+                      color: service.color,
+                    }}
+                  >
+                    <span
+                      className="service-card__highlight-dot"
+                      style={{ background: service.color }}
+                    />
+                    {service.highlight}
+                  </span>
+                )}
+
                 <div
                   className="service-card__glow"
-                  style={{ background: `${service.color}15` }}
+                  style={{
+                    background: `radial-gradient(ellipse at 50% 0%, ${service.color}18, transparent 70%)`,
+                  }}
                 />
-                <div
-                  className="service-card__icon"
-                  style={{ color: service.color }}
-                >
-                  {service.icon}
+
+                {/* Top Row */}
+                <div className="service-card__top">
+                  <div
+                    className="service-card__icon"
+                    style={{
+                      background: `${service.color}14`,
+                      borderColor: `${service.color}30`,
+                      color: service.color,
+                    }}
+                  >
+                    {service.icon}
+                  </div>
+                  <div className="service-card__top-right">
+                    <span className="service-card__id">{service.id}</span>
+                    <span
+                      className="service-card__category"
+                      style={{
+                        color: `${service.color}bb`,
+                        borderColor: `${service.color}25`,
+                      }}
+                    >
+                      {service.category}
+                    </span>
+                  </div>
                 </div>
-                <span className="service-card__id">{service.id}</span>
+
                 <h3 className="service-card__title">{service.title}</h3>
                 <p className="service-card__short">{service.shortDesc}</p>
                 <p className="service-card__desc">{service.fullDesc}</p>
+
+                {/* Features List */}
                 <ul className="service-card__features">
-                  {service.features.map((feat) => (
-                    <li key={feat}>
+                  {service.features.map((feature) => (
+                    <li key={feature}>
                       <span
                         className="service-card__feature-dot"
-                        style={{ background: service.color }}
+                        style={{
+                          background: service.color,
+                          boxShadow: `0 0 5px ${service.color}80`,
+                        }}
                       />
-                      {feat}
+                      {feature}
                     </li>
                   ))}
                 </ul>
-                <div className="service-card__footer">
-                  <div className="service-card__price">
-                    <span className="service-card__price-label">
-                      Starting at
-                    </span>
-                    <span className="service-card__price-value">
-                      {service.price}
-                    </span>
-                  </div>
-                  <div className="service-card__timeline">
-                    <span className="service-card__timeline-label">
-                      Timeline
-                    </span>
-                    <span className="service-card__timeline-value">
-                      {service.timeline}
-                    </span>
-                  </div>
-                </div>
-                <a
-                  href="/contact"
-                  className="service-card__cta"
-                  style={{ borderColor: service.color }}
+
+                {/* Footer - Customer friendly inquiry text */}
+                <div
+                  className="service-card__footer"
+                  style={{ borderColor: `${service.color}20` }}
                 >
-                  <span>Request Quote</span>
-                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                    <path
-                      d="M3 9h12M12 6l3 3-3 3"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </a>
+                  <span
+                    className="service-card__inquiry-text"
+                    style={{ color: service.color }}
+                  >
+                    ✨ {service.inquiryText}
+                  </span>
+                  <a
+                    href="/contact"
+                    className="service-card__cta"
+                    style={
+                      { "--cta-color": service.color } as React.CSSProperties
+                    }
+                  >
+                    <span>Inquire Now →</span>
+                  </a>
+                </div>
+
+                {/* Hover Border */}
                 <div
                   className="service-card__border"
                   style={{ background: service.color }}
+                />
+
+                {/* Top Hover Bar */}
+                <span
+                  className="service-card__hover-top"
+                  style={{
+                    background: `linear-gradient(90deg, transparent, ${service.color}, transparent)`,
+                  }}
                 />
               </div>
             ))}
@@ -394,7 +470,7 @@ export default function ServicesPage() {
           <div className="services-process__header">
             <h2 className="services-process__title">Our Process</h2>
             <p className="services-process__subtitle">
-              How We bring your vision to life
+              How we bring your vision to life
             </p>
           </div>
           <div className="services-process__steps">
@@ -416,73 +492,39 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="services-faq">
-        <div className="services-faq__container">
-          <h2 className="services-faq__title">Frequently Asked Questions</h2>
-          <div className="services-faq__grid">
-            {[
-              {
-                q: "How long does a typical project take?",
-                a: "Most projects take 2-6 weeks depending on complexity. We provide a detailed timeline during our initial consultation.",
-              },
-              {
-                q: "Do you offer ongoing support?",
-                a: "Yes! We offer maintenance plans starting at $199/month that include updates, security patches, and priority support.",
-              },
-              {
-                q: "What's your payment structure?",
-                a: "Typically 50% upfront, 25% at milestone, and 25% upon completion. Custom plans available for larger projects.",
-              },
-              {
-                q: "Can you work with my existing team?",
-                a: "Absolutely! We collaborate seamlessly with designers, marketers, and other developers.",
-              },
-              {
-                q: "Do you provide SEO services?",
-                a: "Yes, all sites are built with SEO best practices. I also offer dedicated SEO optimization as an add-on service.",
-              },
-              {
-                q: "What happens after launch?",
-                a: "I provide 30 days of free support post-launch, plus ongoing maintenance options to keep your site running perfectly.",
-              },
-            ].map((faq, i) => (
-              <div key={i} className="services-faq__item">
-                <h3 className="services-faq__question">{faq.q}</h3>
-                <p className="services-faq__answer">{faq.a}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="services-cta">
-        <div className="services-cta__container">
-          <h2 className="services-cta__title">
-            Ready to Build Something Great?
+        <div className="services-cta__bg" aria-hidden="true" />
+        <div className="services-cta__separator" aria-hidden="true" />
+
+        <div className="services-cta__inner">
+          <p className="services-cta__label">Ready to work together?</p>
+          <h2 className="services-cta__heading">
+            Let's Build Something{" "}
+            <span className="services-cta__heading-gradient">
+              Extraordinary
+            </span>
           </h2>
-          <p className="services-cta__subtitle">
-            Let's discuss your project and turn your ideas into reality.
+          <p className="services-cta__sub">
+            Not sure which service fits your needs? Let's talk — free
+            consultation, zero pressure.
           </p>
+
           <div className="services-cta__buttons">
             <a
               href="/contact"
               className="services-cta__btn services-cta__btn--primary"
             >
-              <span>Start Your Project</span>
+              <span>Get Free Consultation</span>
               <span className="services-cta__btn-shine" />
             </a>
             <a
               href="/projects"
               className="services-cta__btn services-cta__btn--secondary"
             >
-              <span>View Portfolio</span>
+              <span>View Our Portfolio</span>
             </a>
           </div>
-          <p className="services-cta__note">
-            Free consultation • No obligation • 24hr response
-          </p>
         </div>
       </section>
     </main>

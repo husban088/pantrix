@@ -5,7 +5,7 @@ import Image from "next/image";
 import "./ProjectsSection.css";
 
 /* ─────────────────────────────────────────
-   PROJECTS DATA
+   PROJECTS DATA (Removed: Dog Form, Panda Form, Yokos Kitchen, Portfolio CV, Stopwatch, Todo List, Far Away, Quiz App)
 ───────────────────────────────────────── */
 const projectsData = [
   {
@@ -63,32 +63,6 @@ const projectsData = [
   },
   {
     id: "05",
-    title: "Stop Watch",
-    category: "Functionality",
-    shortDesc: "Synchronized clock and stopwatch with JS logic.",
-    tags: ["HTML", "CSS", "JavaScript"],
-    image: "/stopwatch.png",
-    link: "https://husban088.github.io/stopwatch/stopwatch-main/",
-    color: "#00d4ff",
-    icon: "⏱️",
-    country: "Australia",
-    countryFlag: "🇦🇺",
-  },
-  {
-    id: "06",
-    title: "Quiz App",
-    category: "Functionality",
-    shortDesc: "Quiz app with timer and progress persistence on reload.",
-    tags: ["HTML", "CSS", "JavaScript"],
-    image: "/quiz.png",
-    link: "https://husban088.github.io/quiz-app-js/",
-    color: "#00d4ff",
-    icon: "🧠",
-    country: "Germany",
-    countryFlag: "🇩🇪",
-  },
-  {
-    id: "07",
     title: "Kitab",
     category: "Landing Page",
     shortDesc: "Book website with 13 animated sections, built with Sass.",
@@ -101,7 +75,7 @@ const projectsData = [
     countryFlag: "🇬🇧",
   },
   {
-    id: "08",
+    id: "06",
     title: "Natours",
     category: "Landing Page",
     shortDesc: "Nature travel website with 6 immersive animated sections.",
@@ -114,7 +88,7 @@ const projectsData = [
     countryFlag: "🇦🇺",
   },
   {
-    id: "09",
+    id: "07",
     title: "Nexter",
     category: "Landing Page",
     shortDesc:
@@ -128,7 +102,7 @@ const projectsData = [
     countryFlag: "🇦🇺",
   },
   {
-    id: "10",
+    id: "08",
     title: "Trillo",
     category: "Landing Page",
     shortDesc: "Travel booking UI with Flexbox layout and smooth animations.",
@@ -141,7 +115,7 @@ const projectsData = [
     countryFlag: "🇩🇪",
   },
   {
-    id: "11",
+    id: "09",
     title: "Tindog",
     category: "Landing Page",
     shortDesc: "Dog dating app landing page with 5 sections using Bootstrap.",
@@ -154,7 +128,7 @@ const projectsData = [
     countryFlag: "🇬🇧",
   },
   {
-    id: "12",
+    id: "10",
     title: "OLX Clone",
     category: "Frontend",
     shortDesc: "OLX clone with 5 dynamic React pages and full responsiveness.",
@@ -167,7 +141,7 @@ const projectsData = [
     countryFlag: "🇦🇺",
   },
   {
-    id: "13",
+    id: "11",
     title: "Power Store",
     category: "Landing Page",
     shortDesc:
@@ -181,20 +155,7 @@ const projectsData = [
     countryFlag: "🇺🇸",
   },
   {
-    id: "14",
-    title: "Todo List",
-    category: "Functionality",
-    shortDesc: "JS-powered todo app with add, edit, delete and persistence.",
-    tags: ["HTML", "CSS", "JavaScript"],
-    image: "/todo.png",
-    link: "https://husban088.github.io/todo-list/",
-    color: "#00d4ff",
-    icon: "✅",
-    country: "Australia",
-    countryFlag: "🇦🇺",
-  },
-  {
-    id: "15",
+    id: "12",
     title: "Stallion Market",
     category: "Supabase",
     shortDesc: "Full-stack marketplace with Supabase backend and 11 pages.",
@@ -207,7 +168,7 @@ const projectsData = [
     countryFlag: "🇩🇪",
   },
   {
-    id: "16",
+    id: "13",
     title: "Panthify Store",
     category: "Frontend",
     shortDesc: "E-commerce store with REST API integration and 6 pages.",
@@ -220,7 +181,7 @@ const projectsData = [
     countryFlag: "🇬🇧",
   },
   {
-    id: "17",
+    id: "14",
     title: "Power Tech",
     category: "Landing Page",
     shortDesc: "Tech landing page with 6 animated sections built with Sass.",
@@ -233,7 +194,7 @@ const projectsData = [
     countryFlag: "🇦🇺",
   },
   {
-    id: "18",
+    id: "15",
     title: "Power Code",
     category: "Landing Page",
     shortDesc: "Bootstrap 5 coding bootcamp landing page with 10 sections.",
@@ -246,7 +207,7 @@ const projectsData = [
     countryFlag: "🇺🇸",
   },
   {
-    id: "19",
+    id: "16",
     title: "Riseministry Pakistan",
     category: "Landing Page",
     shortDesc:
@@ -260,7 +221,7 @@ const projectsData = [
     countryFlag: "🇦🇺",
   },
   {
-    id: "20",
+    id: "17",
     title: "Fashionista",
     category: "Functionality",
     shortDesc: "Fashion store with JS animations, dynamic cart across 7 pages.",
@@ -273,7 +234,7 @@ const projectsData = [
     countryFlag: "🇩🇪",
   },
   {
-    id: "21",
+    id: "18",
     title: "Eleganza",
     category: "Landing Page",
     shortDesc: "Elegant lifestyle brand with 5 Bootstrap-powered pages.",
@@ -286,60 +247,7 @@ const projectsData = [
     countryFlag: "🇬🇧",
   },
   {
-    id: "22",
-    title: "Portfolio CV",
-    category: "Landing Page",
-    shortDesc:
-      "Personal portfolio with 5 clean sections and responsive layout.",
-    tags: ["HTML", "CSS"],
-    image: "/cv.png",
-    link: "https://husban088.github.io/cv2/",
-    color: "#34495e",
-    icon: "📄",
-    country: "Australia",
-    countryFlag: "🇦🇺",
-  },
-  {
-    id: "23",
-    title: "Yoko's Kitchen",
-    category: "Landing Page",
-    shortDesc: "Restaurant landing page with 4 inviting sections.",
-    tags: ["HTML", "CSS"],
-    image: "/yokos.png",
-    link: "https://husban088.github.io/yokos-kitchen/",
-    color: "#e67e22",
-    icon: "🍽️",
-    country: "USA",
-    countryFlag: "🇺🇸",
-  },
-  {
-    id: "24",
-    title: "Dog Form",
-    category: "Functionality",
-    shortDesc: "Animated dog login form that reacts to your input.",
-    tags: ["HTML", "CSS", "JavaScript"],
-    image: "/dog.png",
-    link: "https://husban088.github.io/doglogin/doglogin/",
-    color: "#00d4ff",
-    icon: "🐕",
-    country: "Australia",
-    countryFlag: "🇦🇺",
-  },
-  {
-    id: "25",
-    title: "Panda Form",
-    category: "Functionality",
-    shortDesc: "Animated panda login form that covers eyes on password entry.",
-    tags: ["HTML", "CSS", "JavaScript"],
-    image: "/panda.png",
-    link: "https://husban088.github.io/pandalogin/pandalogin/",
-    color: "#00d4ff",
-    icon: "🐼",
-    country: "United Kingdom",
-    countryFlag: "🇬🇧",
-  },
-  {
-    id: "26",
+    id: "19",
     title: "Eat & Split",
     category: "Frontend",
     shortDesc: "React bill-splitting app — add friends and split costs easily.",
@@ -352,20 +260,7 @@ const projectsData = [
     countryFlag: "🇦🇺",
   },
   {
-    id: "27",
-    title: "Far Away",
-    category: "Frontend",
-    shortDesc: "React travel packing tracker with smart item management.",
-    tags: ["React", "Tailwind CSS"],
-    image: "/faraway.png",
-    link: "https://travell-lists.netlify.app/",
-    color: "#1abc9c",
-    icon: "🧳",
-    country: "Australia",
-    countryFlag: "🇦🇺",
-  },
-  {
-    id: "28",
+    id: "20",
     title: "Stallion Restaurant",
     category: "Supabase",
     shortDesc: "Full restaurant app with booking, cart & Supabase backend.",
@@ -378,7 +273,7 @@ const projectsData = [
     countryFlag: "🇩🇪",
   },
   {
-    id: "29",
+    id: "21",
     title: "Aussie Tech Security",
     category: "Supabase",
     shortDesc: "Australian cybersecurity firm website with Supabase backend.",
@@ -391,7 +286,7 @@ const projectsData = [
     countryFlag: "🇦🇺",
   },
   {
-    id: "30",
+    id: "22",
     title: "Tech4ru",
     category: "Supabase",
     shortDesc:

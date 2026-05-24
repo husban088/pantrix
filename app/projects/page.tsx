@@ -17,7 +17,8 @@ const categories = [
 ];
 
 /* ─────────────────────────────────────────
-   PROJECTS DATA (same as before, no changes needed to project data)
+   PROJECTS DATA (Removed: Stop Watch, Quiz App, Todo List, Dog Form, Panda Form, Far Away, Yokos Kitchen, Portfolio CV)
+   Total: 22 projects
 ───────────────────────────────────────── */
 const allProjects = [
   {
@@ -91,40 +92,6 @@ const allProjects = [
   },
   {
     id: "05",
-    title: "Stop Watch",
-    category: "Functionality",
-    languages: ["HTML", "CSS", "JavaScript"],
-    fullDesc:
-      "A sleek JavaScript-powered stopwatch with an integrated clock. Both the clock and stopwatch start, stop, continue, and reset in perfect sync — delivering a smooth and reliable time-tracking experience with clean UI.",
-    shortDesc: "Synchronized clock and stopwatch with JS logic.",
-    image: "/stopwatch.png",
-    link: "https://husban088.github.io/stopwatch/stopwatch-main/",
-    color: "#00d4ff",
-    featured: false,
-    year: "2023",
-    icon: "⏱️",
-    country: "Australia",
-    countryFlag: "🇦🇺",
-  },
-  {
-    id: "06",
-    title: "Quiz App",
-    category: "Functionality",
-    languages: ["HTML", "CSS", "JavaScript"],
-    fullDesc:
-      "An interactive quiz app built with vanilla JavaScript. Features a built-in countdown timer and intelligent localStorage persistence — if the page reloads, your progress stays intact. Includes smooth question navigation and a detailed final result screen.",
-    shortDesc: "Quiz app with timer and progress persistence on reload.",
-    image: "/quiz.png",
-    link: "https://husban088.github.io/quiz-app-js/",
-    color: "#00d4ff",
-    featured: false,
-    year: "2023",
-    icon: "🧠",
-    country: "Germany",
-    countryFlag: "🇩🇪",
-  },
-  {
-    id: "07",
     title: "Kitab",
     category: "Landing Page",
     languages: ["HTML", "CSS", "Sass"],
@@ -141,7 +108,7 @@ const allProjects = [
     countryFlag: "🇬🇧",
   },
   {
-    id: "08",
+    id: "06",
     title: "Natours",
     category: "Landing Page",
     languages: ["HTML", "CSS", "Sass"],
@@ -158,7 +125,7 @@ const allProjects = [
     countryFlag: "🇦🇺",
   },
   {
-    id: "09",
+    id: "07",
     title: "Nexter",
     category: "Landing Page",
     languages: ["HTML", "CSS", "Sass"],
@@ -176,7 +143,7 @@ const allProjects = [
     countryFlag: "🇦🇺",
   },
   {
-    id: "10",
+    id: "08",
     title: "Trillo",
     category: "Landing Page",
     languages: ["HTML", "CSS", "Sass"],
@@ -193,7 +160,7 @@ const allProjects = [
     countryFlag: "🇩🇪",
   },
   {
-    id: "11",
+    id: "09",
     title: "Tindog",
     category: "Landing Page",
     languages: ["HTML", "Bootstrap"],
@@ -210,7 +177,7 @@ const allProjects = [
     countryFlag: "🇬🇧",
   },
   {
-    id: "12",
+    id: "10",
     title: "OLX Clone",
     category: "Frontend",
     languages: ["React", "Tailwind CSS"],
@@ -227,7 +194,7 @@ const allProjects = [
     countryFlag: "🇦🇺",
   },
   {
-    id: "13",
+    id: "11",
     title: "Power Store",
     category: "Landing Page",
     languages: ["HTML", "CSS"],
@@ -245,24 +212,7 @@ const allProjects = [
     countryFlag: "🇺🇸",
   },
   {
-    id: "14",
-    title: "Todo List",
-    category: "Functionality",
-    languages: ["HTML", "CSS", "JavaScript"],
-    fullDesc:
-      "A clean and interactive To-Do List app built with vanilla JavaScript. Users can add, edit, update, and delete tasks with smooth UI interactions. Features localStorage persistence and a fully responsive design for productive task management.",
-    shortDesc: "JS-powered todo app with add, edit, delete and persistence.",
-    image: "/todo.png",
-    link: "https://husban088.github.io/todo-list/",
-    color: "#00d4ff",
-    featured: false,
-    year: "2023",
-    icon: "✅",
-    country: "Australia",
-    countryFlag: "🇦🇺",
-  },
-  {
-    id: "15",
+    id: "12",
     title: "Stallion Market",
     category: "Supabase",
     languages: ["React", "Tailwind CSS", "Supabase"],
@@ -279,7 +229,7 @@ const allProjects = [
     countryFlag: "🇩🇪",
   },
   {
-    id: "16",
+    id: "13",
     title: "Panthify Store",
     category: "Frontend",
     languages: ["React", "Tailwind CSS", "REST API"],
@@ -296,7 +246,7 @@ const allProjects = [
     countryFlag: "🇬🇧",
   },
   {
-    id: "17",
+    id: "14",
     title: "Power Tech",
     category: "Landing Page",
     languages: ["HTML", "Sass"],
@@ -313,7 +263,7 @@ const allProjects = [
     countryFlag: "🇦🇺",
   },
   {
-    id: "18",
+    id: "15",
     title: "Power Code",
     category: "Landing Page",
     languages: ["HTML", "Bootstrap"],
@@ -330,7 +280,7 @@ const allProjects = [
     countryFlag: "🇺🇸",
   },
   {
-    id: "19",
+    id: "16",
     title: "Riseministry Pakistan",
     category: "Landing Page",
     languages: ["HTML", "CSS", "Bootstrap"],
@@ -348,7 +298,7 @@ const allProjects = [
     countryFlag: "🇦🇺",
   },
   {
-    id: "20",
+    id: "17",
     title: "Fashionista",
     category: "Functionality",
     languages: ["HTML", "CSS", "JavaScript"],
@@ -365,7 +315,7 @@ const allProjects = [
     countryFlag: "🇩🇪",
   },
   {
-    id: "21",
+    id: "18",
     title: "Eleganza",
     category: "Landing Page",
     languages: ["HTML", "Bootstrap"],
@@ -382,76 +332,7 @@ const allProjects = [
     countryFlag: "🇬🇧",
   },
   {
-    id: "22",
-    title: "Portfolio CV",
-    category: "Landing Page",
-    languages: ["HTML", "CSS"],
-    fullDesc:
-      "A clean and professional personal portfolio website built with HTML and CSS. Features a single landing page with 5 sleek sections — about, skills, projects, experience, and contact — with a fully responsive design and elegant typography.",
-    shortDesc:
-      "Personal portfolio with 5 clean sections and responsive layout.",
-    image: "/cv.png",
-    link: "https://husban088.github.io/cv2/",
-    color: "#34495e",
-    featured: false,
-    year: "2023",
-    icon: "📄",
-    country: "Australia",
-    countryFlag: "🇦🇺",
-  },
-  {
-    id: "23",
-    title: "Yoko's Kitchen",
-    category: "Landing Page",
-    languages: ["HTML", "CSS"],
-    fullDesc:
-      "A visually appetizing restaurant landing page built with HTML and CSS. Features 4 engaging sections — hero, menu highlights, chef story, and reservation — with a warm and inviting design that is fully responsive on all devices.",
-    shortDesc: "Restaurant landing page with 4 inviting sections.",
-    image: "/yokos.png",
-    link: "https://husban088.github.io/yokos-kitchen/",
-    color: "#e67e22",
-    featured: false,
-    year: "2023",
-    icon: "🍽️",
-    country: "USA",
-    countryFlag: "🇺🇸",
-  },
-  {
-    id: "24",
-    title: "Dog Form",
-    category: "Functionality",
-    languages: ["HTML", "CSS", "JavaScript"],
-    fullDesc:
-      "A delightful interactive login form built with JavaScript. An animated dog watches with open eyes as you type your username, then playfully covers its eyes during password entry — combining fun UX with smooth CSS animations.",
-    shortDesc: "Animated dog login form that reacts to your input.",
-    image: "/dog.png",
-    link: "https://husban088.github.io/doglogin/doglogin/",
-    color: "#00d4ff",
-    featured: false,
-    year: "2023",
-    icon: "🐕",
-    country: "Australia",
-    countryFlag: "🇦🇺",
-  },
-  {
-    id: "25",
-    title: "Panda Form",
-    category: "Functionality",
-    languages: ["HTML", "CSS", "JavaScript"],
-    fullDesc:
-      "A cute and engaging interactive login form built with JavaScript. An adorable animated panda watches with wide-open eyes as you type your name, then playfully covers its eyes when you enter your password — a charming take on form UX.",
-    shortDesc: "Animated panda login form that covers eyes on password entry.",
-    image: "/panda.png",
-    link: "https://husban088.github.io/pandalogin/pandalogin/",
-    color: "#00d4ff",
-    featured: false,
-    year: "2023",
-    icon: "🐼",
-    country: "United Kingdom",
-    countryFlag: "🇬🇧",
-  },
-  {
-    id: "26",
+    id: "19",
     title: "Eat & Split",
     category: "Frontend",
     languages: ["React", "Tailwind CSS"],
@@ -468,24 +349,7 @@ const allProjects = [
     countryFlag: "🇦🇺",
   },
   {
-    id: "27",
-    title: "Far Away",
-    category: "Frontend",
-    languages: ["React", "Tailwind CSS"],
-    fullDesc:
-      "A smart travel packing list app built with React. Add items with quantities, mark them as packed, sort by various criteria, and track remaining items at a glance. Helps travelers pack smarter with a clean and intuitive React-powered interface.",
-    shortDesc: "React travel packing tracker with smart item management.",
-    image: "/faraway.png",
-    link: "https://travell-lists.netlify.app/",
-    color: "#1abc9c",
-    featured: false,
-    year: "2024",
-    icon: "🧳",
-    country: "Australia",
-    countryFlag: "🇦🇺",
-  },
-  {
-    id: "28",
+    id: "20",
     title: "Stallion Restaurant",
     category: "Supabase",
     languages: ["React", "Tailwind CSS", "Supabase"],
@@ -502,7 +366,7 @@ const allProjects = [
     countryFlag: "🇩🇪",
   },
   {
-    id: "29",
+    id: "21",
     title: "Aussie Tech Security",
     category: "Supabase",
     languages: ["Next.js", "Tailwind CSS", "Supabase"],
@@ -519,7 +383,7 @@ const allProjects = [
     countryFlag: "🇦🇺",
   },
   {
-    id: "30",
+    id: "22",
     title: "Tech4ru",
     category: "Supabase",
     languages: ["Next.js", "Tailwind CSS", "Supabase"],
@@ -592,7 +456,7 @@ export default function ProjectsPage() {
 
           <div className="pp-hero__stats" role="list">
             <div className="pp-hero__stat" role="listitem">
-              <span className="pp-hero__stat-num">150+</span>
+              <span className="pp-hero__stat-num">22+</span>
               <span className="pp-hero__stat-label">Projects</span>
             </div>
             <div className="pp-hero__stat-divider" aria-hidden="true" />
