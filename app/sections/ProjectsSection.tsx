@@ -299,6 +299,20 @@ const projectsData = [
     country: "Australia",
     countryFlag: "🇦🇺",
   },
+  {
+    id: "23",
+    title: "Muscle Era",
+    category: "Supabase",
+    shortDesc:
+      "Professional gym & fitness website with Supabase backend, built for an Australian client.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
+    image: "/muscleera.png",
+    link: "https://muscle-era.vercel.app/",
+    color: "#3ecf8e",
+    icon: "💪",
+    country: "Australia",
+    countryFlag: "🇦🇺",
+  },
 ];
 
 /* ─────────────────────────────────────────

@@ -400,6 +400,24 @@ const allProjects = [
     country: "Australia",
     countryFlag: "🇦🇺",
   },
+  {
+    id: "23",
+    title: "Muscle Era",
+    category: "Supabase",
+    languages: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
+    fullDesc:
+      "A premium gym and fitness website built for an Australian client using Next.js, TypeScript, Tailwind CSS, and Supabase. Features a full-stack experience with membership plans, trainer profiles, class schedules, weekly timetable, a blog, and a contact form — all powered by Supabase for real-time data and authentication.",
+    shortDesc:
+      "Professional gym & fitness website with Supabase backend, built for an Australian client.",
+    image: "/muscleera.png",
+    link: "https://muscle-era.vercel.app/",
+    color: "#3ecf8e",
+    featured: true,
+    year: "2026",
+    icon: "💪",
+    country: "Australia",
+    countryFlag: "🇦🇺",
+  },
 ];
 
 /* ─────────────────────────────────────────
@@ -456,7 +474,7 @@ export default function ProjectsPage() {
 
           <div className="pp-hero__stats" role="list">
             <div className="pp-hero__stat" role="listitem">
-              <span className="pp-hero__stat-num">22+</span>
+              <span className="pp-hero__stat-num">23+</span>
               <span className="pp-hero__stat-label">Projects</span>
             </div>
             <div className="pp-hero__stat-divider" aria-hidden="true" />
