@@ -19,8 +19,6 @@ const projectsData = [
     link: "https://bejewelled-jelly-b75e56.netlify.app/",
     color: "#ff6b35",
     icon: "🔥",
-    country: "Australia",
-    countryFlag: "🇦🇺",
   },
   {
     id: "02",
@@ -32,8 +30,6 @@ const projectsData = [
     link: "https://project-managment088.netlify.app/",
     color: "#ff6b35",
     icon: "🔥",
-    country: "Germany",
-    countryFlag: "🇩🇪",
   },
   {
     id: "03",
@@ -45,8 +41,6 @@ const projectsData = [
     link: "https://husban088.github.io/linkedin/",
     color: "#0077b5",
     icon: "💼",
-    country: "United Kingdom",
-    countryFlag: "🇬🇧",
   },
   {
     id: "04",
@@ -58,8 +52,6 @@ const projectsData = [
     link: "https://husban088.github.io/facebook/",
     color: "#1877f2",
     icon: "📘",
-    country: "USA",
-    countryFlag: "🇺🇸",
   },
   {
     id: "05",
@@ -71,8 +63,6 @@ const projectsData = [
     link: "https://husban088.github.io/kitab/",
     color: "#9b59b6",
     icon: "📖",
-    country: "United Kingdom",
-    countryFlag: "🇬🇧",
   },
   {
     id: "06",
@@ -84,8 +74,6 @@ const projectsData = [
     link: "https://husban088.github.io/natours/",
     color: "#27ae60",
     icon: "🌿",
-    country: "Australia",
-    countryFlag: "🇦🇺",
   },
   {
     id: "07",
@@ -98,8 +86,6 @@ const projectsData = [
     link: "https://husban088.github.io/nexter/",
     color: "#c0392b",
     icon: "🏡",
-    country: "Australia",
-    countryFlag: "🇦🇺",
   },
   {
     id: "08",
@@ -111,8 +97,6 @@ const projectsData = [
     link: "https://husban088.github.io/trillo/",
     color: "#e67e22",
     icon: "✈️",
-    country: "Germany",
-    countryFlag: "🇩🇪",
   },
   {
     id: "09",
@@ -124,8 +108,6 @@ const projectsData = [
     link: "https://husban088.github.io/bootrstrap4/",
     color: "#e74c3c",
     icon: "🐶",
-    country: "United Kingdom",
-    countryFlag: "🇬🇧",
   },
   {
     id: "10",
@@ -137,8 +119,6 @@ const projectsData = [
     link: "https://olx-clone-088.netlify.app/",
     color: "#3d5a80",
     icon: "🛒",
-    country: "Australia",
-    countryFlag: "🇦🇺",
   },
   {
     id: "11",
@@ -151,8 +131,6 @@ const projectsData = [
     link: "https://husban088.github.io/leggers/",
     color: "#f39c12",
     icon: "⚡",
-    country: "USA",
-    countryFlag: "🇺🇸",
   },
   {
     id: "12",
@@ -164,8 +142,6 @@ const projectsData = [
     link: "https://stallion-brand.firebaseapp.com/",
     color: "#3ecf8e",
     icon: "🗄️",
-    country: "Germany",
-    countryFlag: "🇩🇪",
   },
   {
     id: "13",
@@ -177,8 +153,6 @@ const projectsData = [
     link: "https://fake-shop-api088.netlify.app/",
     color: "#8e44ad",
     icon: "🛍️",
-    country: "United Kingdom",
-    countryFlag: "🇬🇧",
   },
   {
     id: "14",
@@ -190,8 +164,6 @@ const projectsData = [
     link: "https://husban088.github.io/powertech/",
     color: "#2980b9",
     icon: "💻",
-    country: "Australia",
-    countryFlag: "🇦🇺",
   },
   {
     id: "15",
@@ -203,8 +175,6 @@ const projectsData = [
     link: "https://husban088.github.io/bootstrap5/",
     color: "#7952b3",
     icon: "🔵",
-    country: "USA",
-    countryFlag: "🇺🇸",
   },
   {
     id: "16",
@@ -217,8 +187,6 @@ const projectsData = [
     link: "https://husban088.github.io/Riseministry-pakistan/",
     color: "#16a085",
     icon: "🕌",
-    country: "Australia",
-    countryFlag: "🇦🇺",
   },
   {
     id: "17",
@@ -230,8 +198,6 @@ const projectsData = [
     link: "https://husban088.github.io/ecomerce-store-by-js/",
     color: "#e91e8c",
     icon: "👗",
-    country: "Germany",
-    countryFlag: "🇩🇪",
   },
   {
     id: "18",
@@ -243,8 +209,6 @@ const projectsData = [
     link: "https://husban088.github.io/IronGear/",
     color: "#d4ac0d",
     icon: "✨",
-    country: "United Kingdom",
-    countryFlag: "🇬🇧",
   },
   {
     id: "19",
@@ -256,8 +220,6 @@ const projectsData = [
     link: "https://eat-andd-split.netlify.app/",
     color: "#e74c3c",
     icon: "🍴",
-    country: "Australia",
-    countryFlag: "🇦🇺",
   },
   {
     id: "20",
@@ -269,8 +231,6 @@ const projectsData = [
     link: "https://stallion-resturant.web.app",
     color: "#3ecf8e",
     icon: "🗄️",
-    country: "Germany",
-    countryFlag: "🇩🇪",
   },
   {
     id: "21",
@@ -282,8 +242,6 @@ const projectsData = [
     link: "https://aussieetechsecurity.com.au",
     color: "#3ecf8e",
     icon: "🔐",
-    country: "Australia",
-    countryFlag: "🇦🇺",
   },
   {
     id: "22",
@@ -296,8 +254,6 @@ const projectsData = [
     link: "https://www.tech4ru.com/",
     color: "#3ecf8e",
     icon: "🖥️",
-    country: "Australia",
-    countryFlag: "🇦🇺",
   },
   {
     id: "23",
@@ -310,8 +266,6 @@ const projectsData = [
     link: "https://muscle-era.vercel.app/",
     color: "#3ecf8e",
     icon: "💪",
-    country: "Australia",
-    countryFlag: "🇦🇺",
   },
   {
     id: "24",
@@ -324,8 +278,6 @@ const projectsData = [
     link: "",
     color: "#3ecf8e",
     icon: "💬",
-    country: "Pakistan",
-    countryFlag: "🇵🇰",
   },
   {
     id: "25",
@@ -338,8 +290,6 @@ const projectsData = [
     link: "",
     color: "#ff6b35",
     icon: "📈",
-    country: "Pakistan",
-    countryFlag: "🇵🇰",
   },
 ];
 
@@ -481,16 +431,6 @@ export default function ProjectsSection() {
                 </div>
 
                 <h3 className="projects__card-title">{project.title}</h3>
-
-                {/* Country */}
-                <div className="projects__card-country">
-                  <span className="projects__card-country-flag">
-                    {project.countryFlag}
-                  </span>
-                  <span className="projects__card-country-name">
-                    {project.country}
-                  </span>
-                </div>
 
                 <p className="projects__card-desc">{project.shortDesc}</p>
 
