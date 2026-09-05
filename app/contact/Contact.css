@@ -334,6 +334,9 @@
 .contact__info-card:nth-child(3) {
   animation-delay: 0.64s;
 }
+.contact__info-card:nth-child(4) {
+  animation-delay: 0.76s;
+}
 
 .contact__info-card:hover {
   transform: translateX(10px) translateY(-2px);
@@ -906,5 +909,298 @@
   }
   .contact__social-icons {
     gap: 4px;
+  }
+}
+
+/* ============================================================
+   SUCCESS STATE — Luxury Edition
+   ============================================================ */
+.contact__success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 34px 10px 8px;
+  position: relative;
+  z-index: 1;
+  animation: successRise 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes successRise {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Ring + pulse behind the check icon */
+.contact__success-ring {
+  position: relative;
+  width: 92px;
+  height: 92px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+
+.contact__success-ring::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 212, 255, 0.35);
+  background: radial-gradient(
+    circle,
+    rgba(0, 212, 255, 0.14),
+    rgba(0, 212, 255, 0.02) 70%
+  );
+}
+
+.contact__success-ring-pulse {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid var(--crystal-blue);
+  opacity: 0;
+  animation: successPulse 2.4s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+.contact__success-ring-pulse::after {
+  content: "";
+  position: absolute;
+  inset: -14px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 212, 255, 0.25);
+  opacity: 0;
+  animation: successPulse 2.4s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+  animation-delay: 0.5s;
+}
+
+@keyframes successPulse {
+  0% {
+    opacity: 0.7;
+    transform: scale(0.85);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.4);
+  }
+}
+
+.contact__success-icon {
+  position: relative;
+  z-index: 1;
+  width: 62px;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #0a0a0a;
+  background: linear-gradient(
+    135deg,
+    var(--crystal-blue-light),
+    var(--void-blue)
+  );
+  box-shadow:
+    0 10px 30px rgba(0, 212, 255, 0.35),
+    inset 0 1px 1px rgba(255, 255, 255, 0.4);
+  animation: successIconPop 0.6s 0.15s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes successIconPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.4) rotate(-20deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+}
+
+.contact__success-eyebrow {
+  font-size: 0.68rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--crystal-blue);
+  font-family: "Courier New", monospace;
+  font-weight: 600;
+  margin-bottom: 14px;
+  opacity: 0;
+  animation: fadeSlideUp 0.6s 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+
+.contact__success-title {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 2.1rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    var(--crystal-blue-light) 50%,
+    #ffffff 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  opacity: 0;
+  animation:
+    fadeSlideUp 0.6s 0.38s cubic-bezier(0.25, 0.8, 0.25, 1) forwards,
+    shimmerCrystal 3.5s 1s linear infinite;
+}
+
+.contact__success-text {
+  max-width: 340px;
+  color: var(--white-muted);
+  font-size: 0.95rem;
+  line-height: 1.75;
+  font-family: "Georgia", serif;
+  margin-bottom: 34px;
+  opacity: 0;
+  animation: fadeSlideUp 0.6s 0.46s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+
+.contact__success-btn {
+  opacity: 0;
+  animation: fadeSlideUp 0.6s 0.56s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+
+/* ============================================================
+   TOAST NOTIFICATION — Luxury Glass
+   ============================================================ */
+.contact__toast {
+  position: fixed;
+  top: 28px;
+  right: 28px;
+  z-index: 999;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  width: 340px;
+  max-width: calc(100vw - 40px);
+  padding: 18px 20px;
+  background: linear-gradient(
+    150deg,
+    rgba(30, 34, 38, 0.92),
+    rgba(18, 20, 22, 0.96)
+  );
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(0, 212, 255, 0.28);
+  border-radius: 16px;
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(0, 212, 255, 0.05),
+    0 0 30px rgba(0, 212, 255, 0.08);
+  overflow: hidden;
+  animation: toastSlideIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes toastSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(40px) translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+  }
+}
+
+.contact__toast-icon {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #0a0a0a;
+  background: linear-gradient(
+    135deg,
+    var(--crystal-blue-light),
+    var(--void-blue)
+  );
+  box-shadow: 0 4px 14px rgba(0, 212, 255, 0.4);
+}
+
+.contact__toast-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding-top: 2px;
+}
+
+.contact__toast-text strong {
+  font-family: "Georgia", serif;
+  font-size: 0.94rem;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.2px;
+}
+
+.contact__toast-text span {
+  font-size: 0.76rem;
+  color: var(--muted);
+  font-family: "Courier New", monospace;
+  letter-spacing: 0.2px;
+}
+
+.contact__toast-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px;
+  transition: color 0.25s ease;
+}
+
+.contact__toast-close:hover {
+  color: var(--crystal-blue);
+}
+
+.contact__toast-bar {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg, var(--crystal-blue), var(--void-blue));
+  transform-origin: left;
+  animation: toastShrink 4.5s linear forwards;
+}
+
+@keyframes toastShrink {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .contact__toast {
+    top: 14px;
+    right: 14px;
+    left: 14px;
+    width: auto;
+  }
+  .contact__success-title {
+    font-size: 1.7rem;
   }
 }

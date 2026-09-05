@@ -11,11 +11,6 @@ import {
   FaNode,
   FaFire,
   FaCode,
-  FaPalette,
-  FaBullhorn,
-  FaFilm,
-  FaImage,
-  FaLayerGroup,
 } from "react-icons/fa";
 
 import {
@@ -50,38 +45,6 @@ const services = [
     title: "Full Stack Development",
     desc: "Modern, high-performance web applications — pixel-perfect frontends to scalable backend systems.",
     tags: ["React", "Next.js", "Node.js", "Supabase"],
-  },
-  {
-    id: "social",
-    icon: FaBullhorn,
-    color: "#FF6B6B",
-    title: "Social Ads Management",
-    desc: "Data-driven ad campaigns on Facebook, Instagram & Google that convert and deliver real ROI.",
-    tags: ["Meta Ads", "Google Ads", "Analytics", "Campaigns"],
-  },
-  {
-    id: "graphic",
-    icon: FaPalette,
-    color: "#FFD700",
-    title: "Graphic Designing",
-    desc: "Brand identities, logos, and visual systems crafted with purpose, precision, and creativity.",
-    tags: ["Branding", "Logo", "UI Design", "Illustration"],
-  },
-  {
-    id: "poster",
-    icon: FaImage,
-    color: "#FF69B4",
-    title: "Poster Designing",
-    desc: "Eye-catching promotional posters and marketing visuals that make your brand unforgettable.",
-    tags: ["Event Posters", "Social Posts", "Banners", "Print"],
-  },
-  {
-    id: "video",
-    icon: FaFilm,
-    color: "#9B59B6",
-    title: "Video Editing",
-    desc: "Professional video production, reels, motion graphics, and branded content that drives engagement.",
-    tags: ["Reels", "Motion Graphics", "Color Grading", "Shorts"],
   },
 ];
 
@@ -120,14 +83,6 @@ export default function HeroSection() {
     return () => {
       if (intervalRef.current) clearInterval(intervalRef.current);
     };
-  }, []);
-
-  // Auto-cycle services
-  useEffect(() => {
-    const serviceInterval = setInterval(() => {
-      setActiveService((prev) => (prev + 1) % services.length);
-    }, 3500);
-    return () => clearInterval(serviceInterval);
   }, []);
 
   const currentTech = techStack[currentIndex];
@@ -208,16 +163,16 @@ export default function HeroSection() {
           </div>
 
           <p className="hero__desc">
-            We are a full-service digital studio — from high-performance web
-            apps to scroll-stopping social ads, brand visuals, and cinematic
-            video edits. One team. Every solution.
+            We build modern, high-performance web applications — from
+            pixel-perfect frontends to scalable, secure backend systems. Full
+            stack development, done right.
           </p>
 
           {/* ── SERVICES SECTION ── */}
           <div className="hero__services">
             <div className="hero__services-label">
               <span className="hero__services-label-line" />
-              <span className="hero__services-label-text">OUR SERVICES</span>
+              <span className="hero__services-label-text">OUR EXPERTISE</span>
               <span className="hero__services-label-line" />
             </div>
 
@@ -413,31 +368,6 @@ export default function HeroSection() {
                   }}
                 />
               ))}
-            </div>
-          </div>
-
-          {/* Service Quick Icons - right panel */}
-          <div className="hero__services-quick">
-            <span className="hero__services-quick-label">WE ALSO DO</span>
-            <div className="hero__services-quick-icons">
-              {services.slice(1).map((service) => {
-                const QIcon = service.icon;
-                return (
-                  <div
-                    key={service.id}
-                    className="hero__services-quick-item"
-                    style={
-                      { "--q-color": service.color } as React.CSSProperties
-                    }
-                    title={service.title}
-                  >
-                    <QIcon style={{ color: service.color }} />
-                    <span style={{ color: service.color }}>
-                      {service.title.split(" ")[0]}
-                    </span>
-                  </div>
-                );
-              })}
             </div>
           </div>
 

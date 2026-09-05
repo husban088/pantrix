@@ -301,8 +301,10 @@
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
   padding: 0 max(24px, 5vw) 80px;
 }
 

@@ -40,129 +40,9 @@ const reasons = [
     highlight: "End-to-End",
     tags: ["React", "Next.js", "Node.js", "Supabase"],
   },
-  // Social Ads Management
-  {
-    id: "02",
-    accentColor: "#FF6B6B",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" width="28" height="28">
-        <path
-          d="M22 12h-4l-3 9L9 3l-3 9H2"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    ),
-    category: "Social Ads Management",
-    title: "Data-Driven Ad Campaigns",
-    short: "ROI-focused advertising",
-    desc: "Meta Ads, Google Ads — precision-targeted campaigns that convert. We track every click, optimise daily, and deliver measurable growth.",
-    highlight: "Real ROI",
-    tags: ["Meta Ads", "Google Ads", "Analytics", "Campaigns"],
-  },
-  // Graphic Designing
-  {
-    id: "03",
-    accentColor: "#FFD700",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" width="28" height="28">
-        <circle
-          cx="12"
-          cy="12"
-          r="10"
-          stroke="currentColor"
-          strokeWidth="1.5"
-        />
-        <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.5" />
-        <path
-          d="M12 2v4M12 18v4M2 12h4M18 12h4"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-        />
-      </svg>
-    ),
-    category: "Graphic Designing",
-    title: "Brand Identities That Last",
-    short: "Purpose-driven visual craft",
-    desc: "Logos, brand systems, and UI design crafted with strategy. Every mark, colour, and typeface chosen to make your brand unforgettable.",
-    highlight: "100% Custom",
-    tags: ["Branding", "Logo", "UI Design", "Illustration"],
-  },
-  // Poster Designing
-  {
-    id: "04",
-    accentColor: "#FF69B4",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" width="28" height="28">
-        <rect
-          x="3"
-          y="3"
-          width="18"
-          height="18"
-          rx="2"
-          stroke="currentColor"
-          strokeWidth="1.5"
-        />
-        <circle
-          cx="8.5"
-          cy="8.5"
-          r="1.5"
-          stroke="currentColor"
-          strokeWidth="1.5"
-        />
-        <path
-          d="M21 15l-5-5L5 21"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    ),
-    category: "Poster Designing",
-    title: "Visuals That Stop the Scroll",
-    short: "Eye-catching & on-brand",
-    desc: "Event posters, social media graphics, banners, and print collateral — designed to grab attention and communicate your message instantly.",
-    highlight: "Scroll-Stopping",
-    tags: ["Event Posters", "Social Posts", "Banners", "Print"],
-  },
-  // Video Editing
-  {
-    id: "05",
-    accentColor: "#9B59B6",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" width="28" height="28">
-        <polygon
-          points="23 7 16 12 23 17 23 7"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <rect
-          x="1"
-          y="5"
-          width="15"
-          height="14"
-          rx="2"
-          stroke="currentColor"
-          strokeWidth="1.5"
-        />
-      </svg>
-    ),
-    category: "Video Editing",
-    title: "Cinematic Content & Reels",
-    short: "Motion that drives engagement",
-    desc: "Professional edits, reels, motion graphics, and branded video content. From raw footage to polished final cut — we handle it all.",
-    highlight: "Pro Quality",
-    tags: ["Reels", "Motion Graphics", "Color Grading", "Shorts"],
-  },
   // Core Principle
   {
-    id: "06",
+    id: "02",
     accentColor: "#00d4ff",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" width="28" height="28">
@@ -235,7 +115,7 @@ export default function WhyChooseUsSection() {
       <div className="wcu__hero">
         <div className="wcu__eyebrow">
           <span className="wcu__eyebrow-dot" />
-          <span>Pantrix — Full-Service Digital Studio</span>
+          <span>Pantrix — Full Stack Development Studio</span>
         </div>
         <h2 className="wcu__heading">
           <span className="wcu__heading-line">The Pantrix</span>
@@ -244,8 +124,8 @@ export default function WhyChooseUsSection() {
           </span>
         </h2>
         <p className="wcu__subtext">
-          Not just developers — dedicated partners across web, design, ads, and
-          video. One team. Every solution. World-class execution.
+          Not just developers — dedicated partners in your product's success.
+          Frontend to backend. One team. World-class execution.
         </p>
       </div>
 
@@ -272,13 +152,7 @@ export default function WhyChooseUsSection() {
           <span className="wcu__section-title">What We Do</span>
         </div>
         <div className="wcu__services-pills">
-          {[
-            { label: "Full Stack Dev", color: "#00d4ff" },
-            { label: "Social Ads", color: "#FF6B6B" },
-            { label: "Graphic Design", color: "#FFD700" },
-            { label: "Poster Design", color: "#FF69B4" },
-            { label: "Video Editing", color: "#9B59B6" },
-          ].map((s) => (
+          {[{ label: "Full Stack Dev", color: "#00d4ff" }].map((s) => (
             <span
               key={s.label}
               className="wcu__service-pill"
@@ -303,7 +177,7 @@ export default function WhyChooseUsSection() {
       {/* ── Reasons Grid ── */}
       <div className="wcu__section-head">
         <span className="wcu__section-num">02</span>
-        <h3 className="wcu__section-title">6 Reasons to Choose Pantrix</h3>
+        <h3 className="wcu__section-title">2 Reasons to Choose Pantrix</h3>
         <span className="wcu__section-bar" />
       </div>
 

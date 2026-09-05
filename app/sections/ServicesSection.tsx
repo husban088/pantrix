@@ -49,161 +49,9 @@ const servicesData = [
     color: "#00d4ff",
     highlight: "Most Popular",
   },
-  // ── Social Ads Management ──
-  {
-    id: "02",
-    category: "Digital Marketing",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" width="32" height="32">
-        <path
-          d="M22 12h-4l-3 9L9 3l-3 9H2"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    ),
-    title: "Social Ads Management",
-    shortDesc:
-      "Data-driven campaigns on Meta & Google that convert and deliver real ROI.",
-    features: [
-      "Meta Ads (Facebook & Instagram)",
-      "Google Ads & PPC Campaigns",
-      "Audience Targeting & Retargeting",
-      "A/B Testing & Optimization",
-      "Analytics & Weekly Reports",
-      "Campaign Strategy & Creatives",
-    ],
-    inquiryText: "Let's boost your ROl",
-    color: "#FF6B6B",
-    highlight: "ROI Focused",
-  },
-  // ── Graphic Designing ──
-  {
-    id: "03",
-    category: "Design",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" width="32" height="32">
-        <circle
-          cx="12"
-          cy="12"
-          r="10"
-          stroke="currentColor"
-          strokeWidth="1.5"
-        />
-        <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.5" />
-        <path
-          d="M12 2v4M12 18v4M2 12h4M18 12h4"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-        />
-      </svg>
-    ),
-    title: "Graphic Designing",
-    shortDesc:
-      "Brand identities, logos, and visual systems crafted with purpose and precision.",
-    features: [
-      "Logo & Brand Identity Design",
-      "Brand Style Guide & System",
-      "UI/UX Design & Prototyping",
-      "Social Media Kit",
-      "Illustration & Icon Sets",
-      "Print & Digital Assets",
-    ],
-    inquiryText: "Let's create your brand identity",
-    color: "#FFD700",
-    highlight: "100% Custom",
-  },
-  // ── Poster Designing ──
-  {
-    id: "04",
-    category: "Design",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" width="32" height="32">
-        <rect
-          x="3"
-          y="3"
-          width="18"
-          height="18"
-          rx="2"
-          stroke="currentColor"
-          strokeWidth="1.5"
-        />
-        <circle
-          cx="8.5"
-          cy="8.5"
-          r="1.5"
-          stroke="currentColor"
-          strokeWidth="1.5"
-        />
-        <path
-          d="M21 15l-5-5L5 21"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    ),
-    title: "Poster Designing",
-    shortDesc:
-      "Eye-catching promotional posters and marketing visuals that make your brand unforgettable.",
-    features: [
-      "Event & Promotional Posters",
-      "Social Media Posts & Stories",
-      "Banners & Billboard Designs",
-      "Print-Ready Files (CMYK)",
-      "Multiple Format Exports",
-      "Unlimited Revisions",
-    ],
-    inquiryText: "Let's make your brand stand out",
-    color: "#FF69B4",
-    highlight: "Scroll-Stopping",
-  },
-  // ── Video Editing ──
-  {
-    id: "05",
-    category: "Video Production",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" width="32" height="32">
-        <polygon
-          points="23 7 16 12 23 17 23 7"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <rect
-          x="1"
-          y="5"
-          width="15"
-          height="14"
-          rx="2"
-          stroke="currentColor"
-          strokeWidth="1.5"
-        />
-      </svg>
-    ),
-    title: "Video Editing",
-    shortDesc:
-      "Professional edits, reels, motion graphics, and branded video content that drives engagement.",
-    features: [
-      "Short-Form Reels & TikToks",
-      "YouTube Long-Form Editing",
-      "Motion Graphics & Animations",
-      "Color Grading & Correction",
-      "Captions & Sound Design",
-      "Brand Intro / Outro Sequences",
-    ],
-    inquiryText: "Let's bring your vision to life",
-    color: "#9B59B6",
-    highlight: "Pro Quality",
-  },
   // ── Custom Web Applications ──
   {
-    id: "06",
+    id: "02",
     category: "Web Development",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" width="32" height="32">
@@ -242,9 +90,6 @@ const servicesData = [
 
 const categoryColors: Record<string, string> = {
   "Web Development": "#00d4ff",
-  "Digital Marketing": "#FF6B6B",
-  Design: "#FFD700",
-  "Video Production": "#9B59B6",
 };
 
 export default function ServicesSection() {
@@ -281,19 +126,19 @@ export default function ServicesSection() {
       <div className="services__header">
         <div className="services__eyebrow">
           <span className="services__eyebrow-dot" />
-          <span>Pantrix — Full-Service Digital Studio</span>
+          <span>Pantrix — Full Stack Development Studio</span>
         </div>
         <h2 className="services__heading">
-          <span className="services__heading-line">All-In-One</span>
+          <span className="services__heading-line">Full Stack</span>
           <span className="services__heading-line services__heading-line--gradient">
-            Digital Services
+            Web Development
           </span>
           <span className="services__heading-line">For Your Growth</span>
         </h2>
         <p className="services__subtext">
-          From blazing-fast web apps to viral social ads, stunning designs, and
-          cinematic video edits — one team handles it all. No juggling
-          contractors. Pure results.
+          From blazing-fast web apps to complex, enterprise-grade platforms — we
+          handle the entire stack, frontend to backend. No juggling contractors.
+          Pure results.
         </p>
       </div>
 

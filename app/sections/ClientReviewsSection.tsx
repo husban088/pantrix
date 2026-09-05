@@ -12,10 +12,6 @@ import "./ClientReviewsSection.css";
 // ── Service tag colors — matching Hero/WhyChooseUs/Services ──
 const serviceColors: Record<string, string> = {
   "Full Stack Dev": "#00d4ff",
-  "Social Ads": "#FF6B6B",
-  "Graphic Design": "#FFD700",
-  "Poster Design": "#FF69B4",
-  "Video Editing": "#9B59B6",
 };
 
 const reviewsData = [
@@ -58,114 +54,6 @@ const reviewsData = [
     avatar: "J",
     service: "Full Stack Dev",
     color: "linear-gradient(135deg, #0099cc, #007fa8)",
-  },
-  // ── Social Ads Management Reviews ──
-  {
-    id: "04",
-    name: "Marcus Leroy",
-    country: "USA",
-    flag: "🇺🇸",
-    review:
-      "Our Facebook and Instagram ads went from losing money to 4× ROAS in just 3 weeks. The targeting strategy Pantrix built for us is unlike anything we've seen from other agencies.",
-    rating: 5,
-    role: "E-Commerce Brand Owner",
-    avatar: "M",
-    service: "Social Ads",
-    color: "linear-gradient(135deg, #FF6B6B, #cc4444)",
-  },
-  {
-    id: "05",
-    name: "Fatima Al-Rashid",
-    country: "UAE",
-    flag: "🇦🇪",
-    review:
-      "Pantrix managed our Google Ads and Meta campaigns simultaneously with incredible precision. Sales doubled in the first month. The weekly reports are detailed and transparent.",
-    rating: 5,
-    role: "Retail Business Owner",
-    avatar: "F",
-    service: "Social Ads",
-    color: "linear-gradient(135deg, #FF6B6B, #e05555)",
-  },
-  // ── Graphic Designing Reviews ──
-  {
-    id: "06",
-    name: "Sophia Wagner",
-    country: "Germany",
-    flag: "🇩🇪",
-    review:
-      "Präzision und Qualität sind herausragend! The brand identity they designed for us is modern, memorable, and perfectly captures our company values. We will work with Pantrix again.",
-    rating: 5,
-    role: "Marketing Director",
-    avatar: "S",
-    service: "Graphic Design",
-    color: "linear-gradient(135deg, #FFD700, #cc9900)",
-  },
-  {
-    id: "07",
-    name: "Amara Nwosu",
-    country: "Nigeria",
-    flag: "🇳🇬",
-    review:
-      "My logo and brand kit exceeded every expectation. The creativity, professionalism, and turnaround time were all exceptional. My business looks premium now — I get compliments every day!",
-    rating: 5,
-    role: "Fashion Entrepreneur",
-    avatar: "A",
-    service: "Graphic Design",
-    color: "linear-gradient(135deg, #FFD700, #b8860b)",
-  },
-  // ── Poster Designing Reviews ──
-  {
-    id: "08",
-    name: "Elena Volkov",
-    country: "Canada",
-    flag: "🇨🇦",
-    review:
-      "The event posters and social media graphics Pantrix made for us were absolutely stunning. Our event ticket sales jumped 60% compared to last year — I credit the visuals completely.",
-    rating: 5,
-    role: "Event Coordinator",
-    avatar: "E",
-    service: "Poster Design",
-    color: "linear-gradient(135deg, #FF69B4, #cc3399)",
-  },
-  {
-    id: "09",
-    name: "Liam O'Brien",
-    country: "Ireland",
-    flag: "🇮🇪",
-    review:
-      "Ordered social media post designs and banners for our pub's weekly events. The posters look so professional — our followers have tripled and customers keep asking who made them!",
-    rating: 5,
-    role: "Restaurant & Bar Owner",
-    avatar: "L",
-    service: "Poster Design",
-    color: "linear-gradient(135deg, #FF69B4, #e0559a)",
-  },
-  // ── Video Editing Reviews ──
-  {
-    id: "10",
-    name: "Marco Rossi",
-    country: "Italy",
-    flag: "🇮🇹",
-    review:
-      "Pantrix delivered a masterpiece. The animations are smooth, the color grading is cinematic, and the final cut was absolutely flawless. Grazie mille to the entire team!",
-    rating: 5,
-    role: "Luxury Brand Owner",
-    avatar: "M",
-    service: "Video Editing",
-    color: "linear-gradient(135deg, #9B59B6, #7d3f9e)",
-  },
-  {
-    id: "11",
-    name: "Priya Sharma",
-    country: "India",
-    flag: "🇮🇳",
-    review:
-      "My YouTube channel went from 200 to 8,000 subscribers in 2 months after Pantrix started editing my videos. The intros, transitions, and captions are on another level entirely.",
-    rating: 5,
-    role: "Content Creator & YouTuber",
-    avatar: "P",
-    service: "Video Editing",
-    color: "linear-gradient(135deg, #9B59B6, #6c3483)",
   },
 ];
 
@@ -245,9 +133,8 @@ export default function ClientReviewsSection() {
           </span>
         </h2>
         <p className="reviews__subtext">
-          Don't just take our word for it — hear from clients across 8 countries
-          who've experienced the Pantrix difference across every service we
-          offer.
+          Don't just take our word for it — hear from clients across 3 countries
+          who've experienced the Pantrix difference in web development.
         </p>
       </div>
 
@@ -457,7 +344,7 @@ export default function ClientReviewsSection() {
         </div>
         <div className="reviews__stat-divider" aria-hidden="true" />
         <div className="reviews__stat" role="listitem">
-          <span className="reviews__stat-num">8+</span>
+          <span className="reviews__stat-num">3+</span>
           <span className="reviews__stat-label">Countries</span>
         </div>
       </div>

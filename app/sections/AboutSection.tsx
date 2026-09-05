@@ -128,110 +128,6 @@ const services = [
     desc: "Flawless experiences on every screen — mobile to desktop",
     tags: ["Mobile", "Tablet", "Desktop"],
   },
-  {
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" width="28" height="28">
-        <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="1.5" />
-        <path
-          d="M12 2v3M12 19v3M2 12h3M19 12h3"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-        />
-        <path
-          d="M5.64 5.64l2.12 2.12M16.24 16.24l2.12 2.12M5.64 18.36l2.12-2.12M16.24 7.76l2.12-2.12"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-        />
-      </svg>
-    ),
-    badge: "05",
-    badgeColor: "#FF6B6B",
-    title: "Social Ads Management",
-    desc: "Data-driven ad campaigns on Meta, Instagram & Google that convert",
-    tags: ["Meta Ads", "Google Ads", "Analytics"],
-  },
-  {
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" width="28" height="28">
-        <circle cx="12" cy="8" r="4" stroke="currentColor" strokeWidth="1.5" />
-        <path
-          d="M4 20c0-4 3.6-7 8-7s8 3 8 7"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-        />
-        <path
-          d="M18 3l2 2-5 5"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    ),
-    badge: "06",
-    badgeColor: "#FFD700",
-    title: "Graphic Designing",
-    desc: "Brand identities, logos & visual systems built with purpose",
-    tags: ["Branding", "Logo", "Illustration"],
-  },
-  {
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" width="28" height="28">
-        <rect
-          x="3"
-          y="4"
-          width="18"
-          height="14"
-          rx="2"
-          stroke="currentColor"
-          strokeWidth="1.5"
-        />
-        <path d="M3 8h18" stroke="currentColor" strokeWidth="1.5" />
-        <path
-          d="M9 12h6M9 15h4"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-        />
-      </svg>
-    ),
-    badge: "07",
-    badgeColor: "#FF69B4",
-    title: "Poster Designing",
-    desc: "Eye-catching promotional posters & marketing visuals that convert",
-    tags: ["Print", "Event Posters", "Banners"],
-  },
-  {
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" width="28" height="28">
-        <rect
-          x="2"
-          y="4"
-          width="20"
-          height="16"
-          rx="2"
-          stroke="currentColor"
-          strokeWidth="1.5"
-        />
-        <path
-          d="M10 9l6 3-6 3V9z"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinejoin="round"
-          fill="currentColor"
-          fillOpacity="0.2"
-        />
-      </svg>
-    ),
-    badge: "08",
-    badgeColor: "#9B59B6",
-    title: "Video Editing",
-    desc: "Professional reels, motion graphics & branded video content",
-    tags: ["Reels", "Motion Graphics", "Color Grade"],
-  },
 ];
 
 export default function AboutSection() {
@@ -280,22 +176,22 @@ export default function AboutSection() {
             <span className="about__signature-name">Pantrix</span>
             <span className="about__signature-dot">✦</span>
             <span className="about__signature-role">
-              Full-Service Digital Studio
+              Full Stack Development Studio
             </span>
           </div>
         </div>
 
         <div className="about__intro-right">
           <p className="about__desc about__desc--1">
-            <strong>Pantrix</strong> is a full-service digital studio crafting
-            modern web applications, scroll-stopping ad campaigns, stunning
-            brand visuals, and cinematic video content — all under one roof.
+            <strong>Pantrix</strong> is a full stack development studio crafting
+            modern, high-performance web applications — from pixel-perfect
+            frontends to scalable, secure backend systems.
           </p>
           <p className="about__desc about__desc--2">
-            From pixel-perfect frontends in React &amp; Next.js, to social ads
-            on Meta &amp; Google, to graphic design, posters, and video editing
-            — we deliver end-to-end digital solutions that help brands stand out
-            online.
+            From pixel-perfect frontends in React &amp; Next.js, to robust
+            backends powered by Node.js, Firebase &amp; Supabase, to performance
+            tuning and fully responsive design — we deliver end-to-end web
+            solutions built to last.
           </p>
 
           <div className="about__stats">

@@ -415,7 +415,7 @@
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1px;
   padding: 0 max(24px, 5vw) 80px;
   background: var(--border);
@@ -443,16 +443,10 @@
 }
 
 .wcu__card:first-child {
-  border-radius: 24px 0 0 0;
-}
-.wcu__card:nth-child(3) {
-  border-radius: 0 24px 0 0;
-}
-.wcu__card:nth-child(4) {
-  border-radius: 0 0 0 24px;
+  border-radius: 24px 0 0 24px;
 }
 .wcu__card:last-child {
-  border-radius: 0 0 24px 0;
+  border-radius: 0 24px 24px 0;
 }
 
 .wcu__card:hover {
@@ -1050,27 +1044,7 @@
   }
 
   .wcu__grid-cards {
-    grid-template-columns: repeat(2, 1fr);
     padding: 0 20px 60px;
-  }
-
-  .wcu__card:first-child {
-    border-radius: 24px 0 0 0;
-  }
-  .wcu__card:nth-child(2) {
-    border-radius: 0 24px 0 0;
-  }
-  .wcu__card:nth-child(3) {
-    border-radius: 0;
-  }
-  .wcu__card:nth-child(4) {
-    border-radius: 0;
-  }
-  .wcu__card:nth-child(5) {
-    border-radius: 0 0 0 24px;
-  }
-  .wcu__card:last-child {
-    border-radius: 0 0 24px 0;
   }
 
   .wcu__promise-grid {

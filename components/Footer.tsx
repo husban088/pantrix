@@ -24,54 +24,20 @@ const services = [
 ];
 
 const socialLinks = [
-  { label: "Instagram", href: "https://instagram.com" },
-  { label: "LinkedIn", href: "https://linkedin.com" },
-  { label: "Twitter / X", href: "https://twitter.com" },
-  { label: "Behance", href: "https://behance.net" },
-  { label: "GitHub", href: "https://github.com" },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/husban-ahmad-b8203028b",
+  },
+  { label: "GitHub", href: "https://github.com/husban088" },
 ];
 
 /* ── Inline SVG components (Turbopack-safe) ── */
-function IconInstagram() {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-      <circle cx="12" cy="12" r="4" />
-      <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none" />
-    </svg>
-  );
-}
-
 function IconLinkedIn() {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
       <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z" />
       <rect x="2" y="9" width="4" height="12" />
       <circle cx="4" cy="4" r="2" />
-    </svg>
-  );
-}
-
-function IconX() {
-  return (
-    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-    </svg>
-  );
-}
-
-function IconBehance() {
-  return (
-    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029H23.7zM15.97 13h4.908c-.079-1.816-1.303-2.57-2.513-2.57-1.394 0-2.227.758-2.395 2.57zM7 12.065c1.313 0 2.5-.5 2.5-2s-1-2-2.5-2H4v4h3zm-3 5.935H3V6h5c2.5 0 4.5 1.5 4.5 4s-1.875 3.5-3.875 3.75L12 18H9L6.5 14H4v4z" />
     </svg>
   );
 }
@@ -144,10 +110,7 @@ function IconArrow() {
 
 /* ── Social icon picker ── */
 function SocialIcon({ label }: { label: string }) {
-  if (label === "Instagram") return <IconInstagram />;
   if (label === "LinkedIn") return <IconLinkedIn />;
-  if (label === "Twitter / X") return <IconX />;
-  if (label === "Behance") return <IconBehance />;
   if (label === "GitHub") return <IconGitHub />;
   return null;
 }
@@ -265,23 +228,26 @@ export default function Footer() {
           </p>
 
           <div className="footer__contact-block">
-            <a href="mailto:pantrix@gmail.com" className="footer__contact-item">
+            <a
+              href="mailto:husbanahmad099@gmail.com"
+              className="footer__contact-item"
+            >
               <span className="footer__contact-icon">
                 <IconEmail />
               </span>
-              <span>pantrix@gmail.com</span>
+              <span>husbanahmad099@gmail.com</span>
             </a>
-            <a href="tel:+61426855997" className="footer__contact-item">
+            <a href="tel:+923360763840" className="footer__contact-item">
               <span className="footer__contact-icon">
                 <IconPhone />
               </span>
-              <span>+61 426 855 997</span>
+              <span>+92 336 0763840</span>
             </a>
             <div className="footer__contact-item footer__contact-item--location">
               <span className="footer__contact-icon">
                 <IconLocation />
               </span>
-              <span>Australia</span>
+              <span>Faisalabad, Pakistan</span>
             </div>
           </div>
         </div>
@@ -437,7 +403,7 @@ export default function Footer() {
             <span className="footer__heart" aria-hidden="true">
               ♥
             </span>{" "}
-            in Australia
+            in Pakistan
           </p>
         </div>
       </div>

@@ -36,8 +36,8 @@ export default function ReviewsPage() {
           </h1>
 
           <p className="reviews-page__hero-sub">
-            Real words from real clients across 6+ countries who trusted Pantrix
-            to bring their visions to life.
+            Real words from real clients across 3+ countries who trusted Pantrix
+            with their web development projects.
           </p>
 
           {/* Scroll indicator */}

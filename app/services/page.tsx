@@ -52,162 +52,6 @@ const servicesData = [
   },
   {
     id: "02",
-    category: "Digital Marketing",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" width="32" height="32">
-        <path
-          d="M22 12h-4l-3 9L9 3l-3 9H2"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    ),
-    title: "Social Ads Management",
-    shortDesc:
-      "Data-driven campaigns on Meta & Google that convert and deliver real ROI.",
-    fullDesc:
-      "I create data-driven ad campaigns on Meta and Google that actually convert. From audience targeting to A/B testing and analytics, I maximize your ROI with proven strategies and weekly performance reports.",
-    features: [
-      "Meta Ads (Facebook & Instagram)",
-      "Google Ads & PPC Campaigns",
-      "Audience Targeting & Retargeting",
-      "A/B Testing & Optimization",
-      "Analytics & Weekly Reports",
-      "Campaign Strategy & Creatives",
-    ],
-    inquiryText: "Let's boost your ROI",
-    color: "#FF6B6B",
-    highlight: "ROI Focused",
-  },
-  {
-    id: "03",
-    category: "Design",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" width="32" height="32">
-        <circle
-          cx="12"
-          cy="12"
-          r="10"
-          stroke="currentColor"
-          strokeWidth="1.5"
-        />
-        <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.5" />
-        <path
-          d="M12 2v4M12 18v4M2 12h4M18 12h4"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-        />
-      </svg>
-    ),
-    title: "Graphic Designing",
-    shortDesc:
-      "Brand identities, logos, and visual systems crafted with purpose and precision.",
-    fullDesc:
-      "I design stunning brand identities, logos, and complete visual systems that make your business unforgettable. Every color, font, and element is chosen with purpose to tell your unique story.",
-    features: [
-      "Logo & Brand Identity Design",
-      "Brand Style Guide & System",
-      "UI/UX Design & Prototyping",
-      "Social Media Kit",
-      "Illustration & Icon Sets",
-      "Print & Digital Assets",
-    ],
-    inquiryText: "Let's create your brand identity",
-    color: "#FFD700",
-    highlight: "100% Custom",
-  },
-  {
-    id: "04",
-    category: "Design",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" width="32" height="32">
-        <rect
-          x="3"
-          y="3"
-          width="18"
-          height="18"
-          rx="2"
-          stroke="currentColor"
-          strokeWidth="1.5"
-        />
-        <circle
-          cx="8.5"
-          cy="8.5"
-          r="1.5"
-          stroke="currentColor"
-          strokeWidth="1.5"
-        />
-        <path
-          d="M21 15l-5-5L5 21"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    ),
-    title: "Poster Designing",
-    shortDesc:
-      "Eye-catching promotional posters and marketing visuals that make your brand unforgettable.",
-    fullDesc:
-      "I create eye-catching promotional posters and marketing visuals that stop the scroll. From event posters to social media graphics, your brand will stand out and get noticed.",
-    features: [
-      "Event & Promotional Posters",
-      "Social Media Posts & Stories",
-      "Banners & Billboard Designs",
-      "Print-Ready Files (CMYK)",
-      "Multiple Format Exports",
-      "Unlimited Revisions",
-    ],
-    inquiryText: "Let's make your brand stand out",
-    color: "#FF69B4",
-    highlight: "Scroll-Stopping",
-  },
-  {
-    id: "05",
-    category: "Video Production",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" width="32" height="32">
-        <polygon
-          points="23 7 16 12 23 17 23 7"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <rect
-          x="1"
-          y="5"
-          width="15"
-          height="14"
-          rx="2"
-          stroke="currentColor"
-          strokeWidth="1.5"
-        />
-      </svg>
-    ),
-    title: "Video Editing",
-    shortDesc:
-      "Professional edits, reels, motion graphics, and branded video content that drives engagement.",
-    fullDesc:
-      "I produce professional video edits, engaging reels, and stunning motion graphics that drive engagement. Your brand story comes to life through cinematic visuals and expert storytelling.",
-    features: [
-      "Short-Form Reels & TikToks",
-      "YouTube Long-Form Editing",
-      "Motion Graphics & Animations",
-      "Color Grading & Correction",
-      "Captions & Sound Design",
-      "Brand Intro / Outro Sequences",
-    ],
-    inquiryText: "Let's bring your vision to life",
-    color: "#9B59B6",
-    highlight: "Pro Quality",
-  },
-  {
-    id: "06",
     category: "Web Development",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" width="32" height="32">
@@ -310,9 +154,9 @@ export default function ServicesPage() {
             <span className="services-hero__title-gold">Excellence</span>
           </h1>
           <p className="services-hero__subtitle">
-            Comprehensive digital solutions tailored to your unique needs. From
-            stunning designs to powerful web apps and ad campaigns — I deliver
-            complete digital experiences.
+            Full stack web development tailored to your unique needs — from
+            pixel-perfect frontends to scalable, secure backend systems, I
+            deliver complete web solutions.
           </p>
           <div className="services-hero__stats">
             <div className="services-hero__stat">
@@ -337,7 +181,7 @@ export default function ServicesPage() {
           <div className="services-page__header">
             <h2 className="services-page__title">What We Do</h2>
             <p className="services-page__subtitle">
-              Comprehensive digital solutions for your growth
+              Full stack web development solutions for your growth
             </p>
           </div>
           <div className="services-page__cards">

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import "./Contact.css";
 
 /* ── Particle data generated at module level (no Math.random in render) ── */
@@ -57,6 +57,24 @@ const LocationIcon = () => (
   </svg>
 );
 
+const PhoneIcon = () => (
+  <svg
+    width="22"
+    height="22"
+    viewBox="0 0 24 24"
+    fill="none"
+    aria-hidden="true"
+  >
+    <path
+      d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 12 19.79 19.79 0 011.62 3.38 2 2 0 013.6 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.91 8.1a16 16 0 006 6l.94-.94a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
 const ClockIcon = () => (
   <svg
     width="22"
@@ -104,7 +122,17 @@ export default function ContactPage() {
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const [showToast, setShowToast] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
+
+  /* Auto-dismiss the success toast */
+  useEffect(() => {
+    if (status === "success") {
+      setShowToast(true);
+      const t = setTimeout(() => setShowToast(false), 4500);
+      return () => clearTimeout(t);
+    }
+  }, [status]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -153,6 +181,41 @@ export default function ContactPage() {
 
   return (
     <section className="contact-page" id="contact">
+      {/* ── Toast Notification ── */}
+      {showToast && (
+        <div className="contact__toast" role="status" aria-live="polite">
+          <span className="contact__toast-icon">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M4 12.5L9.5 18L20 6"
+                stroke="currentColor"
+                strokeWidth="2.4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </span>
+          <div className="contact__toast-text">
+            <strong>Message sent successfully</strong>
+            <span>We'll get back to you within 24 hours.</span>
+          </div>
+          <button
+            className="contact__toast-close"
+            onClick={() => setShowToast(false)}
+            aria-label="Dismiss"
+          >
+            ×
+          </button>
+          <span className="contact__toast-bar" aria-hidden="true" />
+        </div>
+      )}
+
       {/* ── Animated Background ── */}
       <div className="contact__bg" aria-hidden="true">
         <div className="contact__grid" />
@@ -213,10 +276,22 @@ export default function ContactPage() {
               <div className="contact__info-content">
                 <span className="contact__info-label">Email</span>
                 <a
-                  href="mailto:pantrix@gmail.com"
+                  href="mailto:husbanahmad099@gmail.com"
                   className="contact__info-value"
                 >
-                  pantrix@gmail.com
+                  husbanahmad099@gmail.com
+                </a>
+              </div>
+            </div>
+
+            <div className="contact__info-card">
+              <div className="contact__info-icon">
+                <PhoneIcon />
+              </div>
+              <div className="contact__info-content">
+                <span className="contact__info-label">Phone</span>
+                <a href="tel:+923360763840" className="contact__info-value">
+                  +92 336 0763840
                 </a>
               </div>
             </div>
@@ -227,7 +302,9 @@ export default function ContactPage() {
               </div>
               <div className="contact__info-content">
                 <span className="contact__info-label">Based In</span>
-                <span className="contact__info-value">Global / Remote</span>
+                <span className="contact__info-value">
+                  Faisalabad, Pakistan
+                </span>
               </div>
             </div>
 
@@ -272,23 +349,42 @@ export default function ContactPage() {
             <div className="contact__form-corner-bl" aria-hidden="true" />
             <div className="contact__form-radial" aria-hidden="true" />
 
-            <h2 className="contact__form-title">Send a Message</h2>
-            <p className="contact__form-sub">
-              Fill out the form and we'll get back to you within 24 hours.
-            </p>
-
             {/* ── SUCCESS STATE ── */}
             {status === "success" ? (
               <div className="contact__success">
-                <div className="contact__success-icon">✦</div>
-                <h3 className="contact__success-title">Message Sent!</h3>
+                <div className="contact__success-ring">
+                  <div
+                    className="contact__success-ring-pulse"
+                    aria-hidden="true"
+                  />
+                  <div className="contact__success-icon">
+                    <svg
+                      width="30"
+                      height="30"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M4 12.5L9.5 18L20 6"
+                        stroke="currentColor"
+                        strokeWidth="2.2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <span className="contact__success-eyebrow">
+                  ✦&nbsp; Delivered &nbsp;✦
+                </span>
+                <h3 className="contact__success-title">Message Sent</h3>
                 <p className="contact__success-text">
-                  Thank you for reaching out. We'll get back to you within 24
-                  hours.
+                  Thank you for reaching out. Our team will get back to you
+                  within 24 hours.
                 </p>
                 <button
-                  className="contact__submit"
-                  style={{ marginTop: "1.5rem" }}
+                  className="contact__submit contact__success-btn"
                   onClick={() => setStatus("idle")}
                 >
                   <span className="contact__submit-text">Send Another</span>
@@ -296,28 +392,76 @@ export default function ContactPage() {
                 </button>
               </div>
             ) : (
-              <form
-                ref={formRef}
-                className="contact__form"
-                onSubmit={handleSubmit}
-                noValidate
-              >
-                {/* Row: Name + Email */}
-                <div className="contact__form-row">
+              <>
+                <h2 className="contact__form-title">Send a Message</h2>
+                <p className="contact__form-sub">
+                  Fill out the form and we'll get back to you within 24 hours.
+                </p>
+                <form
+                  ref={formRef}
+                  className="contact__form"
+                  onSubmit={handleSubmit}
+                  noValidate
+                >
+                  {/* Row: Name + Email */}
+                  <div className="contact__form-row">
+                    <div className="contact__input-group">
+                      <input
+                        type="text"
+                        id="name"
+                        className="contact__input"
+                        placeholder=" "
+                        required
+                        autoComplete="name"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        disabled={status === "sending"}
+                      />
+                      <label htmlFor="name" className="contact__label">
+                        Your Name
+                      </label>
+                      <span
+                        className="contact__input-border"
+                        aria-hidden="true"
+                      />
+                    </div>
+
+                    <div className="contact__input-group">
+                      <input
+                        type="email"
+                        id="email"
+                        className="contact__input"
+                        placeholder=" "
+                        required
+                        autoComplete="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        disabled={status === "sending"}
+                      />
+                      <label htmlFor="email" className="contact__label">
+                        Email Address
+                      </label>
+                      <span
+                        className="contact__input-border"
+                        aria-hidden="true"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Subject */}
                   <div className="contact__input-group">
                     <input
                       type="text"
-                      id="name"
+                      id="subject"
                       className="contact__input"
                       placeholder=" "
                       required
-                      autoComplete="name"
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
+                      value={subject}
+                      onChange={(e) => setSubject(e.target.value)}
                       disabled={status === "sending"}
                     />
-                    <label htmlFor="name" className="contact__label">
-                      Your Name
+                    <label htmlFor="subject" className="contact__label">
+                      Subject
                     </label>
                     <span
                       className="contact__input-border"
@@ -325,88 +469,58 @@ export default function ContactPage() {
                     />
                   </div>
 
+                  {/* Message */}
                   <div className="contact__input-group">
-                    <input
-                      type="email"
-                      id="email"
-                      className="contact__input"
+                    <textarea
+                      id="message"
+                      className="contact__input contact__textarea"
+                      rows={5}
                       placeholder=" "
                       required
-                      autoComplete="email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
                       disabled={status === "sending"}
                     />
-                    <label htmlFor="email" className="contact__label">
-                      Email Address
+                    <label htmlFor="message" className="contact__label">
+                      Your Message
                     </label>
                     <span
                       className="contact__input-border"
                       aria-hidden="true"
                     />
                   </div>
-                </div>
 
-                {/* Subject */}
-                <div className="contact__input-group">
-                  <input
-                    type="text"
-                    id="subject"
-                    className="contact__input"
-                    placeholder=" "
-                    required
-                    value={subject}
-                    onChange={(e) => setSubject(e.target.value)}
-                    disabled={status === "sending"}
-                  />
-                  <label htmlFor="subject" className="contact__label">
-                    Subject
-                  </label>
-                  <span className="contact__input-border" aria-hidden="true" />
-                </div>
-
-                {/* Message */}
-                <div className="contact__input-group">
-                  <textarea
-                    id="message"
-                    className="contact__input contact__textarea"
-                    rows={5}
-                    placeholder=" "
-                    required
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                    disabled={status === "sending"}
-                  />
-                  <label htmlFor="message" className="contact__label">
-                    Your Message
-                  </label>
-                  <span className="contact__input-border" aria-hidden="true" />
-                </div>
-
-                {/* Error Message */}
-                {status === "error" && errorMsg && (
-                  <div className="contact__error-msg" role="alert">
-                    <span>⚠</span> {errorMsg}
-                  </div>
-                )}
-
-                {/* Submit Button */}
-                <button
-                  type="submit"
-                  className={`contact__submit ${status === "sending" ? "contact__submit--loading" : ""}`}
-                  disabled={status === "sending"}
-                >
-                  <span className="contact__submit-text">
-                    {status === "sending" ? "Sending…" : "Send Message"}
-                  </span>
-                  <span className="contact__submit-shine" aria-hidden="true" />
-                  {status !== "sending" && (
-                    <span className="contact__submit-arrow" aria-hidden="true">
-                      <ArrowIcon />
-                    </span>
+                  {/* Error Message */}
+                  {status === "error" && errorMsg && (
+                    <div className="contact__error-msg" role="alert">
+                      <span>⚠</span> {errorMsg}
+                    </div>
                   )}
-                </button>
-              </form>
+
+                  {/* Submit Button */}
+                  <button
+                    type="submit"
+                    className={`contact__submit ${status === "sending" ? "contact__submit--loading" : ""}`}
+                    disabled={status === "sending"}
+                  >
+                    <span className="contact__submit-text">
+                      {status === "sending" ? "Sending…" : "Send Message"}
+                    </span>
+                    <span
+                      className="contact__submit-shine"
+                      aria-hidden="true"
+                    />
+                    {status !== "sending" && (
+                      <span
+                        className="contact__submit-arrow"
+                        aria-hidden="true"
+                      >
+                        <ArrowIcon />
+                      </span>
+                    )}
+                  </button>
+                </form>
+              </>
             )}
 
             <p className="contact__form-note" aria-label="Privacy note">

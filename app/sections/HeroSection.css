@@ -1188,79 +1188,6 @@
   background: rgba(0, 212, 255, 0.4);
 }
 
-/* ── Services Quick Icons (Right Panel) ── */
-.hero__services-quick {
-  width: 100%;
-  max-width: 420px;
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-  padding: 1.2rem 1.5rem;
-  background: rgba(10, 10, 10, 0.4);
-  backdrop-filter: blur(10px);
-  border-radius: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.hero__services-quick-label {
-  font-family: var(--font-mono);
-  font-size: 0.58rem;
-  letter-spacing: 0.2em;
-  color: var(--muted);
-  text-transform: uppercase;
-  text-align: center;
-}
-
-.hero__services-quick-icons {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
-
-.hero__services-quick-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.35rem;
-  cursor: default;
-  padding: 0.5rem;
-  border-radius: 12px;
-  transition: all 0.3s ease;
-  flex: 1;
-  min-width: 50px;
-}
-
-.hero__services-quick-item:hover {
-  background: rgba(255, 255, 255, 0.04);
-  transform: translateY(-3px);
-}
-
-.hero__services-quick-item svg {
-  width: 24px !important;
-  height: 24px !important;
-  filter: drop-shadow(0 0 6px var(--q-color, #00d4ff));
-  transition: filter 0.3s ease;
-}
-
-.hero__services-quick-item:hover svg {
-  filter: drop-shadow(0 0 12px var(--q-color, #00d4ff));
-}
-
-.hero__services-quick-item span {
-  font-family: var(--font-mono);
-  font-size: 0.58rem;
-  letter-spacing: 0.05em;
-  opacity: 0.75;
-  transition: opacity 0.3s ease;
-  text-align: center;
-}
-
-.hero__services-quick-item:hover span {
-  opacity: 1;
-}
-
 /* Float Rings */
 .hero__float-ring {
   position: absolute;
@@ -1338,8 +1265,7 @@
     top: 80px;
     align-self: flex-start;
   }
-  .hero__sequential-container,
-  .hero__services-quick {
+  .hero__sequential-container {
     max-width: 360px;
   }
   .hero__sequential-icon-circle {
@@ -1382,11 +1308,6 @@
   .hero__sequential-container {
     max-width: 380px;
     flex: 1 1 340px;
-  }
-  .hero__services-quick {
-    max-width: 380px;
-    flex: 1 1 300px;
-    align-self: flex-start;
   }
   .hero__float-ring--1,
   .hero__float-ring--2,
@@ -1433,8 +1354,7 @@
   .hero__orbit-label {
     width: 100%;
   }
-  .hero__sequential-container,
-  .hero__services-quick {
+  .hero__sequential-container {
     max-width: 340px;
     flex: 1 1 280px;
   }
@@ -1505,10 +1425,6 @@
     padding: 1.5rem 1rem;
     border-radius: 32px;
   }
-  .hero__services-quick {
-    max-width: 100%;
-    border-radius: 20px;
-  }
   .hero__float-ring--1,
   .hero__float-ring--2,
   .hero__float-ring--3 {
@@ -1554,9 +1470,6 @@
   }
   .hero__service-title {
     font-size: 0.82rem;
-  }
-  .hero__services-quick-item span {
-    display: none;
   }
 }
 
