@@ -386,8 +386,8 @@ export default function ProjectsSection() {
                     style={{ objectFit: "cover" }}
                   />
                 </div>
-                <div className="projects__card-overlay">
-                  {project.link ? (
+                {project.link && (
+                  <div className="projects__card-overlay">
                     <a
                       href={project.link}
                       target="_blank"
@@ -410,12 +410,8 @@ export default function ProjectsSection() {
                         />
                       </svg>
                     </a>
-                  ) : (
-                    <span className="projects__card-view projects__card-view--static">
-                      <span>Personal Project</span>
-                    </span>
-                  )}
-                </div>
+                  </div>
+                )}
               </div>
 
               {/* Content */}
