@@ -313,6 +313,34 @@ const projectsData = [
     country: "Australia",
     countryFlag: "🇦🇺",
   },
+  {
+    id: "24",
+    title: "Chat Web App",
+    category: "Mobile App",
+    shortDesc:
+      "Real-time chat web application with instant messaging, built on Node.js and Supabase.",
+    tags: ["Node.js", "Supabase", "Real-time"],
+    image: "/chat.png",
+    link: "",
+    color: "#3ecf8e",
+    icon: "💬",
+    country: "Pakistan",
+    countryFlag: "🇵🇰",
+  },
+  {
+    id: "25",
+    title: "SMC Trading Notes App",
+    category: "Mobile App",
+    shortDesc:
+      "React Native (Expo) crypto trading app with live charts and SMC notes, powered by Firebase.",
+    tags: ["React Native", "Expo", "Firebase"],
+    image: "/trading.png",
+    link: "",
+    color: "#ff6b35",
+    icon: "📈",
+    country: "Pakistan",
+    countryFlag: "🇵🇰",
+  },
 ];
 
 /* ─────────────────────────────────────────
@@ -325,6 +353,7 @@ const categories = [
   "Functionality",
   "Firebase",
   "Supabase",
+  "Mobile App",
 ];
 
 /* ─────────────────────────────────────────
@@ -408,23 +437,34 @@ export default function ProjectsSection() {
                   />
                 </div>
                 <div className="projects__card-overlay">
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="projects__card-view"
-                  >
-                    <span>View Project</span>
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                      <path
-                        d="M4 10h12M12 6l4 4-4 4"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </a>
+                  {project.link ? (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="projects__card-view"
+                    >
+                      <span>View Project</span>
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                      >
+                        <path
+                          d="M4 10h12M12 6l4 4-4 4"
+                          stroke="currentColor"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </a>
+                  ) : (
+                    <span className="projects__card-view projects__card-view--static">
+                      <span>Personal Project</span>
+                    </span>
+                  )}
                 </div>
               </div>
 

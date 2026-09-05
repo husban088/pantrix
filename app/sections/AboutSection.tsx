@@ -3,9 +3,9 @@
 import "./AboutSection.css";
 
 const stats = [
-  { num: "150+", label: "Projects Delivered" },
+  { num: "20+", label: "Projects Delivered" },
   { num: "5+", label: "Years in Industry" },
-  { num: "50+", label: "Happy Clients" },
+  { num: "20+", label: "Happy Clients" },
   { num: "100%", label: "Client Satisfaction" },
 ];
 
@@ -69,8 +69,8 @@ const services = [
     badge: "02",
     badgeColor: "#00bbf9",
     title: "Backend & APIs",
-    desc: "Scalable servers with Firebase & Supabase integration",
-    tags: ["Node.js", "Firebase", "Supabase"],
+    desc: "Scalable servers & databases with Node.js, Firebase, Supabase & MongoDB — version-controlled on GitHub, deployed on Vercel",
+    tags: ["Node.js", "Firebase", "Supabase", "MongoDB", "GitHub", "Vercel"],
   },
   {
     icon: (
@@ -128,6 +128,43 @@ const services = [
     desc: "Flawless experiences on every screen — mobile to desktop",
     tags: ["Mobile", "Tablet", "Desktop"],
   },
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" width="28" height="28">
+        <rect
+          x="7"
+          y="2"
+          width="10"
+          height="20"
+          rx="2"
+          stroke="currentColor"
+          strokeWidth="1.5"
+        />
+        <line
+          x1="11"
+          y1="18"
+          x2="13"
+          y2="18"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+        />
+      </svg>
+    ),
+    badge: "05",
+    badgeColor: "#61DAFB",
+    title: "Mobile App Development",
+    desc: "Cross-platform mobile apps with React Native & Expo, backed by solid Node.js APIs",
+    tags: [
+      "React Native",
+      "Expo",
+      "Node.js",
+      "Express",
+      "Firebase",
+      "Supabase",
+      "MongoDB",
+    ],
+  },
 ];
 
 export default function AboutSection() {
@@ -152,7 +189,7 @@ export default function AboutSection() {
       {/* Section label */}
       <div className="about__label-row">
         <span className="about__label-line" />
-        <span className="about__label-text">About Us</span>
+        <span className="about__label-text">About Me</span>
         <span className="about__label-line" />
       </div>
 
@@ -183,15 +220,16 @@ export default function AboutSection() {
 
         <div className="about__intro-right">
           <p className="about__desc about__desc--1">
-            <strong>Pantrix</strong> is a full stack development studio crafting
-            modern, high-performance web applications — from pixel-perfect
-            frontends to scalable, secure backend systems.
+            I'm the developer behind <strong>Pantrix</strong> — a full stack
+            developer crafting modern, high-performance web applications — from
+            pixel-perfect frontends to scalable, secure backend systems.
           </p>
           <p className="about__desc about__desc--2">
             From pixel-perfect frontends in React &amp; Next.js, to robust
-            backends powered by Node.js, Firebase &amp; Supabase, to performance
-            tuning and fully responsive design — we deliver end-to-end web
-            solutions built to last.
+            backends powered by Node.js, Firebase, Supabase &amp; MongoDB, to
+            performance tuning and fully responsive design — I deliver
+            end-to-end web solutions, version-controlled on GitHub and deployed
+            on Vercel, built to last.
           </p>
 
           <div className="about__stats">

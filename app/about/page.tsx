@@ -3,7 +3,7 @@
 import "./AboutPage.css";
 
 /* ─────────────────────────────────────────────
-   DATA — 4 Services (same as About Section)
+   DATA — 5 Services (same as About Section)
 ───────────────────────────────────────────── */
 
 const stats = [
@@ -13,7 +13,7 @@ const stats = [
   { num: "100%", label: "Client Satisfaction" },
 ];
 
-// 4 Services - EXACTLY matching About Section design
+// 5 Services - EXACTLY matching About Section design
 const services = [
   {
     icon: (
@@ -74,8 +74,8 @@ const services = [
     badge: "02",
     badgeColor: "#00bbf9",
     title: "Backend & APIs",
-    desc: "Scalable servers with Firebase & Supabase integration",
-    tags: ["Node.js", "Firebase", "Supabase"],
+    desc: "Scalable servers & databases with Node.js, Firebase, Supabase & MongoDB — version-controlled on GitHub, deployed on Vercel",
+    tags: ["Node.js", "Firebase", "Supabase", "MongoDB", "GitHub", "Vercel"],
   },
   {
     icon: (
@@ -132,6 +132,43 @@ const services = [
     title: "Responsive Design",
     desc: "Flawless experiences on every screen — mobile to desktop",
     tags: ["Mobile", "Tablet", "Desktop"],
+  },
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" width="28" height="28">
+        <rect
+          x="7"
+          y="2"
+          width="10"
+          height="20"
+          rx="2"
+          stroke="currentColor"
+          strokeWidth="1.5"
+        />
+        <line
+          x1="11"
+          y1="18"
+          x2="13"
+          y2="18"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+        />
+      </svg>
+    ),
+    badge: "05",
+    badgeColor: "#61DAFB",
+    title: "Mobile App Development",
+    desc: "Cross-platform mobile apps with React Native & Expo, backed by solid Node.js APIs",
+    tags: [
+      "React Native",
+      "Expo",
+      "Node.js",
+      "Express",
+      "Firebase",
+      "Supabase",
+      "MongoDB",
+    ],
   },
 ];
 
@@ -363,9 +400,10 @@ export default function AboutPage() {
             </p>
             <p className="ap__desc">
               From pixel-perfect frontends in React &amp; Next.js, to robust
-              backends powered by Node.js, Firebase &amp; Supabase, to
-              performance tuning and fully responsive design — we deliver
-              end-to-end web solutions built to last.
+              backends powered by Node.js, Firebase, Supabase &amp; MongoDB, to
+              performance tuning, fully responsive design and cross-platform
+              mobile apps — we deliver end-to-end solutions, version-controlled
+              on GitHub and deployed on Vercel, built to last.
             </p>
 
             <div className="ap__stats">
@@ -385,7 +423,7 @@ export default function AboutPage() {
       </section>
 
       {/* ══════════════════════════════════════
-          01 — WHAT WE DO (4 Services Cards - Same as About Section)
+          01 — WHAT WE DO (5 Services Cards - Same as About Section)
       ══════════════════════════════════════ */}
       <section className="ap__section">
         <div className="ap__section-head">

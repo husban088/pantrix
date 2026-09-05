@@ -14,11 +14,12 @@ const categories = [
   "Functionality",
   "Firebase",
   "Supabase",
+  "Mobile App",
 ];
 
 /* ─────────────────────────────────────────
    PROJECTS DATA (Removed: Stop Watch, Quiz App, Todo List, Dog Form, Panda Form, Far Away, Yokos Kitchen, Portfolio CV)
-   Total: 22 projects
+   Total: 25 projects
 ───────────────────────────────────────── */
 const allProjects = [
   {
@@ -36,8 +37,6 @@ const allProjects = [
     featured: true,
     year: "2024",
     icon: "🔥",
-    country: "Australia",
-    countryFlag: "🇦🇺",
   },
   {
     id: "02",
@@ -53,8 +52,6 @@ const allProjects = [
     featured: true,
     year: "2024",
     icon: "🔥",
-    country: "Germany",
-    countryFlag: "🇩🇪",
   },
   {
     id: "03",
@@ -70,8 +67,6 @@ const allProjects = [
     featured: false,
     year: "2023",
     icon: "💼",
-    country: "United Kingdom",
-    countryFlag: "🇬🇧",
   },
   {
     id: "04",
@@ -87,8 +82,6 @@ const allProjects = [
     featured: false,
     year: "2023",
     icon: "📘",
-    country: "USA",
-    countryFlag: "🇺🇸",
   },
   {
     id: "05",
@@ -104,8 +97,6 @@ const allProjects = [
     featured: true,
     year: "2023",
     icon: "📖",
-    country: "United Kingdom",
-    countryFlag: "🇬🇧",
   },
   {
     id: "06",
@@ -121,8 +112,6 @@ const allProjects = [
     featured: false,
     year: "2023",
     icon: "🌿",
-    country: "Australia",
-    countryFlag: "🇦🇺",
   },
   {
     id: "07",
@@ -139,8 +128,6 @@ const allProjects = [
     featured: false,
     year: "2023",
     icon: "🏡",
-    country: "Australia",
-    countryFlag: "🇦🇺",
   },
   {
     id: "08",
@@ -156,8 +143,6 @@ const allProjects = [
     featured: false,
     year: "2023",
     icon: "✈️",
-    country: "Germany",
-    countryFlag: "🇩🇪",
   },
   {
     id: "09",
@@ -173,8 +158,6 @@ const allProjects = [
     featured: false,
     year: "2023",
     icon: "🐶",
-    country: "United Kingdom",
-    countryFlag: "🇬🇧",
   },
   {
     id: "10",
@@ -190,8 +173,6 @@ const allProjects = [
     featured: true,
     year: "2024",
     icon: "🛒",
-    country: "Australia",
-    countryFlag: "🇦🇺",
   },
   {
     id: "11",
@@ -208,8 +189,6 @@ const allProjects = [
     featured: false,
     year: "2023",
     icon: "⚡",
-    country: "USA",
-    countryFlag: "🇺🇸",
   },
   {
     id: "12",
@@ -225,8 +204,6 @@ const allProjects = [
     featured: true,
     year: "2024",
     icon: "🗄️",
-    country: "Germany",
-    countryFlag: "🇩🇪",
   },
   {
     id: "13",
@@ -242,8 +219,6 @@ const allProjects = [
     featured: true,
     year: "2024",
     icon: "🛍️",
-    country: "United Kingdom",
-    countryFlag: "🇬🇧",
   },
   {
     id: "14",
@@ -259,8 +234,6 @@ const allProjects = [
     featured: false,
     year: "2023",
     icon: "💻",
-    country: "Australia",
-    countryFlag: "🇦🇺",
   },
   {
     id: "15",
@@ -276,8 +249,6 @@ const allProjects = [
     featured: false,
     year: "2023",
     icon: "🔵",
-    country: "USA",
-    countryFlag: "🇺🇸",
   },
   {
     id: "16",
@@ -294,8 +265,6 @@ const allProjects = [
     featured: false,
     year: "2023",
     icon: "🕌",
-    country: "Australia",
-    countryFlag: "🇦🇺",
   },
   {
     id: "17",
@@ -311,8 +280,6 @@ const allProjects = [
     featured: false,
     year: "2023",
     icon: "👗",
-    country: "Germany",
-    countryFlag: "🇩🇪",
   },
   {
     id: "18",
@@ -328,8 +295,6 @@ const allProjects = [
     featured: false,
     year: "2023",
     icon: "✨",
-    country: "United Kingdom",
-    countryFlag: "🇬🇧",
   },
   {
     id: "19",
@@ -345,8 +310,6 @@ const allProjects = [
     featured: false,
     year: "2024",
     icon: "🍴",
-    country: "Australia",
-    countryFlag: "🇦🇺",
   },
   {
     id: "20",
@@ -362,8 +325,6 @@ const allProjects = [
     featured: true,
     year: "2024",
     icon: "🗄️",
-    country: "Germany",
-    countryFlag: "🇩🇪",
   },
   {
     id: "21",
@@ -379,8 +340,6 @@ const allProjects = [
     featured: true,
     year: "2026",
     icon: "🔐",
-    country: "Australia",
-    countryFlag: "🇦🇺",
   },
   {
     id: "22",
@@ -397,8 +356,6 @@ const allProjects = [
     featured: true,
     year: "2026",
     icon: "🖥️",
-    country: "Australia",
-    countryFlag: "🇦🇺",
   },
   {
     id: "23",
@@ -415,8 +372,38 @@ const allProjects = [
     featured: true,
     year: "2026",
     icon: "💪",
-    country: "Australia",
-    countryFlag: "🇦🇺",
+  },
+  {
+    id: "24",
+    title: "Chat Web App",
+    category: "Mobile App",
+    languages: ["Node.js", "Supabase", "Real-time"],
+    fullDesc:
+      "A real-time chat web application built with Node.js and Supabase. Supports instant one-on-one messaging with a live, always-in-sync backend powered by Supabase.",
+    shortDesc:
+      "Real-time chat web application with instant messaging, built on Node.js and Supabase.",
+    image: "/chat.png",
+    link: "",
+    color: "#3ecf8e",
+    featured: false,
+    year: "2026",
+    icon: "💬",
+  },
+  {
+    id: "25",
+    title: "SMC Trading Notes App",
+    category: "Mobile App",
+    languages: ["React Native", "Expo", "Firebase"],
+    fullDesc:
+      "A React Native (Expo) crypto trading app featuring live charts and organized Smart Money Concepts (SMC) trading notes, with a Firebase backend for data storage and sync.",
+    shortDesc:
+      "React Native (Expo) crypto trading app with live charts and SMC notes, powered by Firebase.",
+    image: "/trading.png",
+    link: "",
+    color: "#ff6b35",
+    featured: false,
+    year: "2026",
+    icon: "📈",
   },
 ];
 
@@ -474,7 +461,7 @@ export default function ProjectsPage() {
 
           <div className="pp-hero__stats" role="list">
             <div className="pp-hero__stat" role="listitem">
-              <span className="pp-hero__stat-num">23+</span>
+              <span className="pp-hero__stat-num">25+</span>
               <span className="pp-hero__stat-label">Projects</span>
             </div>
             <div className="pp-hero__stat-divider" aria-hidden="true" />
@@ -587,16 +574,6 @@ export default function ProjectsPage() {
                 </div>
 
                 <h3 className="pp-feat-card__title">{project.title}</h3>
-
-                {/* Country Badge */}
-                <div className="pp-feat-card__country">
-                  <span className="pp-feat-card__country-flag">
-                    {project.countryFlag}
-                  </span>
-                  <span className="pp-feat-card__country-name">
-                    {project.country}
-                  </span>
-                </div>
 
                 <p className="pp-feat-card__desc">{project.fullDesc}</p>
 
@@ -741,30 +718,32 @@ export default function ProjectsPage() {
                         style={{ objectFit: "cover" }}
                       />
                     </div>
-                    <div className="pp-all__card-overlay">
-                      <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="pp-all__card-view"
-                      >
-                        <span>View Project</span>
-                        <svg
-                          width="20"
-                          height="20"
-                          viewBox="0 0 20 20"
-                          fill="none"
+                    {project.link && (
+                      <div className="pp-all__card-overlay">
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="pp-all__card-view"
                         >
-                          <path
-                            d="M4 10h12M12 6l4 4-4 4"
-                            stroke="currentColor"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                      </a>
-                    </div>
+                          <span>View Project</span>
+                          <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 20 20"
+                            fill="none"
+                          >
+                            <path
+                              d="M4 10h12M12 6l4 4-4 4"
+                              stroke="currentColor"
+                              strokeWidth="1.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                          </svg>
+                        </a>
+                      </div>
+                    )}
                   </div>
 
                   {/* Content */}
@@ -779,14 +758,6 @@ export default function ProjectsPage() {
                       <span className="pp-all__card-id">{project.id}</span>
                     </div>
                     <h3 className="pp-all__card-title">{project.title}</h3>
-
-                    {/* Country */}
-                    <div className="pp-all__card-country">
-                      <span>{project.countryFlag}</span>
-                      <span className="pp-all__card-country-name">
-                        {project.country}
-                      </span>
-                    </div>
 
                     <p className="pp-all__card-desc">{project.shortDesc}</p>
 

@@ -88,6 +88,48 @@ const servicesData = [
     color: "#00f5d4",
     highlight: "Enterprise Grade",
   },
+  {
+    id: "03",
+    category: "Mobile Development",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" width="32" height="32">
+        <rect
+          x="7"
+          y="2"
+          width="10"
+          height="20"
+          rx="2"
+          stroke="currentColor"
+          strokeWidth="1.5"
+        />
+        <line
+          x1="11"
+          y1="18"
+          x2="13"
+          y2="18"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+        />
+      </svg>
+    ),
+    title: "Mobile App Development",
+    shortDesc:
+      "Cross-platform mobile apps for iOS & Android, built with React Native & Expo.",
+    fullDesc:
+      "I build fast, native-feeling mobile apps with React Native and Expo, backed by solid Node.js APIs. One codebase, both platforms — App Store and Play Store ready, with push notifications and deep linking built in.",
+    features: [
+      "React Native & Expo",
+      "Cross-Platform (iOS + Android)",
+      "Node.js & Express APIs",
+      "Firebase, Supabase & MongoDB",
+      "Push Notifications & Deep Linking",
+      "App Store & Play Store Deployment",
+    ],
+    inquiryText: "Let's build your mobile app",
+    color: "#61DAFB",
+    highlight: "Cross-Platform",
+  },
 ];
 
 const processSteps = [
@@ -154,9 +196,9 @@ export default function ServicesPage() {
             <span className="services-hero__title-gold">Excellence</span>
           </h1>
           <p className="services-hero__subtitle">
-            Full stack web development tailored to your unique needs — from
-            pixel-perfect frontends to scalable, secure backend systems, I
-            deliver complete web solutions.
+            Full stack web & mobile development tailored to your unique needs —
+            from pixel-perfect frontends to scalable, secure backend systems and
+            cross-platform apps, I deliver complete digital solutions.
           </p>
           <div className="services-hero__stats">
             <div className="services-hero__stat">
@@ -181,7 +223,7 @@ export default function ServicesPage() {
           <div className="services-page__header">
             <h2 className="services-page__title">What We Do</h2>
             <p className="services-page__subtitle">
-              Full stack web development solutions for your growth
+              Full stack web &amp; mobile development solutions for your growth
             </p>
           </div>
           <div className="services-page__cards">

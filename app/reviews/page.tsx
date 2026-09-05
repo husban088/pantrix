@@ -37,7 +37,7 @@ export default function ReviewsPage() {
 
           <p className="reviews-page__hero-sub">
             Real words from real clients across 3+ countries who trusted Pantrix
-            with their web development projects.
+            with their web &amp; mobile app development projects.
           </p>
 
           {/* Scroll indicator */}

@@ -36,9 +36,17 @@ const reasons = [
     category: "Full Stack Development",
     title: "Pixel-Perfect & Performant",
     short: "Frontend + Backend, one team",
-    desc: "React, Next.js, Node.js, Supabase, Firebase — we handle the full stack. Blazing UIs, scalable APIs, and zero compromise on quality.",
+    desc: "React, Next.js, Node.js, Supabase, Firebase, MongoDB — I handle the full stack. Blazing UIs, scalable APIs, and zero compromise on quality.",
     highlight: "End-to-End",
-    tags: ["React", "Next.js", "Node.js", "Supabase"],
+    tags: [
+      "React",
+      "Next.js",
+      "Node.js",
+      "Supabase",
+      "MongoDB",
+      "GitHub",
+      "Vercel",
+    ],
   },
   // Core Principle
   {
@@ -61,12 +69,52 @@ const reasons = [
         />
       </svg>
     ),
-    category: "Our Promise",
+    category: "My Promise",
     title: "On-Time. Every Time.",
     short: "Zero missed deadlines",
-    desc: "Agile sprints, clear milestones, daily updates. We treat your deadline as sacred — because your launch date matters as much as the product.",
+    desc: "Agile sprints, clear milestones, daily updates. I treat your deadline as sacred — because your launch date matters as much as the product.",
     highlight: "0 Missed Deadlines",
     tags: ["Transparent", "Agile", "On-Time", "Guaranteed"],
+  },
+  // Mobile App Development
+  {
+    id: "03",
+    accentColor: "#61DAFB",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" width="28" height="28">
+        <rect
+          x="7"
+          y="2"
+          width="10"
+          height="20"
+          rx="2"
+          stroke="currentColor"
+          strokeWidth="1.5"
+        />
+        <line
+          x1="11"
+          y1="18"
+          x2="13"
+          y2="18"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+        />
+      </svg>
+    ),
+    category: "Mobile App Development",
+    title: "Native Feel, Cross-Platform Speed",
+    short: "One codebase, iOS & Android",
+    desc: "React Native & Expo — I build cross-platform mobile apps backed by the same solid Node.js, Firebase, Supabase & MongoDB APIs that power the web.",
+    highlight: "iOS + Android",
+    tags: [
+      "React Native",
+      "Expo",
+      "Node.js",
+      "Firebase",
+      "Supabase",
+      "MongoDB",
+    ],
   },
 ];
 
@@ -107,7 +155,7 @@ export default function WhyChooseUsSection() {
       {/* ── Section Label ── */}
       <div className="wcu__label-row">
         <span className="wcu__label-line" />
-        <span className="wcu__label-text">Why Choose Us</span>
+        <span className="wcu__label-text">Why Choose Me</span>
         <span className="wcu__label-line" />
       </div>
 
@@ -115,7 +163,7 @@ export default function WhyChooseUsSection() {
       <div className="wcu__hero">
         <div className="wcu__eyebrow">
           <span className="wcu__eyebrow-dot" />
-          <span>Pantrix — Full Stack Development Studio</span>
+          <span>Pantrix — Full Stack Developer</span>
         </div>
         <h2 className="wcu__heading">
           <span className="wcu__heading-line">The Pantrix</span>
@@ -124,8 +172,8 @@ export default function WhyChooseUsSection() {
           </span>
         </h2>
         <p className="wcu__subtext">
-          Not just developers — dedicated partners in your product's success.
-          Frontend to backend. One team. World-class execution.
+          Not just a developer — a dedicated partner in your product's success.
+          Frontend to backend. One person. World-class execution.
         </p>
       </div>
 
@@ -149,10 +197,13 @@ export default function WhyChooseUsSection() {
       <div className="wcu__services-strip">
         <div className="wcu__services-strip-label">
           <span className="wcu__section-num">01</span>
-          <span className="wcu__section-title">What We Do</span>
+          <span className="wcu__section-title">What I Do</span>
         </div>
         <div className="wcu__services-pills">
-          {[{ label: "Full Stack Dev", color: "#00d4ff" }].map((s) => (
+          {[
+            { label: "Full Stack Dev", color: "#00d4ff" },
+            { label: "Mobile Apps (React Native)", color: "#61DAFB" },
+          ].map((s) => (
             <span
               key={s.label}
               className="wcu__service-pill"
@@ -177,7 +228,7 @@ export default function WhyChooseUsSection() {
       {/* ── Reasons Grid ── */}
       <div className="wcu__section-head">
         <span className="wcu__section-num">02</span>
-        <h3 className="wcu__section-title">2 Reasons to Choose Pantrix</h3>
+        <h3 className="wcu__section-title">3 Reasons to Choose Pantrix</h3>
         <span className="wcu__section-bar" />
       </div>
 
@@ -295,7 +346,7 @@ export default function WhyChooseUsSection() {
       <div className="wcu__guarantee-wrap">
         <div className="wcu__section-head">
           <span className="wcu__section-num">03</span>
-          <h3 className="wcu__section-title">Our Promise to You</h3>
+          <h3 className="wcu__section-title">My Promise to You</h3>
           <span className="wcu__section-bar" />
         </div>
 
@@ -371,7 +422,7 @@ export default function WhyChooseUsSection() {
             <span className="wcu__btn-shine" />
           </a>
           <a href="/projects" className="wcu__btn wcu__btn--secondary">
-            <span>See Our Work</span>
+            <span>See My Work</span>
           </a>
         </div>
       </div>

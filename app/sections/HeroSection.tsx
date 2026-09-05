@@ -11,6 +11,8 @@ import {
   FaNode,
   FaFire,
   FaCode,
+  FaGithub,
+  FaMobileAlt,
 } from "react-icons/fa";
 
 import {
@@ -20,7 +22,12 @@ import {
   SiSupabase,
   SiExpress,
   SiJavascript,
+  SiVercel,
+  SiMongodb,
+  SiExpo,
 } from "react-icons/si";
+
+import { TbBrandReactNative } from "react-icons/tb";
 
 const techStack = [
   { name: "HTML5", icon: FaHtml5, color: "#E34F26" },
@@ -35,6 +42,11 @@ const techStack = [
   { name: "Express", icon: SiExpress, color: "#ffffff" },
   { name: "Firebase", icon: FaFire, color: "#FFCA28" },
   { name: "Supabase", icon: SiSupabase, color: "#3ECF8E" },
+  { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
+  { name: "React Native", icon: TbBrandReactNative, color: "#61DAFB" },
+  { name: "Expo", icon: SiExpo, color: "#8B6CEF" },
+  { name: "GitHub", icon: FaGithub, color: "#ffffff" },
+  { name: "Vercel", icon: SiVercel, color: "#ffffff" },
 ];
 
 const services = [
@@ -44,7 +56,39 @@ const services = [
     color: "#00d4ff",
     title: "Full Stack Development",
     desc: "Modern, high-performance web applications — pixel-perfect frontends to scalable backend systems.",
-    tags: ["React", "Next.js", "Node.js", "Supabase"],
+    tags: [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Bootstrap",
+      "Sass",
+      "React",
+      "Tailwind",
+      "Next.js",
+      "Node.js",
+      "Express",
+      "Firebase",
+      "Supabase",
+      "MongoDB",
+      "GitHub",
+      "Vercel",
+    ],
+  },
+  {
+    id: "mobile",
+    icon: FaMobileAlt,
+    color: "#61DAFB",
+    title: "Mobile App Development",
+    desc: "Cross-platform mobile apps built with React Native & Expo — powered by the same solid backends.",
+    tags: [
+      "React Native",
+      "Expo",
+      "Node.js",
+      "Express",
+      "Firebase",
+      "Supabase",
+      "MongoDB",
+    ],
   },
 ];
 
@@ -142,7 +186,7 @@ export default function HeroSection() {
 
           <h1 className="hero__heading">
             <span className="hero__heading-line hero__heading-line--1">
-              <span className="hero__heading-word">We Craft</span>
+              <span className="hero__heading-word">I Craft</span>
             </span>
             <span className="hero__heading-line hero__heading-line--2">
               <span className="hero__heading-word">Digital</span>
@@ -163,7 +207,7 @@ export default function HeroSection() {
           </div>
 
           <p className="hero__desc">
-            We build modern, high-performance web applications — from
+            I build modern, high-performance web applications — from
             pixel-perfect frontends to scalable, secure backend systems. Full
             stack development, done right.
           </p>
@@ -246,7 +290,7 @@ export default function HeroSection() {
 
           <div className="hero__stats">
             <div className="hero__stat">
-              <span className="hero__stat-num">150+</span>
+              <span className="hero__stat-num">20+</span>
               <span className="hero__stat-label">Projects Delivered</span>
             </div>
             <div className="hero__stat-divider" />
@@ -256,7 +300,7 @@ export default function HeroSection() {
             </div>
             <div className="hero__stat-divider" />
             <div className="hero__stat">
-              <span className="hero__stat-num">50+</span>
+              <span className="hero__stat-num">20+</span>
               <span className="hero__stat-label">Happy Clients</span>
             </div>
           </div>

@@ -38,12 +38,12 @@ const servicesData = [
     shortDesc:
       "High-performance web apps — pixel-perfect frontends to scalable backend systems.",
     features: [
-      "React & Next.js 14",
+      "React, Next.js 14 & TypeScript",
       "Node.js & Express APIs",
-      "Supabase & Firebase",
-      "TypeScript & Tailwind CSS",
-      "Performance & SEO Optimized",
-      "Lighthouse 95+ Score",
+      "Supabase, Firebase & MongoDB",
+      "Tailwind CSS",
+      "GitHub Version Control & Vercel Deployment",
+      "Performance & SEO — Lighthouse 95+",
     ],
     inquiryText: "Let's build your dream web app",
     color: "#00d4ff",
@@ -86,10 +86,52 @@ const servicesData = [
     color: "#00d4ff",
     highlight: "Enterprise Grade",
   },
+  // ── Mobile App Development ──
+  {
+    id: "03",
+    category: "Mobile Development",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" width="32" height="32">
+        <rect
+          x="7"
+          y="2"
+          width="10"
+          height="20"
+          rx="2"
+          stroke="currentColor"
+          strokeWidth="1.5"
+        />
+        <line
+          x1="11"
+          y1="18"
+          x2="13"
+          y2="18"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+        />
+      </svg>
+    ),
+    title: "Mobile App Development",
+    shortDesc:
+      "Cross-platform mobile apps for iOS & Android, built with React Native & Expo.",
+    features: [
+      "React Native & Expo",
+      "Cross-Platform (iOS + Android)",
+      "Node.js & Express APIs",
+      "Firebase, Supabase & MongoDB",
+      "Push Notifications & Deep Linking",
+      "App Store & Play Store Deployment",
+    ],
+    inquiryText: "Let's build your mobile app",
+    color: "#61DAFB",
+    highlight: "Cross-Platform",
+  },
 ];
 
 const categoryColors: Record<string, string> = {
   "Web Development": "#00d4ff",
+  "Mobile Development": "#61DAFB",
 };
 
 export default function ServicesSection() {
@@ -118,7 +160,7 @@ export default function ServicesSection() {
       {/* ── Section Label ── */}
       <div className="services__label-row">
         <span className="services__label-line" />
-        <span className="services__label-text">What We Offer</span>
+        <span className="services__label-text">What I Offer</span>
         <span className="services__label-line" />
       </div>
 
@@ -126,7 +168,7 @@ export default function ServicesSection() {
       <div className="services__header">
         <div className="services__eyebrow">
           <span className="services__eyebrow-dot" />
-          <span>Pantrix — Full Stack Development Studio</span>
+          <span>Pantrix — Full Stack Developer</span>
         </div>
         <h2 className="services__heading">
           <span className="services__heading-line">Full Stack</span>
@@ -136,7 +178,7 @@ export default function ServicesSection() {
           <span className="services__heading-line">For Your Growth</span>
         </h2>
         <p className="services__subtext">
-          From blazing-fast web apps to complex, enterprise-grade platforms — we
+          From blazing-fast web apps to complex, enterprise-grade platforms — I
           handle the entire stack, frontend to backend. No juggling contractors.
           Pure results.
         </p>
@@ -306,7 +348,7 @@ export default function ServicesSection() {
             href="/projects"
             className="services__btn services__btn--secondary"
           >
-            <span>View Our Portfolio</span>
+            <span>View My Portfolio</span>
           </a>
         </div>
       </div>

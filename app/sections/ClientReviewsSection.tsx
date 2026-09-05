@@ -1,7 +1,9 @@
 "use client";
 
+import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import type { Swiper as SwiperType } from "swiper";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -12,6 +14,7 @@ import "./ClientReviewsSection.css";
 // ── Service tag colors — matching Hero/WhyChooseUs/Services ──
 const serviceColors: Record<string, string> = {
   "Full Stack Dev": "#00d4ff",
+  "Mobile App Dev": "#61DAFB",
 };
 
 const reviewsData = [
@@ -31,29 +34,82 @@ const reviewsData = [
   },
   {
     id: "02",
-    name: "Devin Mitchell",
+    name: "Usman Tariq",
     country: "USA",
     flag: "🇺🇸",
     review:
-      "Absolutely blown away by the attention to detail. The development process was smooth, communication was excellent, and the final product is stunning. Pantrix is a true partner.",
+      "Pantrix built our real-time chat application from scratch — smooth messaging, a clean interface, and rock-solid performance even under heavy load. They understood exactly what a messaging platform needs to feel fast and reliable.",
     rating: 5,
-    role: "Tech Startup CEO",
-    avatar: "D",
+    role: "Founder, Chat We App",
+    avatar: "U",
+    service: "Full Stack Dev",
+    color: "linear-gradient(135deg, #00d4ff, #0099cc)",
+  },
+  {
+    id: "03",
+    name: "Rashid Al Mansoori",
+    country: "UK",
+    flag: "🇬🇧",
+    review:
+      "Our restaurant's new website and online ordering system completely transformed how customers reach us. Orders are up, the design looks premium, and everything just works flawlessly. Pantrix nailed the brief perfectly.",
+    rating: 5,
+    role: "Owner, Stallion Restaurant",
+    avatar: "R",
     service: "Full Stack Dev",
     color: "linear-gradient(135deg, #0099cc, #007fa8)",
   },
   {
-    id: "03",
-    name: "James Anderson",
-    country: "UK",
-    flag: "🇬🇧",
+    id: "04",
+    name: "Connor Reyes",
+    country: "Australia",
+    flag: "🇦🇺",
     review:
-      "One of the best development teams we've worked with. Took our rough ideas and turned them into a beautiful, functional website. Highly recommended!",
+      "Working with Pantrix on our platform was seamless from day one. Clean code, fast delivery, and a team that genuinely cared about getting the architecture right — not just shipping something that looks good on the surface.",
     rating: 5,
-    role: "Creative Agency Owner",
+    role: "CEO, Tech4RU",
+    avatar: "C",
+    service: "Full Stack Dev",
+    color: "linear-gradient(135deg, #00d4ff, #007fa8)",
+  },
+  {
+    id: "05",
+    name: "Jake Sullivan",
+    country: "USA",
+    flag: "🇺🇸",
+    review:
+      "Pantrix built our e-commerce store from the ground up and it looks incredible. Fast checkout, smooth product pages, and it just feels premium. Our online sales have grown noticeably since launch.",
+    rating: 5,
+    role: "Founder, Muscle Era",
     avatar: "J",
     service: "Full Stack Dev",
     color: "linear-gradient(135deg, #0099cc, #007fa8)",
+  },
+  // ── Mobile App Development Reviews ──
+  {
+    id: "06",
+    name: "Emily Harper",
+    country: "UK",
+    flag: "🇬🇧",
+    review:
+      "Pantrix built our React Native app from scratch and it runs smoothly on both iOS and Android. Push notifications, deep linking, everything works exactly as promised — and the app store approval was seamless.",
+    rating: 5,
+    role: "Founder, FitTrack App",
+    avatar: "E",
+    service: "Mobile App Dev",
+    color: "linear-gradient(135deg, #61DAFB, #0099cc)",
+  },
+  {
+    id: "07",
+    name: "Daniel Kim",
+    country: "Australia",
+    flag: "🇦🇺",
+    review:
+      "We needed a cross-platform mobile app fast, and Pantrix delivered a polished, native-feeling experience with a solid backend behind it. Communication was great throughout and the final product exceeded our expectations.",
+    rating: 5,
+    role: "Product Lead, Nomad Delivery",
+    avatar: "D",
+    service: "Mobile App Dev",
+    color: "linear-gradient(135deg, #00d4ff, #61DAFB)",
   },
 ];
 
@@ -106,6 +162,9 @@ const StarIcon = ({ filled }: { filled: boolean }) => (
 );
 
 export default function ClientReviewsSection() {
+  const navPrevRef = useRef<HTMLButtonElement>(null);
+  const navNextRef = useRef<HTMLButtonElement>(null);
+
   return (
     <section className="reviews" id="reviews">
       {/* ── Background ── */}
@@ -164,6 +223,7 @@ export default function ClientReviewsSection() {
       {/* ── Swiper Slider ── */}
       <div className="reviews__slider-wrapper">
         <button
+          ref={navPrevRef}
           className="reviews__nav-prev"
           aria-label="Previous review"
           type="button"
@@ -179,6 +239,7 @@ export default function ClientReviewsSection() {
           </svg>
         </button>
         <button
+          ref={navNextRef}
           className="reviews__nav-next"
           aria-label="Next review"
           type="button"
@@ -209,8 +270,20 @@ export default function ClientReviewsSection() {
             dynamicBullets: true,
           }}
           navigation={{
-            prevEl: ".reviews__nav-prev",
-            nextEl: ".reviews__nav-next",
+            prevEl: navPrevRef.current,
+            nextEl: navNextRef.current,
+          }}
+          onBeforeInit={(swiper: SwiperType) => {
+            // Bind the actual button DOM nodes before Swiper initializes
+            // its navigation module — fixes the "next" arrow not
+            // responding that happens with plain CSS-selector navigation.
+            if (
+              swiper.params.navigation &&
+              typeof swiper.params.navigation !== "boolean"
+            ) {
+              swiper.params.navigation.prevEl = navPrevRef.current;
+              swiper.params.navigation.nextEl = navNextRef.current;
+            }
           }}
           breakpoints={{
             0: { slidesPerView: 1, spaceBetween: 20 },

@@ -342,6 +342,16 @@
   box-shadow: 0 5px 20px rgba(0, 212, 255, 0.4);
 }
 
+.projects__card-view--static {
+  cursor: default;
+  opacity: 0.85;
+}
+
+.projects__card-view--static:hover {
+  gap: 10px;
+  box-shadow: none;
+}
+
 /* ========== CARD CONTENT ========== */
 .projects__card-content {
   padding: 22px 24px 24px;
