@@ -7,9 +7,9 @@ import "./AboutPage.css";
 ───────────────────────────────────────────── */
 
 const stats = [
-  { num: "150+", label: "Projects Delivered" },
+  { num: "20+", label: "Projects Delivered" },
   { num: "5+", label: "Years Experience" },
-  { num: "50+", label: "Happy Clients" },
+  { num: "20+", label: "Happy Clients" },
   { num: "100%", label: "Client Satisfaction" },
 ];
 

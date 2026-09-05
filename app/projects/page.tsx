@@ -466,7 +466,7 @@ export default function ProjectsPage() {
             </div>
             <div className="pp-hero__stat-divider" aria-hidden="true" />
             <div className="pp-hero__stat" role="listitem">
-              <span className="pp-hero__stat-num">50+</span>
+              <span className="pp-hero__stat-num">20+</span>
               <span className="pp-hero__stat-label">Happy Clients</span>
             </div>
             <div className="pp-hero__stat-divider" aria-hidden="true" />

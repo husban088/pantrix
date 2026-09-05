@@ -119,9 +119,9 @@ const reasons = [
 ];
 
 const bigStats = [
-  { num: "150+", label: "Projects Completed", icon: "◈" },
+  { num: "20+", label: "Projects Completed", icon: "◈" },
   { num: "5+", label: "Years of Excellence", icon: "◆" },
-  { num: "50+", label: "Happy Clients", icon: "◉" },
+  { num: "20+", label: "Happy Clients", icon: "◉" },
   { num: "0", label: "Missed Deadlines", icon: "◇" },
 ];
 

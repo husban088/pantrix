@@ -402,7 +402,7 @@ export default function ClientReviewsSection() {
       {/* ── Stats Bar ── */}
       <div className="reviews__stats" role="list">
         <div className="reviews__stat" role="listitem">
-          <span className="reviews__stat-num">50+</span>
+          <span className="reviews__stat-num">7+</span>
           <span className="reviews__stat-label">Happy Clients</span>
         </div>
         <div className="reviews__stat-divider" aria-hidden="true" />

@@ -202,7 +202,7 @@ export default function ServicesPage() {
           </p>
           <div className="services-hero__stats">
             <div className="services-hero__stat">
-              <span className="services-hero__stat-num">50+</span>
+              <span className="services-hero__stat-num">20+</span>
               <span>Projects Delivered</span>
             </div>
             <div className="services-hero__stat">
