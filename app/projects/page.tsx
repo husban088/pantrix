@@ -320,7 +320,7 @@ const allProjects = [
       "A full-stack restaurant web application built with React, Tailwind CSS, and Supabase. Delivers a complete digital dining experience — About page, Chef showcase, online table booking, food cart with live updates, and secure order placement, all powered by Supabase real-time database.",
     shortDesc: "Full restaurant app with booking, cart & Supabase backend.",
     image: "/stallionresturant.png",
-    link: "https://stallion-resturant.web.app",
+    link: "https://stallion-restaurant.vercel.app/",
     color: "#3ecf8e",
     featured: true,
     year: "2024",

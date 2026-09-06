@@ -228,7 +228,7 @@ const projectsData = [
     shortDesc: "Full restaurant app with booking, cart & Supabase backend.",
     tags: ["React", "Tailwind CSS", "Supabase"],
     image: "/stallionresturant.png",
-    link: "https://stallion-resturant.web.app",
+    link: "https://stallion-restaurant.vercel.app/",
     color: "#3ecf8e",
     icon: "🗄️",
   },
