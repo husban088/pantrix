@@ -36,8 +36,8 @@ const services = [
     badge: "01",
     badgeColor: "#00f5d4",
     title: "Frontend Development",
-    desc: "Pixel-perfect UIs with React, Next.js & Tailwind CSS",
-    tags: ["React", "Next.js", "Tailwind"],
+    desc: "Pixel-perfect UIs with React, Next.js, Angular & Vue.js, styled with Tailwind CSS",
+    tags: ["React", "Angular", "Vue.js", "Next.js", "Tailwind CSS"],
   },
   {
     icon: (
@@ -69,8 +69,16 @@ const services = [
     badge: "02",
     badgeColor: "#00bbf9",
     title: "Backend & APIs",
-    desc: "Scalable servers & databases with Node.js, Firebase, Supabase & MongoDB — version-controlled on GitHub, deployed on Vercel",
-    tags: ["Node.js", "Firebase", "Supabase", "MongoDB", "GitHub", "Vercel"],
+    desc: "Scalable servers & databases with Node.js, Firebase, Supabase & MongoDB, with Cloudinary for image & video storage — version-controlled on GitHub, deployed on Vercel",
+    tags: [
+      "Node.js",
+      "Firebase",
+      "Supabase",
+      "MongoDB",
+      "Cloudinary",
+      "GitHub",
+      "Vercel",
+    ],
   },
   {
     icon: (
@@ -159,10 +167,11 @@ const services = [
       "React Native",
       "Expo",
       "Node.js",
-      "Express",
+      "Express.js",
       "Firebase",
       "Supabase",
       "MongoDB",
+      "Cloudinary",
     ],
   },
 ];
@@ -225,11 +234,12 @@ export default function AboutSection() {
             pixel-perfect frontends to scalable, secure backend systems.
           </p>
           <p className="about__desc about__desc--2">
-            From pixel-perfect frontends in React &amp; Next.js, to robust
-            backends powered by Node.js, Firebase, Supabase &amp; MongoDB, to
-            performance tuning and fully responsive design — I deliver
-            end-to-end web solutions, version-controlled on GitHub and deployed
-            on Vercel, built to last.
+            From pixel-perfect frontends in React, Next.js, Angular &amp;
+            Vue.js, to robust backends powered by Node.js, Firebase, Supabase
+            &amp; MongoDB, with Cloudinary handling all image &amp; video
+            storage and delivery, to performance tuning and fully responsive
+            design — I deliver end-to-end web solutions, version-controlled on
+            GitHub and deployed on Vercel, built to last.
           </p>
 
           <div className="about__stats">

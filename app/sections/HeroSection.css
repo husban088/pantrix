@@ -590,12 +590,13 @@
 
 .hero__service-tag {
   font-family: var(--font-mono);
-  font-size: 0.58rem;
-  letter-spacing: 0.08em;
-  padding: 0.15rem 0.5rem;
+  font-size: 0.78rem;
+  color: #ffffff;
+  letter-spacing: 0.06em;
+  padding: 0.25rem 0.65rem;
   border-radius: 999px;
   border: 1px solid;
-  opacity: 0.75;
+  opacity: 0.9;
   transition: opacity 0.2s ease;
   white-space: nowrap;
 }
@@ -1397,6 +1398,10 @@
   .hero__service-desc {
     display: none;
   }
+  .hero__service-tag {
+    font-size: 0.72rem;
+    padding: 0.22rem 0.6rem;
+  }
 }
 
 /* ══════════════════════════════════════════════
@@ -1470,6 +1475,10 @@
   }
   .hero__service-title {
     font-size: 0.82rem;
+  }
+  .hero__service-tag {
+    font-size: 0.68rem;
+    padding: 0.2rem 0.55rem;
   }
 }
 

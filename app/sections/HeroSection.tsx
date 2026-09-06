@@ -25,6 +25,9 @@ import {
   SiVercel,
   SiMongodb,
   SiExpo,
+  SiCloudinary,
+  SiAngular,
+  SiVuedotjs,
 } from "react-icons/si";
 
 import { TbBrandReactNative } from "react-icons/tb";
@@ -36,13 +39,16 @@ const techStack = [
   { name: "Bootstrap", icon: FaBootstrap, color: "#7952B3" },
   { name: "Sass", icon: SiSass, color: "#CC6699" },
   { name: "React", icon: FaReact, color: "#61DAFB" },
-  { name: "Tailwind", icon: SiTailwindcss, color: "#06B6D4" },
+  { name: "Angular", icon: SiAngular, color: "#DD0031" },
+  { name: "Vue.js", icon: SiVuedotjs, color: "#4FC08D" },
+  { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
   { name: "Next.js", icon: SiNextdotjs, color: "#ffffff" },
   { name: "Node.js", icon: FaNode, color: "#339933" },
-  { name: "Express", icon: SiExpress, color: "#ffffff" },
+  { name: "Express.js", icon: SiExpress, color: "#ffffff" },
   { name: "Firebase", icon: FaFire, color: "#FFCA28" },
   { name: "Supabase", icon: SiSupabase, color: "#3ECF8E" },
   { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
+  { name: "Cloudinary", icon: SiCloudinary, color: "#3448C5" },
   { name: "React Native", icon: TbBrandReactNative, color: "#61DAFB" },
   { name: "Expo", icon: SiExpo, color: "#8B6CEF" },
   { name: "GitHub", icon: FaGithub, color: "#ffffff" },
@@ -63,13 +69,16 @@ const services = [
       "Bootstrap",
       "Sass",
       "React",
-      "Tailwind",
+      "Angular",
+      "Vue.js",
+      "Tailwind CSS",
       "Next.js",
       "Node.js",
-      "Express",
+      "Express.js",
       "Firebase",
       "Supabase",
       "MongoDB",
+      "Cloudinary",
       "GitHub",
       "Vercel",
     ],
@@ -84,10 +93,11 @@ const services = [
       "React Native",
       "Expo",
       "Node.js",
-      "Express",
+      "Express.js",
       "Firebase",
       "Supabase",
       "MongoDB",
+      "Cloudinary",
     ],
   },
 ];
@@ -256,7 +266,6 @@ export default function HeroSection() {
                             className="hero__service-tag"
                             style={{
                               borderColor: `${service.color}40`,
-                              color: service.color,
                             }}
                           >
                             {tag}

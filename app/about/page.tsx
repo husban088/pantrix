@@ -42,7 +42,7 @@ const services = [
     badgeColor: "#00f5d4",
     title: "Frontend Development",
     desc: "Pixel-perfect UIs with React, Next.js & Tailwind CSS",
-    tags: ["React", "Next.js", "Tailwind"],
+    tags: ["React", "Next.js", "Tailwind CSS"],
   },
   {
     icon: (
@@ -74,8 +74,16 @@ const services = [
     badge: "02",
     badgeColor: "#00bbf9",
     title: "Backend & APIs",
-    desc: "Scalable servers & databases with Node.js, Firebase, Supabase & MongoDB — version-controlled on GitHub, deployed on Vercel",
-    tags: ["Node.js", "Firebase", "Supabase", "MongoDB", "GitHub", "Vercel"],
+    desc: "Scalable servers & databases with Node.js, Firebase, Supabase & MongoDB, with Cloudinary for image & video storage — version-controlled on GitHub, deployed on Vercel",
+    tags: [
+      "Node.js",
+      "Firebase",
+      "Supabase",
+      "MongoDB",
+      "Cloudinary",
+      "GitHub",
+      "Vercel",
+    ],
   },
   {
     icon: (
@@ -164,10 +172,11 @@ const services = [
       "React Native",
       "Expo",
       "Node.js",
-      "Express",
+      "Express.js",
       "Firebase",
       "Supabase",
       "MongoDB",
+      "Cloudinary",
     ],
   },
 ];
@@ -400,10 +409,12 @@ export default function AboutPage() {
             </p>
             <p className="ap__desc">
               From pixel-perfect frontends in React &amp; Next.js, to robust
-              backends powered by Node.js, Firebase, Supabase &amp; MongoDB, to
-              performance tuning, fully responsive design and cross-platform
-              mobile apps — we deliver end-to-end solutions, version-controlled
-              on GitHub and deployed on Vercel, built to last.
+              backends powered by Node.js, Firebase, Supabase &amp; MongoDB,
+              with Cloudinary handling all image &amp; video storage and
+              delivery, to performance tuning, fully responsive design and
+              cross-platform mobile apps — we deliver end-to-end solutions,
+              version-controlled on GitHub and deployed on Vercel, built to
+              last.
             </p>
 
             <div className="ap__stats">

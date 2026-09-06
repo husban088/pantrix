@@ -39,8 +39,10 @@ const servicesData = [
       "High-performance web apps — pixel-perfect frontends to scalable backend systems.",
     features: [
       "React, Next.js 14 & TypeScript",
+      "Angular & Vue.js",
       "Node.js & Express APIs",
       "Supabase, Firebase & MongoDB",
+      "Cloudinary Media Storage",
       "Tailwind CSS",
       "GitHub Version Control & Vercel Deployment",
       "Performance & SEO — Lighthouse 95+",
@@ -120,6 +122,7 @@ const servicesData = [
       "Cross-Platform (iOS + Android)",
       "Node.js & Express APIs",
       "Firebase, Supabase & MongoDB",
+      "Cloudinary Media Storage",
       "Push Notifications & Deep Linking",
       "App Store & Play Store Deployment",
     ],

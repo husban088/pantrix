@@ -40,8 +40,10 @@ const servicesData = [
       "I craft modern, high-performance web applications using React, Next.js, and Node.js. Every pixel is precisely placed, every animation smooth, and every interaction intuitive. Your users will never want to leave.",
     features: [
       "React & Next.js 14",
+      "Angular & Vue.js",
       "Node.js & Express APIs",
       "Supabase & Firebase",
+      "Cloudinary Media Storage",
       "TypeScript & Tailwind CSS",
       "Performance & SEO Optimized",
       "Lighthouse 95+ Score",
@@ -123,6 +125,7 @@ const servicesData = [
       "Cross-Platform (iOS + Android)",
       "Node.js & Express APIs",
       "Firebase, Supabase & MongoDB",
+      "Cloudinary Media Storage",
       "Push Notifications & Deep Linking",
       "App Store & Play Store Deployment",
     ],
